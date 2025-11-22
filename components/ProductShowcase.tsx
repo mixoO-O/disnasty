@@ -69,7 +69,7 @@ export function ProductShowcase() {
                                             {product.title}
                                         </h3>
                                         <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                            <ArrowUpRight className="w-5 h-5 text-white" />
+                                            {/* <ArrowUpRight className="w-5 h-5 text-white" /> */}
                                         </div>
                                     </div>
                                 </div>
