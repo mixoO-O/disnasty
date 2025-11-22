@@ -6,7 +6,7 @@ export function AIShowcase() {
     return (
         <section className="py-24 px-6 relative overflow-hidden">
             {/* Background gradients */}
-            <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-0" />
+            <div className="absolute top-0 left-0 w-full h-full bg-black/90 z-0" />
             <div className="absolute top-1/4 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl -translate-x-1/2 pointer-events-none" />
             <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl translate-x-1/2 pointer-events-none" />
 
@@ -16,7 +16,7 @@ export function AIShowcase() {
                         <Sparkles className="w-4 h-4 text-yellow-400" />
                         <span className="text-sm font-medium text-gray-300">Proprietary AI Solutions</span>
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                    <h2 className="text-4xl md:text-5xl text-white font-bold mb-6">
                         Intelligent Systems <br />
                         <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
                             Tailored for Industries

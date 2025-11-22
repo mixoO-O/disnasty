@@ -34,16 +34,18 @@ export function Navbar() {
                                 priority
                             />
                         </div>
-                        {/* Desktop Logo (Full) */}
-                        <div className="hidden md:block">
+                        {/* Desktop Logo (Text + Icon) */}
+                        <div className="hidden md:flex items-center gap-2">
                             <Image
-                                src="/disnasty-logo-full.png"
+                                src="/disnasty-logo-icon.png"
                                 alt="Disnasty Logo"
-                                width={180}
-                                height={50}
-                                className="h-12 w-auto object-contain group-hover:scale-105 transition-transform"
-                                priority
+                                width={32}
+                                height={32}
+                                className="h-8 w-auto object-contain"
                             />
+                            <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_200%]">
+                                DISNASTY
+                            </span>
                         </div>
                     </Link>
 
