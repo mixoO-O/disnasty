@@ -5,9 +5,11 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Menu, X, Zap, Cpu, Network } from "lucide-react";
 import { useState } from "react";
+import { ContactModal } from "./ContactModal";
 
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [isContactOpen, setIsContactOpen] = useState(false);
 
     const navItems = [
         { name: "Innovation", href: "#innovation", icon: Zap },
@@ -32,16 +34,18 @@ export function Navbar() {
                                 priority
                             />
                         </div>
-                        {/* Desktop Logo (Full) */}
-                        <div className="hidden md:block">
+                        {/* Desktop Logo (Text + Icon) */}
+                        <div className="hidden md:flex items-center gap-2">
                             <Image
-                                src="/disnasty-logo-full.png"
+                                src="/disnasty-logo-icon.png"
                                 alt="Disnasty Logo"
-                                width={180}
-                                height={50}
-                                className="h-12 w-auto object-contain group-hover:scale-105 transition-transform"
-                                priority
+                                width={32}
+                                height={32}
+                                className="h-8 w-auto object-contain"
                             />
+                            <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_200%]">
+                                DISNASTY
+                            </span>
                         </div>
                     </Link>
 
@@ -58,8 +62,11 @@ export function Navbar() {
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all group-hover:w-full" />
                             </Link>
                         ))}
-                        <button className="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all border border-white/5 hover:border-white/20">
-                            Get Started
+                        <button
+                            onClick={() => setIsContactOpen(true)}
+                            className="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all border border-white/5 hover:border-white/20"
+                        >
+                            Contact Us
                         </button>
                     </div>
 
@@ -71,6 +78,8 @@ export function Navbar() {
                         {isOpen ? <X /> : <Menu />}
                     </button>
                 </div>
+
+                <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
 
                 {/* Mobile Nav */}
                 {isOpen && (
