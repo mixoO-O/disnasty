@@ -41,24 +41,6 @@ export default function Home() {
                     <div className="grid md:grid-cols-3 gap-6">
                         {[
                             {
-                                client: "Quimobility",
-                                location: "UK",
-                                desc: "Enterprise mobile systems for international logistics.",
-                                tags: ["Mobile", "Logistics"]
-                            },
-                            {
-                                client: "Falabella",
-                                location: "Chile",
-                                desc: "Scalable enterprise systems for retail operations.",
-                                tags: ["Enterprise", "Retail"]
-                            },
-                            {
-                                client: "kaufmann",
-                                location: "Global",
-                                desc: "Custom application development for specialized needs.",
-                                tags: ["App Dev", "Custom"]
-                            },
-                            {
                                 client: "Mediprotek",
                                 location: "Chile",
                                 desc: "Comprehensive application development and system maintenance.",
