@@ -3,8 +3,11 @@
 import { Mail, Linkedin, Twitter, Instagram } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image"; // Added Image import
+import { useTranslations } from 'next-intl';
 
 export function Footer() {
+    const t = useTranslations('Footer');
+
     return (
         <footer className="py-12 px-6 border-t border-white/10 bg-black/90 backdrop-blur-lg">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
@@ -19,7 +22,7 @@ export function Footer() {
                         />
                     </Link>
                     <p className="text-gray-400 max-w-sm text-center md:text-left">
-                        Empowering businesses with cutting-edge AI automation and scalable infrastructure solutions.
+                        {t('description')}
                     </p>
                 </div>
 
@@ -56,7 +59,7 @@ export function Footer() {
             </div>
 
             <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-white/5 text-center text-sm text-gray-500">
-                © {new Date().getFullYear()} Disnasty Tech. All rights reserved.
+                © {new Date().getFullYear()} Disnasty Tech. {t('rights')}
             </div>
         </footer>
     );

@@ -7,8 +7,11 @@ import { Testimonials } from "@/components/Testimonials";
 import { Footer } from "@/components/Footer";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { AIShowcase } from "@/components/AIShowcase";
+import { useTranslations } from 'next-intl';
 
 export default function Home() {
+    const t = useTranslations('HomePage');
+
     return (
         <main className="min-h-screen bg-background text-foreground selection:bg-primary/30">
             <Navbar />
@@ -37,7 +40,7 @@ export default function Home() {
             {/* Placeholder for next sections */}
             <section id="innovation" className="py-20 px-6">
                 <div className="max-w-7xl mx-auto">
-                    <h2 className="text-3xl font-bold mb-10 text-center">Innovation Hub</h2>
+                    <h2 className="text-3xl font-bold mb-10 text-center">{t('innovationHub')}</h2>
                     <div className="grid md:grid-cols-3 gap-6">
                         {[
                             {

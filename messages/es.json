@@ -1,0 +1,28 @@
+{
+  "HomePage": {
+    "title": "Disnasty Tech",
+    "subtitle": "El Futuro de la Tecnología",
+    "getStarted": "Comenzar",
+    "contactUs": "Contáctanos",
+    "innovationHub": "Centro de Innovación"
+  },
+  "Navbar": {
+    "home": "Inicio",
+    "innovation": "Innovación",
+    "products": "Productos",
+    "clients": "Clientes",
+    "testimonials": "Testimonios",
+    "contact": "Contáctanos"
+  },
+  "Hero": {
+    "badge": "Innovación de Próxima Generación",
+    "titlePrefix": "Construyendo el",
+    "titleSuffix": "Futuro de la Tecnología",
+    "description": "Experimenta la sinergia de la Inteligencia Artificial y la Automatización Avanzada. Disnasty te trae la vanguardia de la transformación digital.",
+    "cta": "Contáctanos"
+  },
+  "Footer": {
+    "description": "Empoderando empresas con automatización de IA de vanguardia y soluciones de infraestructura escalables.",
+    "rights": "Todos los derechos reservados"
+  }
+}

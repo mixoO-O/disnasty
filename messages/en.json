@@ -1,0 +1,28 @@
+{
+  "HomePage": {
+    "title": "Disnasty Tech",
+    "subtitle": "The Future of Tech",
+    "getStarted": "Get Started",
+    "contactUs": "Contact Us",
+    "innovationHub": "Innovation Hub"
+  },
+  "Navbar": {
+    "home": "Home",
+    "innovation": "Innovation",
+    "products": "Products",
+    "clients": "Clients",
+    "testimonials": "Testimonials",
+    "contact": "Contact Us"
+  },
+  "Hero": {
+    "badge": "Next Gen Innovation",
+    "titlePrefix": "Building the",
+    "titleSuffix": "Future of Tech",
+    "description": "Experience the synergy of Artificial Intelligence and Advanced Automation. Disnasty brings you the cutting edge of digital transformation.",
+    "cta": "Contact Us"
+  },
+  "Footer": {
+    "description": "Empowering businesses with cutting-edge AI automation and scalable infrastructure solutions.",
+    "rights": "All rights reserved"
+  }
+}
