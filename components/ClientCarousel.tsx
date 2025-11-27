@@ -15,7 +15,7 @@ const clients = [
 
 export function ClientCarousel() {
     return (
-        <section className="py-10 overflow-hidden bg-background/50 backdrop-blur-sm border-y border-white/5">
+        <section id="clients" className="py-10 overflow-hidden bg-background/50 backdrop-blur-sm border-y border-white/5">
             <div className="max-w-7xl mx-auto px-6 mb-6">
                 <p className="text-center text-sm text-gray-400 font-medium uppercase tracking-wider">
                     Trusted by industry leaders
