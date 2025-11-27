@@ -6,16 +6,18 @@ import { motion } from "framer-motion";
 import { Menu, X, Zap, Cpu, Network } from "lucide-react";
 import { useState } from "react";
 import { ContactModal } from "./ContactModal";
+import { useTranslations } from 'next-intl';
 
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [isContactOpen, setIsContactOpen] = useState(false);
+    const t = useTranslations('Navbar');
 
     const navItems = [
-        { name: "Innovation", href: "#innovation", icon: Zap },
-        { name: "Products", href: "#products", icon: Cpu },
-        { name: "Clients", href: "#clients", icon: Network },
-        { name: "Testimonials", href: "#testimonials", icon: Zap },
+        { name: t('innovation'), href: "#innovation", icon: Zap },
+        { name: t('products'), href: "#products", icon: Cpu },
+        { name: t('clients'), href: "#clients", icon: Network },
+        { name: t('testimonials'), href: "#testimonials", icon: Zap },
     ];
 
     return (
@@ -66,7 +68,7 @@ export function Navbar() {
                             onClick={() => setIsContactOpen(true)}
                             className="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all border border-white/5 hover:border-white/20"
                         >
-                            Contact Us
+                            {t('contact')}
                         </button>
                     </div>
 
