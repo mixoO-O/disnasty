@@ -26,19 +26,7 @@ export function Navbar() {
             <div className="max-w-7xl mx-auto">
                 <div className="glass-nav rounded-2xl px-6 py-3 flex items-center justify-between bg-black/60 backdrop-blur-md border border-white/10">
                     <Link href="/" className="flex items-center gap-2 group">
-                        {/* Mobile Logo (Icon Only) */}
-                        <div className="md:hidden">
-                            <Image
-                                src="/disnasty-logo-icon.png"
-                                alt="Disnasty Logo"
-                                width={40}
-                                height={40}
-                                className="h-10 w-auto object-contain group-hover:scale-105 transition-transform"
-                                priority
-                            />
-                        </div>
-                        {/* Desktop Logo (Text + Icon) */}
-                        <div className="hidden md:flex items-center gap-2">
+                        <div className="flex items-center gap-2">
                             <Image
                                 src="/disnasty-logo-icon.png"
                                 alt="Disnasty Logo"
@@ -51,8 +39,6 @@ export function Navbar() {
                             </span>
                         </div>
                     </Link>
-
-                    {/* Desktop Nav */}
                     <div className="hidden md:flex items-center gap-8">
                         {navItems.map((item) => (
                             <Link
@@ -72,8 +58,6 @@ export function Navbar() {
                             {t('contact')}
                         </button>
                     </div>
-
-                    {/* Mobile Menu Button */}
                     <button
                         className="md:hidden text-gray-300 hover:text-white"
                         onClick={() => setIsOpen(!isOpen)}
@@ -81,10 +65,7 @@ export function Navbar() {
                         {isOpen ? <X /> : <Menu />}
                     </button>
                 </div>
-
                 <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
-
-                {/* Mobile Nav */}
                 {isOpen && (
                     <motion.div
                         initial={{ opacity: 0, y: -20 }}

@@ -22,6 +22,40 @@
     "description": "Experimenta la sinergia de la Inteligencia Artificial y la Automatización Avanzada. Disnasty te trae la vanguardia de la transformación digital.",
     "cta": "Contáctanos"
   },
+  "ProductShowcase": {
+    "title": "Proyectos Destacados",
+    "description": "Explora nuestro último trabajo en IA, automatización y desarrollo web de próxima generación.",
+    "products": {
+      "aiAnalytics": {
+        "title": "Panel de Análisis de IA",
+        "category": "Visualización de Datos"
+      },
+      "smartCity": {
+        "title": "Interfaz de Ciudad Inteligente",
+        "category": "Plataforma IoT"
+      },
+      "neuralNet": {
+        "title": "Visualizador de Redes Neuronales",
+        "category": "Aprendizaje Automático"
+      },
+      "defi": {
+        "title": "Protocolo de Comercio DeFi",
+        "category": "Web3 / Blockchain"
+      },
+      "quantum": {
+        "title": "Núcleo de Computación Cuántica",
+        "category": "Computación Avanzada"
+      },
+      "cyber": {
+        "title": "Escudo de Ciberseguridad",
+        "category": "Seguridad"
+      },
+      "holo": {
+        "title": "Espacio de Trabajo Holográfico",
+        "category": "RA / RV"
+      }
+    }
+  },
   "Footer": {
     "description": "Empoderando empresas con automatización de IA de vanguardia y soluciones de infraestructura escalables.",
     "rights": "Todos los derechos reservados"

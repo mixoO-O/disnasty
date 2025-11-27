@@ -28,12 +28,6 @@ export function Hero() {
                     transition={{ duration: 0.8 }}
                     className="text-center max-w-4xl mx-auto"
                 >
-                    <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
-                        <span className="text-sm font-medium bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                            {t('badge')}
-                        </span>
-                    </div>
-
                     <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
                         {t('titlePrefix')} <br />
                         <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_200%]">

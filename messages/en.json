@@ -22,6 +22,40 @@
     "description": "Experience the synergy of Artificial Intelligence and Advanced Automation. Disnasty brings you the cutting edge of digital transformation.",
     "cta": "Contact Us"
   },
+  "ProductShowcase": {
+    "title": "Featured Projects",
+    "description": "Explore our latest work in AI, automation, and next-gen web development.",
+    "products": {
+      "aiAnalytics": {
+        "title": "AI Analytics Dashboard",
+        "category": "Data Visualization"
+      },
+      "smartCity": {
+        "title": "Smart City Interface",
+        "category": "IoT Platform"
+      },
+      "neuralNet": {
+        "title": "Neural Network Visualizer",
+        "category": "Machine Learning"
+      },
+      "defi": {
+        "title": "DeFi Trading Protocol",
+        "category": "Web3 / Blockchain"
+      },
+      "quantum": {
+        "title": "Quantum Computing Core",
+        "category": "Advanced Computing"
+      },
+      "cyber": {
+        "title": "Cybersecurity Shield",
+        "category": "Security"
+      },
+      "holo": {
+        "title": "Holographic Workspace",
+        "category": "AR / VR"
+      }
+    }
+  },
   "Footer": {
     "description": "Empowering businesses with cutting-edge AI automation and scalable infrastructure solutions.",
     "rights": "All rights reserved"
