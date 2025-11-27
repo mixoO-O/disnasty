@@ -59,8 +59,8 @@ export function Testimonials() {
                                 <testimonial.icon className="w-6 h-6" />
                             </div>
 
-                            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-                                "{testimonial.content}"
+                            <p className="text-gray-300 mb-6 italic">
+                                &quot;{testimonial.content}&quot;
                             </p>
 
                             <div>

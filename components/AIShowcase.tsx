@@ -22,13 +22,13 @@ export function AIShowcase() {
                             Tailored for Industries
                         </span>
                     </h2>
-                    <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                        Beyond standard automation. We build specialized AI agents that understand the nuance of your specific domain.
+                    <p className="text-gray-400 max-w-2xl mx-auto">
+                        Discover how our AI solutions can transform your business with intelligent automation and data-driven insights. It&apos;s time to innovate.
                     </p>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-8">
-                    {/* Aurelis Card */}
+                    {/* Auralis Card */}
                     <div className="group relative rounded-3xl overflow-hidden border border-white/10 bg-white/5 hover:bg-white/10 transition-colors">
                         <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
@@ -37,9 +37,9 @@ export function AIShowcase() {
                                 <Scale className="w-8 h-8 text-purple-400" />
                             </div>
 
-                            <h3 className="text-3xl font-bold mb-4 text-white">Aurelis</h3>
+                            <h3 className="text-3xl font-bold mb-4 text-white">Auralis</h3>
                             <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-                                The advanced AI partner for legal firms. Aurelis doesn't just manage schedules; it intelligently distributes caseloads, optimizes attorney bandwidth, and proactively communicates with clients.
+                                The advanced AI partner for legal firms. Auralis doesn&apos;t just manage schedules; it intelligently distributes caseloads, optimizes attorney bandwidth, and proactively communicates with clients.
                             </p>
 
                             <ul className="space-y-4 mb-8 text-gray-400">
