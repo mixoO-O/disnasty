@@ -33,9 +33,9 @@ const iaTech = [
 
 // Cloud & DevOps
 const cloudTech = [
-    //{ name: "Amazon Web Services", icon: "amazoncloud" },
+    // { name: "Amazon Web Services", icon: "amazoncloud" },
     { name: "Google Cloud", icon: "googlecloud" },
-    { name: "Microsoft Azure", icon: "microsoftazure" },
+    // { name: "Microsoft Azure", icon: "microsoftazure" },
     { name: "Docker", icon: "docker" },
     { name: "Kubernetes", icon: "kubernetes" },
     { name: "Terraform", icon: "terraform" },
@@ -87,7 +87,7 @@ export function TechStackCarousel() {
     const t = useTranslations("TechStackCarousel");
 
     return (
-        <section className="py-24 relative overflow-hidden">
+        <section id="tech-stack" className="py-24 relative overflow-hidden">
             {/* Background effects */}
             <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />

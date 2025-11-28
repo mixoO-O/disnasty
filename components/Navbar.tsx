@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Menu, X, Zap, Cpu, Network, Bot } from "lucide-react";
+import { Menu, X, Zap, Cpu, Network, Bot, Code } from "lucide-react";
 import { useState } from "react";
 import { ContactModal } from "./ContactModal";
 import { useTranslations } from 'next-intl';
@@ -15,6 +15,7 @@ export function Navbar() {
 
     const navItems = [
         { name: t('products'), href: "#products", icon: Cpu },
+        { name: t('tech-stack'), href: "#tech-stack", icon: Code },
         { name: t('clients'), href: "#clients", icon: Network },
         { name: t('testimonials'), href: "#testimonials", icon: Zap },
         { name: t('ia'), href: "#ia", icon: Bot },
