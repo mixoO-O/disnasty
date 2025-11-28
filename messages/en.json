@@ -56,6 +56,34 @@
       }
     }
   },
+  "AIShowcase": {
+    "badge": "Proprietary AI Solutions",
+    "titlePrefix": "Intelligent Systems",
+    "titleSuffix": "Tailored for Industries",
+    "description": "Discover how our AI solutions can transform your business with intelligent automation and data-driven insights. It's time to innovate.",
+    "auralis": {
+      "title": "Auralis",
+      "description": "The advanced AI partner for legal firms. Auralis doesn't just manage schedules; it intelligently distributes caseloads, optimizes attorney bandwidth, and proactively communicates with clients.",
+      "features": {
+        "0": "Smart Agenda Management",
+        "1": "Caseload Distribution Algorithms",
+        "2": "Automated Client Onboarding"
+      }
+    },
+    "clou": {
+      "title": "Clou",
+      "description": "Your AI-powered nutritional strategist. Clou analyzes dietary patterns, health goals, and metabolic data to craft dynamic, evolving nutrition plans that adapt to your progress.",
+      "features": {
+        "0": "Personalized Meal Planning",
+        "1": "Real-time Progress Tracking",
+        "2": "Metabolic Adaptation Logic"
+      }
+    }
+  },
+  "ClientCarousel": {
+    "title": "Trusted by Industry Leaders",
+    "subtitle": "Partnering with forward-thinking companies to build the future."
+  },
   "Footer": {
     "description": "Empowering businesses with cutting-edge AI automation and scalable infrastructure solutions.",
     "rights": "All rights reserved"
