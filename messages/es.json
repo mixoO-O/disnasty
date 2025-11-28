@@ -84,6 +84,11 @@
     "title": "Con la Confianza de Líderes de la Industria",
     "subtitle": "Asociándonos con empresas visionarias para construir el futuro."
   },
+  "TechStackCarousel": {
+    "titlePrefix": "Nuestra",
+    "titleSuffix": "Pila Tecnológica",
+    "description": "Aprovechamos las tecnologías más avanzadas y confiables para construir soluciones escalables."
+  },
   "Footer": {
     "description": "Empoderando empresas con automatización de IA de vanguardia y soluciones de infraestructura escalables.",
     "rights": "Todos los derechos reservados"

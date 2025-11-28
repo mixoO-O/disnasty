@@ -84,6 +84,11 @@
     "title": "Trusted by Industry Leaders",
     "subtitle": "Partnering with forward-thinking companies to build the future."
   },
+  "TechStackCarousel": {
+    "titlePrefix": "Our",
+    "titleSuffix": "Technology Stack",
+    "description": "We leverage the most advanced and reliable technologies to build scalable solutions."
+  },
   "Footer": {
     "description": "Empowering businesses with cutting-edge AI automation and scalable infrastructure solutions.",
     "rights": "All rights reserved"
