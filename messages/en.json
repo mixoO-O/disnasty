@@ -12,7 +12,8 @@
     "products": "Products",
     "clients": "Clients",
     "testimonials": "Testimonials",
-    "contact": "Contact Us"
+    "contact": "Contact Us",
+    "ia": "IA"
   },
   "Hero": {
     "badge": "Next Gen Innovation",
@@ -20,6 +21,68 @@
     "titleSuffix": "Future of Tech",
     "description": "Experience the synergy of Artificial Intelligence and Advanced Automation. Disnasty brings you the cutting edge of digital transformation.",
     "cta": "Contact Us"
+  },
+  "ProductShowcase": {
+    "title": "Featured Projects",
+    "description": "Explore our latest work in AI, automation, and next-gen web development.",
+    "products": {
+      "aiAnalytics": {
+        "title": "AI Analytics Dashboard",
+        "category": "Data Visualization"
+      },
+      "smartCity": {
+        "title": "Smart City Interface",
+        "category": "IoT Platform"
+      },
+      "neuralNet": {
+        "title": "Neural Network Visualizer",
+        "category": "Machine Learning"
+      },
+      "defi": {
+        "title": "DeFi Trading Protocol",
+        "category": "Web3 / Blockchain"
+      },
+      "quantum": {
+        "title": "Quantum Computing Core",
+        "category": "Advanced Computing"
+      },
+      "cyber": {
+        "title": "Cybersecurity Shield",
+        "category": "Security"
+      },
+      "holo": {
+        "title": "Holographic Workspace",
+        "category": "AR / VR"
+      }
+    }
+  },
+  "AIShowcase": {
+    "badge": "Proprietary AI Solutions",
+    "titlePrefix": "Intelligent Systems",
+    "titleSuffix": "Tailored for Industries",
+    "description": "Discover how our AI solutions can transform your business with intelligent automation and data-driven insights. It's time to innovate.",
+    "auralis": {
+      "title": "Auralis",
+      "description": "The advanced AI partner for legal firms. Auralis doesn't just manage schedules; it intelligently distributes caseloads, optimizes attorney bandwidth, and proactively communicates with clients.",
+      "features": {
+        "0": "Smart Agenda Management",
+        "1": "Caseload Distribution Algorithms",
+        "2": "Automated Client Onboarding"
+      }
+    },
+    "clou": {
+      "title": "Clou",
+      "description": "Your AI-powered nutritional strategist. Clou analyzes dietary patterns, health goals, and metabolic data to craft dynamic, evolving nutrition plans that adapt to your progress.",
+      "features": {
+        "0": "Personalized Meal Planning",
+        "1": "Real-time Progress Tracking",
+        "2": "Metabolic Adaptation Logic"
+      }
+    }
+  },
+  "ClientCarousel": {
+    "title": "Trusted by Industry Leaders",
+    "subtitle": "Partnering with forward-thinking companies to build the future."
   },
   "Footer": {
     "description": "Empowering businesses with cutting-edge AI automation and scalable infrastructure solutions.",

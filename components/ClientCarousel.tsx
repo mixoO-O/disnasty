@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const clients = [
     { name: "TechCorp", logo: "TC" },
@@ -14,25 +15,29 @@ const clients = [
 ];
 
 export function ClientCarousel() {
+    const t = useTranslations("ClientCarousel");
+
     return (
-        <section className="py-10 overflow-hidden bg-background/50 backdrop-blur-sm border-y border-white/5">
-            <div className="max-w-7xl mx-auto px-6 mb-6">
-                <p className="text-center text-sm text-gray-400 font-medium uppercase tracking-wider">
-                    Trusted by industry leaders
+        <section id="clients" className="py-24 overflow-hidden relative">
+            <div className="max-w-7xl mx-auto px-6 mb-12 text-center">
+                <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                    <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_200%]">
+                        {t("title")}
+                    </span>
+                </h2>
+                <p className="text-gray-400 max-w-2xl mx-auto">
+                    {t("subtitle")}
                 </p>
             </div>
 
-            <div className="relative flex">
-                <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10" />
-                <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10" />
-
+            <div className="relative flex py-4 group md:[mask-image:linear-gradient(to_right,transparent,black_60%,black_40%,transparent)]">
                 <motion.div
-                    className="flex gap-12 items-center"
+                    className="flex gap-8 items-center"
                     animate={{
                         x: ["0%", "-50%"],
                     }}
                     transition={{
-                        duration: 20,
+                        duration: 30,
                         ease: "linear",
                         repeat: Infinity,
                     }}
@@ -40,16 +45,23 @@ export function ClientCarousel() {
                     {[...clients, ...clients].map((client, index) => (
                         <div
                             key={`${client.name}-${index}`}
-                            className="flex items-center gap-3 group min-w-[150px] justify-center"
+                            className="relative flex items-center"
                         >
-                            <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                                <span className="font-bold text-gray-400 group-hover:text-primary transition-colors">
-                                    {client.logo}
+                            {/* Circle Icon with Gradient Border */}
+                            <div className="w-16 h-16 rounded-full p-[2px] bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 animate-gradient bg-[length:200%_200%] relative z-10">
+                                <div className="w-full h-full rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center">
+                                    <span className="font-bold text-white text-xl">
+                                        {client.logo}
+                                    </span>
+                                </div>
+                            </div>
+
+                            {/* Extending Rectangle */}
+                            <div className="h-12 flex items-center pl-10 pr-6 -ml-8 bg-white/5 border-y border-r border-white/10 rounded-r-full backdrop-blur-sm">
+                                <span className="text-base font-semibold text-gray-400 whitespace-nowrap">
+                                    {client.name}
                                 </span>
                             </div>
-                            <span className="text-lg font-semibold text-gray-500 group-hover:text-white transition-colors">
-                                {client.name}
-                            </span>
                         </div>
                     ))}
                 </motion.div>

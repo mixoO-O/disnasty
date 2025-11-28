@@ -12,7 +12,8 @@
     "products": "Productos",
     "clients": "Clientes",
     "testimonials": "Testimonios",
-    "contact": "Contáctanos"
+    "contact": "Contáctanos",
+    "ia": "IA"
   },
   "Hero": {
     "badge": "Innovación de Próxima Generación",
@@ -20,6 +21,68 @@
     "titleSuffix": "Futuro de la Tecnología",
     "description": "Experimenta la sinergia de la Inteligencia Artificial y la Automatización Avanzada. Disnasty te trae la vanguardia de la transformación digital.",
     "cta": "Contáctanos"
+  },
+  "ProductShowcase": {
+    "title": "Proyectos Destacados",
+    "description": "Explora nuestro último trabajo en IA, automatización y desarrollo web de próxima generación.",
+    "products": {
+      "aiAnalytics": {
+        "title": "Panel de Análisis de IA",
+        "category": "Visualización de Datos"
+      },
+      "smartCity": {
+        "title": "Interfaz de Ciudad Inteligente",
+        "category": "Plataforma IoT"
+      },
+      "neuralNet": {
+        "title": "Visualizador de Redes Neuronales",
+        "category": "Aprendizaje Automático"
+      },
+      "defi": {
+        "title": "Protocolo de Comercio DeFi",
+        "category": "Web3 / Blockchain"
+      },
+      "quantum": {
+        "title": "Núcleo de Computación Cuántica",
+        "category": "Computación Avanzada"
+      },
+      "cyber": {
+        "title": "Escudo de Ciberseguridad",
+        "category": "Seguridad"
+      },
+      "holo": {
+        "title": "Espacio de Trabajo Holográfico",
+        "category": "RA / RV"
+      }
+    }
+  },
+  "AIShowcase": {
+    "badge": "Soluciones de IA Propietarias",
+    "titlePrefix": "Sistemas Inteligentes",
+    "titleSuffix": "Adaptados para Industrias",
+    "description": "Descubre cómo nuestras soluciones de IA pueden transformar tu negocio con automatización inteligente y conocimientos basados en datos. Es hora de innovar.",
+    "auralis": {
+      "title": "Auralis",
+      "description": "El socio avanzado de IA para firmas legales. Auralis no solo gestiona agendas; distribuye inteligentemente la carga de casos, optimiza el ancho de banda de los abogados y se comunica proactivamente con los clientes.",
+      "features": {
+        "0": "Gestión Inteligente de Agenda",
+        "1": "Algoritmos de Distribución de Casos",
+        "2": "Incorporación Automatizada de Clientes"
+      }
+    },
+    "clou": {
+      "title": "Clou",
+      "description": "Tu estratega nutricional impulsado por IA. Clou analiza patrones dietéticos, objetivos de salud y datos metabólicos para elaborar planes de nutrición dinámicos y evolutivos que se adaptan a tu progreso.",
+      "features": {
+        "0": "Planificación de Comidas Personalizada",
+        "1": "Seguimiento de Progreso en Tiempo Real",
+        "2": "Lógica de Adaptación Metabólica"
+      }
+    }
+  },
+  "ClientCarousel": {
+    "title": "Con la Confianza de Líderes de la Industria",
+    "subtitle": "Asociándonos con empresas visionarias para construir el futuro."
   },
   "Footer": {
     "description": "Empoderando empresas con automatización de IA de vanguardia y soluciones de infraestructura escalables.",

@@ -1,10 +1,13 @@
 "use client";
 
-import { Scale, Leaf, ArrowRight, Sparkles } from "lucide-react";
+import { Scale, Leaf, Sparkles } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function AIShowcase() {
+    const t = useTranslations("AIShowcase");
+
     return (
-        <section className="py-24 px-6 relative overflow-hidden">
+        <section id="ia" className="py-24 px-6 relative overflow-hidden">
             {/* Background gradients */}
             <div className="absolute top-0 left-0 w-full h-full bg-black/90 z-0" />
             <div className="absolute top-1/4 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl -translate-x-1/2 pointer-events-none" />
@@ -14,21 +17,21 @@ export function AIShowcase() {
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-sm">
                         <Sparkles className="w-4 h-4 text-yellow-400" />
-                        <span className="text-sm font-medium text-gray-300">Proprietary AI Solutions</span>
+                        <span className="text-sm font-medium text-gray-300">{t("badge")}</span>
                     </div>
                     <h2 className="text-4xl md:text-5xl text-white font-bold mb-6">
-                        Intelligent Systems <br />
+                        {t("titlePrefix")} <br />
                         <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                            Tailored for Industries
+                            {t("titleSuffix")}
                         </span>
                     </h2>
-                    <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                        Beyond standard automation. We build specialized AI agents that understand the nuance of your specific domain.
+                    <p className="text-gray-400 max-w-2xl mx-auto">
+                        {t("description")}
                     </p>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-8">
-                    {/* Aurelis Card */}
+                    {/* Auralis Card */}
                     <div className="group relative rounded-3xl overflow-hidden border border-white/10 bg-white/5 hover:bg-white/10 transition-colors">
                         <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
@@ -37,23 +40,23 @@ export function AIShowcase() {
                                 <Scale className="w-8 h-8 text-purple-400" />
                             </div>
 
-                            <h3 className="text-3xl font-bold mb-4 text-white">Aurelis</h3>
+                            <h3 className="text-3xl font-bold mb-4 text-white">{t("auralis.title")}</h3>
                             <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-                                The advanced AI partner for legal firms. Aurelis doesn't just manage schedules; it intelligently distributes caseloads, optimizes attorney bandwidth, and proactively communicates with clients.
+                                {t("auralis.description")}
                             </p>
 
                             <ul className="space-y-4 mb-8 text-gray-400">
                                 <li className="flex items-center gap-3">
                                     <div className="w-1.5 h-1.5 rounded-full bg-purple-400" />
-                                    Smart Agenda Management
+                                    {t("auralis.features.0")}
                                 </li>
                                 <li className="flex items-center gap-3">
                                     <div className="w-1.5 h-1.5 rounded-full bg-purple-400" />
-                                    Caseload Distribution Algorithms
+                                    {t("auralis.features.1")}
                                 </li>
                                 <li className="flex items-center gap-3">
                                     <div className="w-1.5 h-1.5 rounded-full bg-purple-400" />
-                                    Automated Client Onboarding
+                                    {t("auralis.features.2")}
                                 </li>
                             </ul>
                         </div>
@@ -68,23 +71,23 @@ export function AIShowcase() {
                                 <Leaf className="w-8 h-8 text-green-400" />
                             </div>
 
-                            <h3 className="text-3xl font-bold mb-4 text-white">Clou</h3>
+                            <h3 className="text-3xl font-bold mb-4 text-white">{t("clou.title")}</h3>
                             <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-                                Your AI-powered nutritional strategist. Clou analyzes dietary patterns, health goals, and metabolic data to craft dynamic, evolving nutrition plans that adapt to your progress.
+                                {t("clou.description")}
                             </p>
 
                             <ul className="space-y-4 mb-8 text-gray-400">
                                 <li className="flex items-center gap-3">
                                     <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
-                                    Personalized Meal Planning
+                                    {t("clou.features.0")}
                                 </li>
                                 <li className="flex items-center gap-3">
                                     <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
-                                    Real-time Progress Tracking
+                                    {t("clou.features.1")}
                                 </li>
                                 <li className="flex items-center gap-3">
                                     <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
-                                    Metabolic Adaptation Logic
+                                    {t("clou.features.2")}
                                 </li>
                             </ul>
                         </div>
