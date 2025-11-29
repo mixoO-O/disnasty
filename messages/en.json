@@ -90,6 +90,27 @@
     "titleSuffix": "Technology Stack",
     "description": "We leverage the most advanced and reliable technologies to build scalable solutions."
   },
+  "Testimonials": {
+    "title": "Client Stories",
+    "subtitle": "See what our partners are saying about us on social media.",
+    "items": {
+      "0": {
+        "name": "Sarah Chen",
+        "role": "CTO at TechFlow",
+        "content": "Disnasty transformed our legacy systems into a state-of-the-art AI platform. The attention to detail is unmatched."
+      },
+      "1": {
+        "name": "Marcus Rodriguez",
+        "role": "Founder of StartUpX",
+        "content": "Incredible work on our automation workflows. We've saved hundreds of hours thanks to their n8n integrations."
+      },
+      "2": {
+        "name": "Elena Popov",
+        "role": "Product Lead",
+        "content": "The design team at Disnasty is on another level. Our user engagement increased by 200% after the redesign."
+      }
+    }
+  },
   "Footer": {
     "description": "Empowering businesses with cutting-edge AI automation and scalable infrastructure solutions.",
     "rights": "All rights reserved"

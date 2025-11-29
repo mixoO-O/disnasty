@@ -32,7 +32,7 @@ export function ClientCarousel() {
 
             <div className="relative flex py-4 group md:[mask-image:linear-gradient(to_right,transparent,black_60%,black_40%,transparent)]">
                 <motion.div
-                    className="flex gap-8 items-center"
+                    className="flex gap-2 items-center"
                     animate={{
                         x: ["0%", "-50%"],
                     }}

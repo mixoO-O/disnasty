@@ -48,38 +48,37 @@ const cloudTech = [
 
 const TechRow = ({ items, speed = 40, reverse = false }: { items: typeof frontendTech, speed?: number, reverse?: boolean }) => {
     return (
-        <div className="flex overflow-hidden py-3 relative md:[mask-image:linear-gradient(to_right,transparent,black_60%,black_40%,transparent)]">
-            <motion.div
-                className="flex gap-6 whitespace-nowrap"
-                animate={{
-                    x: reverse ? ["-50%", "0%"] : ["0%", "-50%"]
-                }}
-                transition={{
-                    duration: speed,
-                    ease: "linear",
-                    repeat: Infinity,
-                }}
-            >
-                {[...items, ...items].map((item, idx) => (
-                    <div
-                        key={`${item.name}-${idx}`}
-                        className="relative group"
-                    >
-                        {/* Gradient border wrapper */}
-                        <div className="p-[1px] rounded-xl bg-gradient-to-r from-purple-400/20 via-blue-400/20 to-cyan-400/20 group-hover:from-purple-400/50 group-hover:via-blue-400/50 group-hover:to-cyan-400/50 transition-all duration-300">
-                            <div className="flex items-center gap-3 px-5 py-2.5 rounded-xl bg-black/60 backdrop-blur-md text-gray-300 font-medium group-hover:bg-black/40 transition-all cursor-default">
-                                <img
-                                    src={`https://cdn.simpleicons.org/${item.icon}/white`}
-                                    alt={item.name}
-                                    className="w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity"
-                                />
-                                <span className="text-sm pr-4 group-hover:text-white transition-colors">{item.name}</span>
-                            </div>
+        <motion.div
+            className="flex gap-6 items-center"
+            animate={{
+                x: reverse ? ["-50%", "0%"] : ["0%", "-50%"]
+            }}
+            transition={{
+                duration: speed,
+                ease: 'linear',
+                repeat: Infinity,
+            }}
+        >
+            {[...items, ...items].map((item, idx) => (
+                <div
+                    key={`${item.name}-${idx}`}
+                    className="relative group"
+                >
+                    {/* Gradient border wrapper */}
+                    <div className="p-[1px] rounded-xl bg-gradient-to-r from-purple-400/20 via-blue-400/20 to-cyan-400/20 group-hover:from-purple-400/50 group-hover:via-blue-400/50 group-hover:to-cyan-400/50 transition-all duration-300">
+                        <div className="flex items-center gap-3 px-5 py-2.5 rounded-xl bg-black/60 backdrop-blur-md text-gray-300 font-medium group-hover:bg-black/40 transition-all cursor-default">
+                            <img
+                                src={`https://cdn.simpleicons.org/${item.icon}/white`}
+                                alt={item.name}
+                                className="w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity"
+                            />
+                            <span className="text-sm pr-4 group-hover:text-white transition-colors">{item.name}</span>
                         </div>
                     </div>
-                ))}
-            </motion.div>
-        </div>
+                </div>
+            ))}
+        </motion.div>
+
     );
 };
 
@@ -101,10 +100,12 @@ export function TechStackCarousel() {
                 </p>
             </div>
 
-            <div className="space-y-2 relative z-10">
-                <TechRow items={iaTech} speed={40} />
-                <TechRow items={cloudTech} speed={35} reverse />
-                <TechRow items={frontendTech} speed={30} />
+            <div className="flex overflow-hidden py-3 relative md:[mask-image:linear-gradient(to_right,transparent,black_60%,black_40%,transparent)]">
+                <div className="space-y-2 relative z-10">
+                    <TechRow items={iaTech} speed={40} />
+                    <TechRow items={cloudTech} speed={35} reverse />
+                    <TechRow items={frontendTech} speed={30} />
+                </div>
             </div>
         </section>
     );
