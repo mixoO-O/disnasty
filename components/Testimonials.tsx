@@ -92,7 +92,7 @@ export function Testimonials() {
                                     className="absolute top-0 left-0 w-10 h-10 -ml-5 -mt-5 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(0,0,0,0.5)] border border-white/20"
                                     style={{
                                         backgroundColor: testimonial.color,
-                                        offsetPath: "rect(0% 100% 100% 0% round 16px)", // Matches rounded-2xl (16px)
+
                                     }}
                                     animate={{
                                         offsetDistance: ["0%", "100%"]

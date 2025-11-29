@@ -50,7 +50,7 @@ export function InnovationHub() {
                                 <div className="h-full bg-black/40 backdrop-blur-xl rounded-2xl p-8 flex flex-col relative z-10">
 
                                     <div className="flex justify-between items-start mb-6">
-                                        <h3 className="text-2xl font-bold text-white group-hover:text-primary transition-colors">
+                                        <h3 className="text-2xl font-bold text-white transition-colors">
                                             {t(`items.${index}.client`)}
                                         </h3>
                                         <span className="text-xs px-3 py-1 rounded-full bg-white/10 text-gray-300 border border-white/5">
@@ -64,7 +64,7 @@ export function InnovationHub() {
 
                                     <div className="flex gap-2 flex-wrap mt-auto">
                                         {t(`items.${index}.tags`).split(', ').map(tag => (
-                                            <span key={tag} className="text-xs text-primary bg-primary/10 px-2 py-1 rounded-md border border-primary/20">
+                                            <span key={tag} className="text-xs text-white bg-primary/10 px-2 py-1 rounded-md ">
                                                 {tag}
                                             </span>
                                         ))}
@@ -80,7 +80,7 @@ export function InnovationHub() {
                                     className="absolute top-0 left-0 w-10 h-10 -ml-5 -mt-5 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(0,0,0,0.5)] border border-white/20"
                                     style={{
                                         backgroundColor: project.color,
-                                        offsetPath: "rect(0% 100% 100% 0% round 16px)",
+
                                     }}
                                     animate={{
                                         offsetDistance: ["0%", "100%"]

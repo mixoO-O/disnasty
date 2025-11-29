@@ -38,7 +38,6 @@ export default function Home() {
                 <AIShowcase />
             </ScrollReveal>
 
-            {/* Placeholder for next sections */}
             <ScrollReveal>
                 <InnovationHub />
             </ScrollReveal>
