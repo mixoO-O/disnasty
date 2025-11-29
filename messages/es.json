@@ -87,8 +87,46 @@
   },
   "TechStackCarousel": {
     "titlePrefix": "Nuestra",
-    "titleSuffix": "Pila Tecnológica",
+    "titleSuffix": "Stack Tecnológica",
     "description": "Aprovechamos las tecnologías más avanzadas y confiables para construir soluciones escalables."
+  },
+  "Testimonials": {
+    "title": "Historias de Clientes",
+    "subtitle": "Mira lo que nuestros socios dicen sobre nosotros en las redes sociales.",
+    "items": {
+      "0": {
+        "name": "Sarah Chen",
+        "role": "CTO en TechFlow",
+        "content": "Disnasty transformó nuestros sistemas heredados en una plataforma de IA de última generación. La atención al detalle es inigualable."
+      },
+      "1": {
+        "name": "Marcus Rodriguez",
+        "role": "Fundador de StartUpX",
+        "content": "Trabajo increíble en nuestros flujos de automatización. Hemos ahorrado cientos de horas gracias a sus integraciones con n8n."
+      },
+      "2": {
+        "name": "Elena Popov",
+        "role": "Líder de Producto",
+        "content": "El equipo de diseño de Disnasty está en otro nivel. Nuestra participación de usuarios aumentó un 200% después del rediseño."
+      }
+    }
+  },
+  "InnovationHub": {
+    "title": "Centro de Innovación",
+    "items": {
+      "0": {
+        "client": "Mediprotek",
+        "location": "Chile",
+        "desc": "Desarrollo integral de aplicaciones y mantenimiento de sistemas.",
+        "tags": "Salud, Mantenimiento"
+      },
+      "1": {
+        "client": "Empresas Navieras",
+        "location": "Arica, Chile",
+        "desc": "Sistemas marítimos para gestión portuaria y de envíos.",
+        "tags": "Marítimo, Logística"
+      }
+    }
   },
   "Footer": {
     "description": "Empoderando empresas con automatización de IA de vanguardia y soluciones de infraestructura escalables.",

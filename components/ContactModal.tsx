@@ -49,7 +49,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
                             <button
                                 onClick={onClose}
-                                className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+                                className="absolute top-4 right-4 text-gray-200 hover:text-white transition-colors"
                             >
                                 <X className="w-6 h-6" />
                             </button>
@@ -59,13 +59,13 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
                                     Get in Touch
                                 </span>
                             </h2>
-                            <p className="text-gray-400 mb-8">
+                            <p className="text-gray-200 mb-8">
                                 Ready to start your digital transformation?
                             </p>
 
                             <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
                                 <div>
-                                    <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                                    <label htmlFor="name" className="block text-sm font-medium text-gray-200 mb-2">
                                         Name
                                     </label>
                                     <input
@@ -80,7 +80,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
                                 </div>
 
                                 <div>
-                                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                                    <label htmlFor="email" className="block text-sm font-medium text-gray-200 mb-2">
                                         Email
                                     </label>
                                     <input
@@ -95,7 +95,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
                                 </div>
 
                                 <div>
-                                    <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                                    <label htmlFor="message" className="block text-sm font-medium text-gray-200 mb-2">
                                         Message
                                     </label>
                                     <textarea

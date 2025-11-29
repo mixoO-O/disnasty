@@ -25,14 +25,14 @@ export function ClientCarousel() {
                         {t("title")}
                     </span>
                 </h2>
-                <p className="text-gray-400 max-w-2xl mx-auto">
+                <p className="text-gray-200 max-w-2xl mx-auto">
                     {t("subtitle")}
                 </p>
             </div>
 
             <div className="relative flex py-4 group md:[mask-image:linear-gradient(to_right,transparent,black_60%,black_40%,transparent)]">
                 <motion.div
-                    className="flex gap-8 items-center"
+                    className="flex gap-2 items-center"
                     animate={{
                         x: ["0%", "-50%"],
                     }}
@@ -58,7 +58,7 @@ export function ClientCarousel() {
 
                             {/* Extending Rectangle */}
                             <div className="h-12 flex items-center pl-10 pr-6 -ml-8 bg-white/5 border-y border-r border-white/10 rounded-r-full backdrop-blur-sm">
-                                <span className="text-base font-semibold text-gray-400 whitespace-nowrap">
+                                <span className="text-base font-semibold text-gray-200 whitespace-nowrap">
                                     {client.name}
                                 </span>
                             </div>
