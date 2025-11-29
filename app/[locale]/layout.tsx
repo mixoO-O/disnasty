@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     icons: {
         icon: "/favicon.ico",
     },
+    themeColor: "#000000",
 };
 
 export default async function LocaleLayout({
@@ -26,8 +27,8 @@ export default async function LocaleLayout({
     const messages = await getMessages();
 
     return (
-        <html lang={locale} className="dark">
-            <body className={inter.className}>
+        <html lang={locale} className="dark bg-black">
+            <body className={`${inter.className} bg-black`}>
                 {/* Global Background */}
                 <div className="fixed inset-0 bg-black/90 -z-50" />
                 <div className="fixed inset-0 overflow-hidden -z-40 pointer-events-none">
