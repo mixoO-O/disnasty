@@ -21,7 +21,7 @@ export function Footer() {
                             className="h-10 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
                         />
                     </Link>
-                    <p className="text-gray-400 max-w-sm text-center md:text-left">
+                    <p className="text-gray-300 max-w-sm text-center md:text-left">
                         {t('description')}
                     </p>
                 </div>
@@ -29,7 +29,7 @@ export function Footer() {
                 <div className="flex flex-col items-center md:items-end gap-4">
                     <a
                         href="mailto:contacto@disnasty.com"
-                        className="flex items-center gap-2 text-gray-300 hover:text-primary transition-colors"
+                        className="flex items-center gap-2 text-gray-200 hover:text-primary transition-colors"
                     >
                         <Mail className="w-4 h-4" />
                         contacto@disnasty.com
@@ -38,19 +38,19 @@ export function Footer() {
                     <div className="flex items-center gap-4">
                         <Link
                             href="#"
-                            className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-white/10 hover:text-white transition-all hover:scale-110"
+                            className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-300 hover:bg-white/10 hover:text-white transition-all hover:scale-110"
                         >
                             <Linkedin className="w-5 h-5" />
                         </Link>
                         <Link
                             href="#"
-                            className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-white/10 hover:text-white transition-all hover:scale-110"
+                            className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-300 hover:bg-white/10 hover:text-white transition-all hover:scale-110"
                         >
                             <Twitter className="w-5 h-5" />
                         </Link>
                         <Link
                             href="#"
-                            className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-white/10 hover:text-white transition-all hover:scale-110"
+                            className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-300 hover:bg-white/10 hover:text-white transition-all hover:scale-110"
                         >
                             <Instagram className="w-5 h-5" />
                         </Link>
@@ -58,7 +58,7 @@ export function Footer() {
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-white/5 text-center text-sm text-gray-500">
+            <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-white/5 text-center text-sm text-gray-300">
                 © {new Date().getFullYear()} Disnasty Tech. {t('rights')}
             </div>
         </footer>

@@ -8,11 +8,6 @@ export function AIShowcase() {
 
     return (
         <section id="ia" className="py-24 px-6 relative overflow-hidden">
-            {/* Background gradients */}
-            <div className="absolute top-0 left-0 w-full h-full bg-black/90 z-0" />
-            <div className="absolute top-1/4 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl -translate-x-1/2 pointer-events-none" />
-            <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl translate-x-1/2 pointer-events-none" />
-
             <div className="max-w-7xl mx-auto relative z-10">
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-sm">
@@ -25,7 +20,7 @@ export function AIShowcase() {
                             {t("titleSuffix")}
                         </span>
                     </h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto">
+                    <p className="text-gray-200 max-w-2xl mx-auto">
                         {t("description")}
                     </p>
                 </div>
@@ -41,11 +36,11 @@ export function AIShowcase() {
                             </div>
 
                             <h3 className="text-3xl font-bold mb-4 text-white">{t("auralis.title")}</h3>
-                            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+                            <p className="text-lg text-gray-100 mb-8 leading-relaxed">
                                 {t("auralis.description")}
                             </p>
 
-                            <ul className="space-y-4 mb-8 text-gray-400">
+                            <ul className="space-y-4 mb-8 text-gray-200">
                                 <li className="flex items-center gap-3">
                                     <div className="w-1.5 h-1.5 rounded-full bg-purple-400" />
                                     {t("auralis.features.0")}
@@ -72,11 +67,11 @@ export function AIShowcase() {
                             </div>
 
                             <h3 className="text-3xl font-bold mb-4 text-white">{t("clou.title")}</h3>
-                            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+                            <p className="text-lg text-gray-100 mb-8 leading-relaxed">
                                 {t("clou.description")}
                             </p>
 
-                            <ul className="space-y-4 mb-8 text-gray-400">
+                            <ul className="space-y-4 mb-8 text-gray-200">
                                 <li className="flex items-center gap-3">
                                     <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
                                     {t("clou.features.0")}

@@ -111,6 +111,23 @@
       }
     }
   },
+  "InnovationHub": {
+    "title": "Innovation Hub",
+    "items": {
+      "0": {
+        "client": "Mediprotek",
+        "location": "Chile",
+        "desc": "Comprehensive application development and system maintenance.",
+        "tags": "Healthcare, Maintenance"
+      },
+      "1": {
+        "client": "Shipping Companies",
+        "location": "Arica, Chile",
+        "desc": "Maritime systems for port and shipping management.",
+        "tags": "Maritime, Logistics"
+      }
+    }
+  },
   "Footer": {
     "description": "Empowering businesses with cutting-edge AI automation and scalable infrastructure solutions.",
     "rights": "All rights reserved"
