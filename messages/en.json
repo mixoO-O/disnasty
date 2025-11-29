@@ -128,6 +128,17 @@
       }
     }
   },
+  "ContactModal": {
+    "title": "Get in Touch",
+    "subtitle": "Ready to start your digital transformation?",
+    "nameLabel": "Name",
+    "namePlaceholder": "John Doe",
+    "emailLabel": "Email",
+    "emailPlaceholder": "john@example.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell us about your project...",
+    "submitButton": "Send Message"
+  },
   "Footer": {
     "description": "Empowering businesses with cutting-edge AI automation and scalable infrastructure solutions.",
     "rights": "All rights reserved"

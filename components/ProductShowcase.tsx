@@ -5,6 +5,8 @@ import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
+import { ProductModal } from "./ProductModal";
 
 const products = [
     {
@@ -51,8 +53,17 @@ const products = [
     },
 ];
 
+interface SelectedProduct {
+    id: string;
+    gradient: string;
+    image: string;
+    title: string;
+    category: string;
+}
+
 export function ProductShowcase() {
     const t = useTranslations("ProductShowcase");
+    const [selectedProduct, setSelectedProduct] = useState<SelectedProduct | null>(null);
 
     return (
         <section id="products" className="py-20 px-6">
@@ -110,9 +121,16 @@ export function ProductShowcase() {
                                             }`}>
                                             {t(`products.${product.id}.title`)}
                                         </h3>
-                                        <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shrink-0">
+                                        <button
+                                            onClick={() => setSelectedProduct({
+                                                ...product,
+                                                title: t(`products.${product.id}.title`),
+                                                category: t(`products.${product.id}.category`)
+                                            })}
+                                            className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shrink-0 hover:bg-white/20 hover:scale-110 cursor-pointer"
+                                        >
                                             <ArrowUpRight className="w-5 h-5 text-white" />
-                                        </div>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -120,6 +138,12 @@ export function ProductShowcase() {
                     ))}
                 </div>
             </div>
+
+            <ProductModal
+                isOpen={!!selectedProduct}
+                onClose={() => setSelectedProduct(null)}
+                product={selectedProduct}
+            />
         </section>
     );
 }

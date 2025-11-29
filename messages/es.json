@@ -128,6 +128,17 @@
       }
     }
   },
+  "ContactModal": {
+    "title": "Contáctanos",
+    "subtitle": "¿Listo para comenzar tu transformación digital?",
+    "nameLabel": "Nombre",
+    "namePlaceholder": "Juan Pérez",
+    "emailLabel": "Correo Electrónico",
+    "emailPlaceholder": "juan@ejemplo.com",
+    "messageLabel": "Mensaje",
+    "messagePlaceholder": "Cuéntanos sobre tu proyecto...",
+    "submitButton": "Enviar Mensaje"
+  },
   "Footer": {
     "description": "Empoderando empresas con automatización de IA de vanguardia y soluciones de infraestructura escalables.",
     "rights": "Todos los derechos reservados"
