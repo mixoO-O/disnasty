@@ -57,7 +57,7 @@ export function ClientCarousel() {
                             </div>
 
                             {/* Extending Rectangle */}
-                            <div className="h-12 flex items-center pl-10 pr-6 -ml-8 bg-white/5 border-y border-r border-white/10 rounded-r-full backdrop-blur-sm">
+                            <div className="h-12 flex items-center pl-10 pr-6 -ml-8 bg-white/5 border-y border-r border-white/10 rounded-r-xl backdrop-blur-sm">
                                 <span className="text-base font-semibold text-gray-200 whitespace-nowrap">
                                     {client.name}
                                 </span>
