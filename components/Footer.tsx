@@ -1,12 +1,15 @@
 "use client";
 
-import { Mail, Linkedin, Twitter, Instagram } from "lucide-react";
+import { Mail, Linkedin, Twitter, Instagram, Check } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image"; // Added Image import
 import { useTranslations } from 'next-intl';
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function Footer() {
     const t = useTranslations('Footer');
+    const [copied, setCopied] = useState(false);
 
     return (
         <footer className="relative z-10">
@@ -43,15 +46,63 @@ export function Footer() {
 
                         {/* Contact & Socials */}
                         <div className="flex flex-col items-center md:items-end gap-8">
-                            <a
-                                href="mailto:contacto@disnasty.com"
-                                className="group flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-white/10 transition-all duration-300"
+                            <button
+                                onClick={() => {
+                                    navigator.clipboard.writeText("contacto@disnasty.com");
+                                    setCopied(true);
+                                    setTimeout(() => setCopied(false), 2000);
+                                }}
+                                className="group relative flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-white/10 transition-all duration-300 cursor-pointer overflow-hidden"
                             >
-                                <div className="p-2 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                                    <Mail className="w-5 h-5 text-white" />
+                                <div className="p-2 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors relative">
+                                    <AnimatePresence mode="wait">
+                                        {copied ? (
+                                            <motion.div
+                                                key="check"
+                                                initial={{ scale: 0 }}
+                                                animate={{ scale: 1 }}
+                                                exit={{ scale: 0 }}
+                                            >
+                                                <Check className="w-5 h-5 text-green-400" />
+                                            </motion.div>
+                                        ) : (
+                                            <motion.div
+                                                key="mail"
+                                                initial={{ scale: 0 }}
+                                                animate={{ scale: 1 }}
+                                                exit={{ scale: 0 }}
+                                            >
+                                                <Mail className="w-5 h-5 text-white" />
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
                                 </div>
-                                <span className="text-gray-200 group-hover:text-white font-medium">contacto@disnasty.com</span>
-                            </a>
+                                <div className="relative overflow-hidden h-6 min-w-[180px] flex items-center">
+                                    <AnimatePresence mode="wait" initial={false}>
+                                        {copied ? (
+                                            <motion.span
+                                                key="copied"
+                                                initial={{ y: 20, opacity: 0 }}
+                                                animate={{ y: 0, opacity: 1 }}
+                                                exit={{ y: -20, opacity: 0 }}
+                                                className="text-green-400 font-medium absolute left-0"
+                                            >
+                                                Copied to clipboard!
+                                            </motion.span>
+                                        ) : (
+                                            <motion.span
+                                                key="email"
+                                                initial={{ y: 20, opacity: 0 }}
+                                                animate={{ y: 0, opacity: 1 }}
+                                                exit={{ y: -20, opacity: 0 }}
+                                                className="text-gray-200 group-hover:text-white font-medium absolute left-0"
+                                            >
+                                                contacto@disnasty.com
+                                            </motion.span>
+                                        )}
+                                    </AnimatePresence>
+                                </div>
+                            </button>
 
                             <div className="flex items-center gap-4">
                                 {[
