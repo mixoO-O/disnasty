@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import Image from "next/image";
+import { useEffect } from "react";
 
 interface ProductModalProps {
     isOpen: boolean;
@@ -17,6 +18,17 @@ interface ProductModalProps {
 }
 
 export function ProductModal({ isOpen, onClose, product }: ProductModalProps) {
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "unset";
+        }
+        return () => {
+            document.body.style.overflow = "unset";
+        };
+    }, [isOpen]);
+
     if (!product) return null;
 
     return (
@@ -66,7 +78,7 @@ export function ProductModal({ isOpen, onClose, product }: ProductModalProps) {
 
                             {/* Content Section */}
                             <div className="p-8 md:p-10 overflow-y-auto">
-                                <span className="inline-block px-3 py-1 rounded-full bg-white/10 border border-white/10 text-primary text-xs font-medium mb-4 uppercase tracking-wider">
+                                <span className="inline-block px-3 py-1 rounded-full bg-white/10 border border-white/10 text-white/80 text-xs font-medium mb-4 uppercase tracking-wider">
                                     {product.category}
                                 </span>
 
