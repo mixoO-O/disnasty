@@ -7,6 +7,7 @@ import { Menu, X, Zap, Cpu, Network, Bot, Code } from "lucide-react";
 import { useState } from "react";
 import { ContactModal } from "./ContactModal";
 import { useTranslations } from 'next-intl';
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -52,6 +53,7 @@ export function Navbar() {
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all group-hover:w-full" />
                             </Link>
                         ))}
+                        <LanguageSwitcher />
                         <button
                             onClick={() => setIsContactOpen(true)}
                             className="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all border border-white/5 hover:border-white/20"
@@ -84,6 +86,10 @@ export function Navbar() {
                                 {item.name}
                             </Link>
                         ))}
+                        <div className="pt-2 border-t border-white/10 flex justify-between items-center">
+                            <span className="text-sm text-gray-400">Language</span>
+                            <LanguageSwitcher />
+                        </div>
                     </motion.div>
                 )}
             </div>
