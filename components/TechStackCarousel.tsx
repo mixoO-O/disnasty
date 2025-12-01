@@ -48,36 +48,35 @@ const cloudTech = [
 
 const TechRow = ({ items, speed = 40, reverse = false }: { items: typeof frontendTech, speed?: number, reverse?: boolean }) => {
     return (
-        <motion.div
-            className="flex gap-6 items-center"
-            animate={{
-                x: reverse ? ["-50%", "0%"] : ["0%", "-50%"]
-            }}
-            transition={{
-                duration: speed,
-                ease: 'linear',
-                repeat: Infinity,
-            }}
-        >
-            {[...items, ...items].map((item, idx) => (
-                <div
-                    key={`${item.name}-${idx}`}
-                    className="relative group"
-                >
-                    {/* Gradient border wrapper */}
-                    <div className="p-[1px] rounded-xl bg-gradient-to-r from-purple-400/20 via-blue-400/20 to-cyan-400/20 group-hover:from-purple-400/50 group-hover:via-blue-400/50 group-hover:to-cyan-400/50 transition-all duration-300">
-                        <div className="flex items-center gap-3 px-5 py-2.5 rounded-xl bg-black/60 backdrop-blur-md text-gray-200 font-medium group-hover:bg-black/40 transition-all cursor-default">
-                            <img
-                                src={`https://cdn.simpleicons.org/${item.icon}/white`}
-                                alt={item.name}
-                                className="w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity"
-                            />
-                            <span className="text-sm pr-4 group-hover:text-white transition-colors">{item.name}</span>
-                        </div>
+        <div className="flex w-max overflow-hidden group">
+            <div
+                className={`flex w-max ${reverse ? 'animate-marquee-reverse' : 'animate-marquee'} group-hover:[animation-play-state:paused]`}
+                style={{ animationDuration: `${speed}s` }}
+            >
+                {[...Array(4)].map((_, i) => (
+                    <div key={i} className="flex gap-6 pr-6 shrink-0">
+                        {items.map((item, idx) => (
+                            <div
+                                key={`${item.name}-${idx}-${i}`}
+                                className="relative group"
+                            >
+                                {/* Gradient border wrapper */}
+                                <div className="p-[1px] rounded-xl bg-gradient-to-r from-purple-400/20 via-blue-400/20 to-cyan-400/20 group-hover:from-purple-400/50 group-hover:via-blue-400/50 group-hover:to-cyan-400/50 transition-all duration-300">
+                                    <div className="flex items-center gap-3 px-5 py-2.5 rounded-xl bg-black/60 backdrop-blur-md text-gray-200 font-medium group-hover:bg-black/40 transition-all cursor-default">
+                                        <img
+                                            src={`https://cdn.simpleicons.org/${item.icon}/white`}
+                                            alt={item.name}
+                                            className="w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity"
+                                        />
+                                        <span className="text-sm pr-4 group-hover:text-white transition-colors">{item.name}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                </div>
-            ))}
-        </motion.div>
+                ))}
+            </div>
+        </div>
 
     );
 };
@@ -87,9 +86,6 @@ export function TechStackCarousel() {
 
     return (
         <section id="tech-stack" className="py-24 relative overflow-hidden">
-            {/* Background effects */}
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
 
             <div className="max-w-7xl mx-auto px-6 mb-12 text-center relative z-10">
                 <h2 className="text-3xl text-white md:text-5xl font-bold mb-6">
