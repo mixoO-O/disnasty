@@ -1,19 +1,38 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { getMessages } from 'next-intl/server';
+import { getMessages, getTranslations } from 'next-intl/server';
 import { Providers } from './providers';
 import "../globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-    title: "Disnasty - Innovation Hub",
-    description: "Leading the future of AI and Automation technology.",
-    icons: {
-        icon: "/favicon.ico",
-    },
-    themeColor: "#000000",
-};
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
+    const t = await getTranslations({ locale, namespace: 'Metadata' });
+
+    return {
+        title: t('title'),
+        description: t('description'),
+        keywords: t('keywords'),
+        icons: {
+            icon: "/favicon.ico",
+        },
+        openGraph: {
+            title: t('ogTitle'),
+            description: t('ogDescription'),
+            type: 'website',
+            locale: locale,
+            // url: `https://disnasty.com/${locale}`, // TODO: Update with actual domain
+            siteName: 'Disnasty',
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: t('twitterTitle'),
+            description: t('twitterDescription'),
+            // creator: '@disnasty', // TODO: Update with actual handle
+        },
+        themeColor: "#000000",
+    };
+}
 
 export default async function LocaleLayout({
     children,
