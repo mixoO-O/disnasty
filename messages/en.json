@@ -142,5 +142,14 @@
   "Footer": {
     "description": "Empowering businesses with cutting-edge AI automation and scalable infrastructure solutions.",
     "rights": "All rights reserved"
+  },
+  "Metadata": {
+    "title": "Disnasty - Innovation Hub",
+    "description": "Leading the future of AI and Automation technology. Disnasty brings you the cutting edge of digital transformation with intelligent systems and scalable infrastructure.",
+    "keywords": "AI, Automation, Technology, Innovation, Digital Transformation, Software Development, Machine Learning, IoT, Blockchain, Web3",
+    "ogTitle": "Disnasty - The Future of Tech",
+    "ogDescription": "Experience the synergy of Artificial Intelligence and Advanced Automation. Partner with Disnasty to build the future.",
+    "twitterTitle": "Disnasty - Innovation Hub",
+    "twitterDescription": "Leading the future of AI and Automation technology."
   }
 }

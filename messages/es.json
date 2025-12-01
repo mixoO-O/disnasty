@@ -142,5 +142,14 @@
   "Footer": {
     "description": "Empoderando empresas con automatización de IA de vanguardia y soluciones de infraestructura escalables.",
     "rights": "Todos los derechos reservados"
+  },
+  "Metadata": {
+    "title": "Disnasty - Centro de Innovación",
+    "description": "Liderando el futuro de la tecnología de IA y Automatización. Disnasty te trae la vanguardia de la transformación digital con sistemas inteligentes e infraestructura escalable.",
+    "keywords": "IA, Automatización, Tecnología, Innovación, Transformación Digital, Desarrollo de Software, Aprendizaje Automático, IoT, Blockchain, Web3",
+    "ogTitle": "Disnasty - El Futuro de la Tecnología",
+    "ogDescription": "Experimenta la sinergia de la Inteligencia Artificial y la Automatización Avanzada. Asóciate con Disnasty para construir el futuro.",
+    "twitterTitle": "Disnasty - Centro de Innovación",
+    "twitterDescription": "Liderando el futuro de la tecnología de IA y Automatización."
   }
 }
