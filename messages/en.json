@@ -150,6 +150,49 @@
     "description": "Empowering businesses with cutting-edge AI automation and scalable infrastructure solutions.",
     "rights": "All rights reserved"
   },
+  "MobileAppProcess": {
+    "title": "Mobile App Development Process",
+    "description": "From concept to deployment, we follow a proven methodology to build exceptional mobile applications.",
+    "cta": "Ready to bring your mobile app idea to life? Let's talk.",
+    "steps": {
+      "planning": {
+        "title": "Planning",
+        "description": "We analyze requirements, define scope, and create a strategic roadmap for your mobile application.",
+        "tools": {
+          "0": "User Stories",
+          "1": "Wireframes",
+          "2": "Architecture"
+        }
+      },
+      "mockup": {
+        "title": "Mockup & Wireframing",
+        "description": "Interactive prototypes and wireframes to visualize the user journey and validate concepts early.",
+        "tools": {
+          "0": "Figma",
+          "1": "Prototyping",
+          "2": "User Flow"
+        }
+      },
+      "design": {
+        "title": "UX/UI Design",
+        "description": "Crafting beautiful, intuitive interfaces with a focus on user experience and brand consistency.",
+        "tools": {
+          "0": "Design System",
+          "1": "Animations",
+          "2": "Accessibility"
+        }
+      },
+      "development": {
+        "title": "Development",
+        "description": "Building robust, scalable mobile apps using React Native, Expo, and modern development tools.",
+        "tools": {
+          "0": "React Native",
+          "1": "Expo",
+          "2": "TypeScript"
+        }
+      }
+    }
+  },
   "Metadata": {
     "title": "Disnasty - Innovation Hub",
     "description": "Leading the future of AI and Automation technology. Disnasty brings you the cutting edge of digital transformation with intelligent systems and scalable infrastructure.",
