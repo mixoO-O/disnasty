@@ -27,17 +27,17 @@ export default function Home() {
                 <MobileAppProcess />
             </ScrollReveal>
 
-            <ScrollReveal>
+            {/* <ScrollReveal>
                 <ClientCarousel />
-            </ScrollReveal>
+            </ScrollReveal> */}
 
             <ScrollReveal>
                 <TechStackCarousel />
             </ScrollReveal>
 
-            <ScrollReveal>
+            {/* <ScrollReveal>
                 <Testimonials />
-            </ScrollReveal>
+            </ScrollReveal> */}
 
             <ScrollReveal>
                 <AIShowcase />
