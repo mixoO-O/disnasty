@@ -85,6 +85,53 @@ export function MobileAppProcess() {
             />
 
             <div className="max-w-7xl mx-auto relative z-10">
+                {/* Phone Background Animation */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1 }}
+                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[600px] -z-10 hidden md:block"
+                >
+                    {/* Phone Frame */}
+                    <div className="relative w-full h-full bg-black rounded-[3rem] border-[8px] border-gray-800 shadow-2xl overflow-hidden">
+                        {/* Notch */}
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-black rounded-b-xl z-20" />
+
+                        {/* Screen Content */}
+                        <div className="relative w-full h-full bg-gray-900 overflow-hidden">
+                            <motion.div
+                                animate={{ y: [0, -1000] }}
+                                transition={{
+                                    duration: 20,
+                                    repeat: Infinity,
+                                    ease: "linear",
+                                    repeatType: "loop"
+                                }}
+                                className="w-full"
+                            >
+                                {/* Repeating the image to create seamless loop */}
+                                <img
+                                    src="/tech-app-mock.png"
+                                    alt="App Mock"
+                                    className="w-full h-auto opacity-50"
+                                />
+                                <img
+                                    src="/tech-app-mock.png"
+                                    alt="App Mock"
+                                    className="w-full h-auto opacity-50"
+                                />
+                            </motion.div>
+
+                            {/* Gradient Overlay to fade edges */}
+                            <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/80 pointer-events-none" />
+                        </div>
+                    </div>
+
+                    {/* Glow Effect behind phone */}
+                    <div className="absolute inset-0 bg-primary/20 blur-3xl -z-10 rounded-full" />
+                </motion.div>
+
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -105,7 +152,7 @@ export function MobileAppProcess() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-20"
                 >
                     {processSteps.map((step, index) => {
                         const Icon = step.icon;
