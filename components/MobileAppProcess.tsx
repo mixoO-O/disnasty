@@ -30,10 +30,59 @@ const processSteps = [
 export function MobileAppProcess() {
     const t = useTranslations("MobileAppProcess");
 
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.2,
+            },
+        },
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.6,
+                ease: "easeOut",
+            },
+        },
+    };
+
     return (
         <section id="mobile-app" className="py-20 px-6 relative overflow-hidden">
             {/* Background gradient effects */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
+
+            {/* Animated background blobs */}
+            <motion.div
+                animate={{
+                    scale: [1, 1.2, 1],
+                    opacity: [0.1, 0.2, 0.1],
+                }}
+                transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                }}
+                className="absolute top-20 left-10 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl -z-10"
+            />
+            <motion.div
+                animate={{
+                    scale: [1, 1.1, 1],
+                    opacity: [0.1, 0.2, 0.1],
+                }}
+                transition={{
+                    duration: 10,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 1
+                }}
+                className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl -z-10"
+            />
 
             <div className="max-w-7xl mx-auto relative z-10">
                 <motion.div
@@ -51,27 +100,36 @@ export function MobileAppProcess() {
                 </motion.div>
 
                 {/* Process Steps Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+                >
                     {processSteps.map((step, index) => {
                         const Icon = step.icon;
                         return (
                             <motion.div
                                 key={step.id}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.15, duration: 0.6 }}
+                                variants={itemVariants}
                                 className="group relative"
                             >
                                 {/* Card */}
-                                <div className="relative h-full bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-500 hover:border-white/20">
+                                <motion.div
+                                    whileHover={{ y: -5 }}
+                                    className="relative h-full bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors duration-300 hover:border-white/20"
+                                >
                                     {/* Icon with gradient background */}
                                     <div className="mb-6">
-                                        <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${step.gradient} p-0.5 group-hover:scale-110 transition-transform duration-500`}>
+                                        <motion.div
+                                            whileHover={{ rotate: 5, scale: 1.05 }}
+                                            className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${step.gradient} p-0.5 transition-transform duration-300`}
+                                        >
                                             <div className="w-full h-full bg-background rounded-2xl flex items-center justify-center">
                                                 <Icon className="w-8 h-8 text-white" />
                                             </div>
-                                        </div>
+                                        </motion.div>
                                     </div>
 
                                     {/* Content */}
@@ -95,17 +153,29 @@ export function MobileAppProcess() {
                                     </div>
 
                                     {/* Hover gradient effect */}
-                                    <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${step.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none`} />
-                                </div>
+                                    <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${step.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500 pointer-events-none`} />
+                                </motion.div>
 
                                 {/* Connecting line (except for last item on desktop) */}
                                 {index < processSteps.length - 1 && (
-                                    <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-to-r from-white/20 to-transparent" />
+                                    <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-white/10 overflow-hidden">
+                                        <motion.div
+                                            initial={{ x: "-100%" }}
+                                            whileInView={{ x: "100%" }}
+                                            transition={{
+                                                duration: 1.5,
+                                                repeat: Infinity,
+                                                ease: "linear",
+                                                delay: index * 0.2
+                                            }}
+                                            className="w-full h-full bg-gradient-to-r from-transparent via-white/50 to-transparent"
+                                        />
+                                    </div>
                                 )}
                             </motion.div>
                         );
                     })}
-                </div>
+                </motion.div>
 
                 {/* Bottom CTA or additional info */}
                 <motion.div
