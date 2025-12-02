@@ -2,9 +2,10 @@
 
 import { motion } from "framer-motion";
 import { Network, Cpu } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ContactModal } from "@/components/ContactModal";
 import { useTranslations } from 'next-intl';
+import { frontendTech, iaTech, cloudTech } from "@/constants/techStack";
 
 export function Hero() {
     const [isContactModalOpen, setIsContactModalOpen] = useState(false);
@@ -20,6 +21,14 @@ export function Hero() {
             />
 
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background z-0 pointer-events-none" />
+
+            {/* Tech Stack Crossed/Angled Display */}
+
+
+            {/* Random Floating Icons Background */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none select-none z-0">
+                <FloatingIcons />
+            </div>
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
                 <motion.div
@@ -49,5 +58,80 @@ export function Hero() {
                 </motion.div>
             </div>
         </section>
+    );
+}
+
+function FloatingIcons() {
+    const allTech = [...frontendTech, ...iaTech, ...cloudTech];
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    if (!mounted) return null;
+
+    return (
+        <>
+            {allTech.map((tech, i) => (
+                <FloatingIcon key={i} icon={tech.icon} index={i} />
+            ))}
+        </>
+    );
+}
+
+function FloatingIcon({ icon, index }: { icon: string; index: number }) {
+    // Randomize start position (from any side)
+    const randomSide = Math.floor(Math.random() * 4); // 0: top, 1: right, 2: bottom, 3: left
+
+    let initialX = Math.random() * 100;
+    let initialY = Math.random() * 100;
+
+    // Force start from outside
+    if (randomSide === 0) initialY = -20;
+    else if (randomSide === 1) initialX = 120;
+    else if (randomSide === 2) initialY = 120;
+    else if (randomSide === 3) initialX = -20;
+
+    // Randomize end position (opposite side or random)
+    // To make it look like "floating around", we can just use keyframes with wide ranges
+
+    const duration = 15 + Math.random() * 20; // 15-35s duration
+    const delay = Math.random() * 5;
+
+    return (
+        <motion.div
+            initial={{ x: `${initialX}vw`, y: `${initialY}vh`, opacity: 0 }}
+            animate={{
+                x: [
+                    `${initialX}vw`,
+                    `${Math.random() * 100}vw`,
+                    `${Math.random() * 100}vw`,
+                    `${Math.random() * 100}vw`
+                ],
+                y: [
+                    `${initialY}vh`,
+                    `${Math.random() * 100}vh`,
+                    `${Math.random() * 100}vh`,
+                    `${Math.random() * 100}vh`
+                ],
+                opacity: [0, 0.4, 0.4, 0],
+                rotate: [0, 360]
+            }}
+            transition={{
+                duration: duration,
+                repeat: Infinity,
+                delay: delay,
+                ease: "linear",
+                times: [0, 0.3, 0.7, 1]
+            }}
+            className="absolute w-12 h-12 md:w-16 md:h-16"
+        >
+            <img
+                src={`https://cdn.simpleicons.org/${icon}`}
+                alt="tech icon"
+                className="w-full h-full grayscale opacity-30 dark:invert"
+            />
+        </motion.div>
     );
 }
