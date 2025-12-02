@@ -19,7 +19,14 @@
   "Hero": {
     "badge": "Innovación de Próxima Generación",
     "titlePrefix": "Construyendo el",
-    "titleSuffix": "Futuro de la Tecnología",
+    "titleSuffixes": {
+      "0": "Futuro de la Tecnología",
+      "1": "Cambio de estrategia",
+      "2": "Nuevos caminos",
+      "3": "Destino",
+      "4": "Próxima Gran Cosa",
+      "5": "Horizonte Digital"
+    },
     "description": "Experimenta la sinergia de la Inteligencia Artificial y la Automatización Avanzada. Disnasty te trae la vanguardia de la transformación digital.",
     "cta": "Contáctanos"
   },
