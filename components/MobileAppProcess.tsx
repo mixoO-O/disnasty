@@ -189,7 +189,7 @@ export function MobileAppProcess() {
 
                                     {/* Tools/Technologies */}
                                     <div className="flex flex-wrap gap-2">
-                                        {Array.from({ length: 3 }).map((_, i) => (
+                                        {Array.from({ length: 6 }).map((_, i) => (
                                             <span
                                                 key={i}
                                                 className={`text-xs px-3 py-1 rounded-full bg-gradient-to-r ${step.gradient} bg-opacity-20 text-white/80 border border-white/10`}
