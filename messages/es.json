@@ -150,6 +150,49 @@
     "description": "Empoderando empresas con automatización de IA de vanguardia y soluciones de infraestructura escalables.",
     "rights": "Todos los derechos reservados"
   },
+  "MobileAppProcess": {
+    "title": "Proceso de Desarrollo de Aplicaciones Móviles",
+    "description": "Desde el concepto hasta el despliegue, seguimos una metodología probada para construir aplicaciones móviles excepcionales.",
+    "cta": "¿Listo para dar vida a tu idea de aplicación móvil? Hablemos.",
+    "steps": {
+      "planning": {
+        "title": "Planificación",
+        "description": "Analizamos requisitos, definimos el alcance y creamos una hoja de ruta estratégica para tu aplicación móvil.",
+        "tools": {
+          "0": "Historias de Usuario",
+          "1": "Wireframes",
+          "2": "Arquitectura"
+        }
+      },
+      "mockup": {
+        "title": "Mockup y Wireframing",
+        "description": "Prototipos interactivos y wireframes para visualizar el recorrido del usuario y validar conceptos tempranamente.",
+        "tools": {
+          "0": "Figma",
+          "1": "Prototipado",
+          "2": "Flujo de Usuario"
+        }
+      },
+      "design": {
+        "title": "Diseño UX/UI",
+        "description": "Creando interfaces hermosas e intuitivas con enfoque en la experiencia del usuario y consistencia de marca.",
+        "tools": {
+          "0": "Sistema de Diseño",
+          "1": "Animaciones",
+          "2": "Accesibilidad"
+        }
+      },
+      "development": {
+        "title": "Desarrollo",
+        "description": "Construyendo aplicaciones móviles robustas y escalables usando React Native, Expo y herramientas modernas de desarrollo.",
+        "tools": {
+          "0": "React Native",
+          "1": "Expo",
+          "2": "TypeScript"
+        }
+      }
+    }
+  },
   "Metadata": {
     "title": "Disnasty - Centro de Innovación",
     "description": "Liderando el futuro de la tecnología de IA y Automatización. Disnasty te trae la vanguardia de la transformación digital con sistemas inteligentes e infraestructura escalable.",
