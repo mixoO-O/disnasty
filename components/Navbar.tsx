@@ -16,9 +16,10 @@ export function Navbar() {
 
     const navItems = [
         { name: t('products'), href: "#products", icon: Cpu },
-        { name: t('clients'), href: "#clients", icon: Network },
+        { name: t('mobile-app'), href: "#mobile-app", icon: Cpu },
+        // { name: t('clients'), href: "#clients", icon: Network },
         { name: t('tech-stack'), href: "#tech-stack", icon: Code },
-        { name: t('testimonials'), href: "#testimonials", icon: Zap },
+        // { name: t('testimonials'), href: "#testimonials", icon: Zap },
         { name: t('ia'), href: "#ia", icon: Bot },
         { name: t('innovation'), href: "#innovation", icon: Zap },
     ];

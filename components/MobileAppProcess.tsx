@@ -31,7 +31,7 @@ export function MobileAppProcess() {
     const t = useTranslations("MobileAppProcess");
 
     return (
-        <section id="mobile-process" className="py-20 px-6 relative overflow-hidden">
+        <section id="mobile-app" className="py-20 px-6 relative overflow-hidden">
             {/* Background gradient effects */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
 
