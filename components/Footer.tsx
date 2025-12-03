@@ -48,7 +48,7 @@ export function Footer() {
                         <div className="flex flex-col items-center md:items-end gap-8">
                             <button
                                 onClick={() => {
-                                    navigator.clipboard.writeText("contacto@disnasty.com");
+                                    navigator.clipboard.writeText("mrojas@disnasty.com");
                                     setCopied(true);
                                     setTimeout(() => setCopied(false), 2000);
                                 }}
@@ -97,7 +97,7 @@ export function Footer() {
                                                 exit={{ y: -20, opacity: 0 }}
                                                 className="text-gray-200 group-hover:text-white font-medium absolute left-0"
                                             >
-                                                contacto@disnasty.com
+                                                mrojas@disnasty.com
                                             </motion.span>
                                         )}
                                     </AnimatePresence>
