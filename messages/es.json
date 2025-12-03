@@ -16,7 +16,8 @@
     "tech-stack": "Tecnología",
     "testimonials": "Testimonios",
     "contact": "Contáctanos",
-    "ia": "IA"
+    "ia": "IA",
+    "cloud": "Cloud"
   },
   "Hero": {
     "badge": "Innovación de Próxima Generación",
@@ -261,5 +262,20 @@
     "ogDescription": "Experimenta la sinergia de la Inteligencia Artificial y la Automatización Avanzada. Asóciate con Disnasty para construir el futuro.",
     "twitterTitle": "Disnasty - Centro de Innovación",
     "twitterDescription": "Liderando el futuro de la tecnología de IA y Automatización."
+  },
+  "CloudArchitecture": {
+    "title": "Arquitectura Cloud Nativa",
+    "description": "Infraestructura moderna diseñada para escalar. Desde el usuario hasta el dato, cada componente está optimizado para rendimiento y seguridad.",
+    "diagram_note": "Diagrama simplificado de nuestra arquitectura serverless de referencia.",
+    "nodes": {
+      "users": "Usuarios",
+      "web": "App Web",
+      "mobile": "App Móvil",
+      "gateway": "API Gateway",
+      "auth": "Auth & Seguridad",
+      "compute": "Lógica Serverless",
+      "database": "Base de Datos",
+      "storage": "Almacenamiento"
+    }
   }
 }
