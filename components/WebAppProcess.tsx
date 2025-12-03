@@ -39,7 +39,7 @@ export function WebAppProcess() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="sticky top-24 z-30 bg-background/80 backdrop-blur-xl py-10 text-center mb-20"
+                    className="sticky top-24 z-30 bg-background/80 backdrop-blur-xl py-10 text-center mb-40"
                 >
                     <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-white/60">
                         {t("title")}
@@ -49,9 +49,9 @@ export function WebAppProcess() {
                     </p>
                 </motion.div>
 
-                <div className="relative lg:flex lg:gap-10">
+                <div className="relative lg:flex lg:gap-10 mb-40">
                     {/* Scrolling Text Section */}
-                    <div className="lg:w-1/2 relative z-20 lg:mt-40">
+                    <div className="lg:w-1/2 relative z-20 ">
                         {steps.map((step, index) => (
                             <motion.div
                                 key={step.id}
