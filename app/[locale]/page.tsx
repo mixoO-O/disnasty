@@ -3,6 +3,7 @@ import { Hero } from "@/components/Hero";
 import { ClientCarousel } from "@/components/ClientCarousel";
 import { ProductShowcase } from "@/components/ProductShowcase";
 import { MobileAppProcess } from "@/components/MobileAppProcess";
+import { WebAppProcess } from "@/components/WebAppProcess";
 import { TechStackCarousel } from "@/components/TechStackCarousel";
 import { Testimonials } from "@/components/Testimonials";
 import { Footer } from "@/components/Footer";
@@ -21,6 +22,10 @@ export default function Home() {
 
             <ScrollReveal>
                 <ProductShowcase />
+            </ScrollReveal>
+
+            <ScrollReveal>
+                <WebAppProcess />
             </ScrollReveal>
 
             <ScrollReveal>

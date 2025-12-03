@@ -206,6 +206,52 @@
       }
     }
   },
+  "WebAppProcess": {
+    "title": "Desarrollo de Aplicaciones Web",
+    "description": "Construyendo aplicaciones web escalables y de alto rendimiento con tecnologías modernas y estética impresionante.",
+    "steps": {
+      "strategy": {
+        "title": "Estrategia y Planificación",
+        "description": "Definimos la arquitectura técnica y el flujo de usuario para asegurar que tu aplicación web cumpla con los objetivos comerciales y las necesidades del usuario.",
+        "tools": {
+          "0": "Arquitectura",
+          "1": "Flujo de Usuario",
+          "2": "Stack Tecnológico",
+          "3": "Roadmap"
+        }
+      },
+      "design": {
+        "title": "Diseño UI/UX",
+        "description": "Creando experiencias web inmersivas con principios de diseño moderno, modos oscuros y efectos de glassmorphism.",
+        "tools": {
+          "0": "Figma",
+          "1": "Tailwind",
+          "2": "Motion",
+          "3": "Prototipado"
+        }
+      },
+      "development": {
+        "title": "Desarrollo Full Stack",
+        "description": "Implementando sistemas backend robustos y frontends dinámicos usando Next.js, React e infraestructura en la nube.",
+        "tools": {
+          "0": "Next.js",
+          "1": "React",
+          "2": "Node.js",
+          "3": "PostgreSQL"
+        }
+      },
+      "launch": {
+        "title": "Lanzamiento y Escala",
+        "description": "Desplegando a producción con pipelines CI/CD, optimización de rendimiento y monitoreo para un escalado sin problemas.",
+        "tools": {
+          "0": "Vercel",
+          "1": "AWS",
+          "2": "Docker",
+          "3": "Analítica"
+        }
+      }
+    }
+  },
   "Metadata": {
     "title": "Disnasty - Centro de Innovación",
     "description": "Liderando el futuro de la tecnología de IA y Automatización. Disnasty te trae la vanguardia de la transformación digital con sistemas inteligentes e infraestructura escalable.",

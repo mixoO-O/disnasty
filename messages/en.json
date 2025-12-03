@@ -206,6 +206,52 @@
       }
     }
   },
+  "WebAppProcess": {
+    "title": "Web App Development",
+    "description": "Building scalable, high-performance web applications with modern technologies and stunning aesthetics.",
+    "steps": {
+      "strategy": {
+        "title": "Strategy & Planning",
+        "description": "We define the technical architecture and user flow to ensure your web application meets business goals and user needs.",
+        "tools": {
+          "0": "Architecture",
+          "1": "User Flow",
+          "2": "Tech Stack",
+          "3": "Roadmap"
+        }
+      },
+      "design": {
+        "title": "UI/UX Design",
+        "description": "Creating immersive web experiences with modern design principles, dark modes, and glassmorphism effects.",
+        "tools": {
+          "0": "Figma",
+          "1": "Tailwind",
+          "2": "Motion",
+          "3": "Prototyping"
+        }
+      },
+      "development": {
+        "title": "Full Stack Development",
+        "description": "Implementing robust backend systems and dynamic frontends using Next.js, React, and cloud infrastructure.",
+        "tools": {
+          "0": "Next.js",
+          "1": "React",
+          "2": "Node.js",
+          "3": "PostgreSQL"
+        }
+      },
+      "launch": {
+        "title": "Launch & Scale",
+        "description": "Deploying to production with CI/CD pipelines, performance optimization, and monitoring for seamless scaling.",
+        "tools": {
+          "0": "Vercel",
+          "1": "AWS",
+          "2": "Docker",
+          "3": "Analytics"
+        }
+      }
+    }
+  },
   "Metadata": {
     "title": "Disnasty - Innovation Hub",
     "description": "Leading the future of AI and Automation technology. Disnasty brings you the cutting edge of digital transformation with intelligent systems and scalable infrastructure.",

@@ -2,13 +2,10 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { useState, useEffect, useMemo } from "react";
 import { ProductModal } from "./ProductModal";
-
-
 
 interface SelectedProduct {
     id: string;
@@ -89,72 +86,9 @@ export function ProductShowcase() {
     // or wait for hydration. Let's render initial order first then shuffle effect takes over.
     const displayProducts = shuffledProducts.length > 0 ? shuffledProducts : productContent;
 
-    // Generate random stars for background
-    const stars = useMemo(() => Array.from({ length: 50 }).map((_, i) => ({
-        id: i,
-        x: Math.random() * 100,
-        y: Math.random() * 100,
-        size: Math.random() * 2 + 1,
-        duration: Math.random() * 3 + 2,
-        delay: Math.random() * 2
-    })), []);
 
     return (
         <section id="products" className="py-20 px-6 relative overflow-hidden">
-            {/* Space Background Effects */}
-            <div className="absolute inset-0 bg-[#030014] -z-20" />
-
-            {/* Nebula/Galaxy Gradient */}
-            <motion.div
-                animate={{
-                    opacity: [0.3, 0.5, 0.3],
-                    scale: [1, 1.1, 1],
-                }}
-                transition={{
-                    duration: 10,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                }}
-                className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-purple-900/30 rounded-full blur-[100px] -z-10"
-            />
-            <motion.div
-                animate={{
-                    opacity: [0.2, 0.4, 0.2],
-                    scale: [1, 1.2, 1],
-                }}
-                transition={{
-                    duration: 15,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 2
-                }}
-                className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-blue-900/20 rounded-full blur-[120px] -z-10"
-            />
-
-            {/* Starfield */}
-            {stars.map((star) => (
-                <motion.div
-                    key={star.id}
-                    className="absolute bg-white rounded-full -z-10"
-                    style={{
-                        left: `${star.x}%`,
-                        top: `${star.y}%`,
-                        width: star.size,
-                        height: star.size,
-                    }}
-                    animate={{
-                        opacity: [0.2, 1, 0.2],
-                        scale: [1, 1.5, 1],
-                    }}
-                    transition={{
-                        duration: star.duration,
-                        repeat: Infinity,
-                        delay: star.delay,
-                        ease: "easeInOut",
-                    }}
-                />
-            ))}
-
             <div className="max-w-7xl mx-auto relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
