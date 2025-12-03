@@ -66,7 +66,7 @@ export function WebAppProcess() {
                                 <motion.div
                                     initial={{ opacity: 0, x: -50 }}
                                     whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true, margin: "-80%" }}
+                                    viewport={{ once: true, margin: "-20%" }}
                                     className={`bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl lg:bg-transparent lg:backdrop-blur-none lg:border-none lg:p-0 ${index !== 0 && index !== steps.length - 1 ? "lg:pt-64" : ""
                                         }`}
                                 >
