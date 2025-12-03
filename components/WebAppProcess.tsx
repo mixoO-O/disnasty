@@ -33,7 +33,7 @@ export function WebAppProcess() {
     const [activeStep, setActiveStep] = useState(steps[0].id);
 
     return (
-        <section className="relative bg-background">
+        <section id="web-app" className="relative bg-background">
             <div className="max-w-7xl mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

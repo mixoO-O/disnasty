@@ -12,8 +12,8 @@ export function Footer() {
     const [copied, setCopied] = useState(false);
 
     return (
-        <footer className="relative z-10">
-            <div className="relative overflow-hidden w-full md:max-w-7xl md:mx-auto md:rounded-3xl md:border md:border-white/10 md:my-12 bg-black/40 backdrop-blur-xl border-t border-white/10">
+        <footer className="relative z-10 md:py-12">
+            <div className="relative overflow-hidden w-full md:max-w-7xl md:mx-auto md:rounded-3xl md:border md:border-white/10  bg-black/40 backdrop-blur-xl border-t border-white/10">
 
                 {/* Top Gradient Border (Mobile only/Adjusted for card) */}
                 <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
