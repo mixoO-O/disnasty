@@ -16,7 +16,8 @@
     "tech-stack": "Tech Stack",
     "testimonials": "Testimonials",
     "contact": "Contact Us",
-    "ia": "IA"
+    "ia": "IA",
+    "cloud": "Cloud"
   },
   "Hero": {
     "badge": "Next Gen Innovation",
@@ -261,5 +262,20 @@
     "ogDescription": "Experience the synergy of Artificial Intelligence and Advanced Automation. Partner with Disnasty to build the future.",
     "twitterTitle": "Disnasty - Innovation Hub",
     "twitterDescription": "Leading the future of AI and Automation technology."
+  },
+  "CloudArchitecture": {
+    "title": "Cloud Native Architecture",
+    "description": "Modern infrastructure designed to scale. From user to data, every component is optimized for performance and security.",
+    "diagram_note": "Simplified diagram of our reference serverless architecture.",
+    "nodes": {
+      "users": "Users",
+      "web": "Web App",
+      "mobile": "Mobile App",
+      "gateway": "API Gateway",
+      "auth": "Auth & Security",
+      "compute": "Serverless Logic",
+      "database": "Database",
+      "storage": "Storage"
+    }
   }
 }
