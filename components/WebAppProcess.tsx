@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Compass, Palette, Code2, Rocket } from "lucide-react";
@@ -33,15 +33,16 @@ export function WebAppProcess() {
     const [activeStep, setActiveStep] = useState(steps[0].id);
 
     return (
-        <section id="web-app" className="relative bg-background">
-            <div className="max-w-7xl mx-auto px-6">
+        <section id="web-app" className="relative">
+            <div className="max-w-7xl mx-auto px-6 ">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="sticky top-24 z-30 bg-background/80 backdrop-blur-xl py-10 text-center mb-40"
+                    className={`sticky top-20 z-30 bg-background/80 backdrop-blur-xl py-10 text-center rounded-3xl border border-white/10 ${activeStep === steps[0].id ? "mb-24" : "mb-[50vh]"
+                        }`}
                 >
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-white/60">
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent  bg-gradient-to-r from-white to-white/80">
                         {t("title")}
                     </h2>
                     <p className="text-lg text-gray-400 max-w-2xl mx-auto">
@@ -49,7 +50,7 @@ export function WebAppProcess() {
                     </p>
                 </motion.div>
 
-                <div className="relative lg:flex lg:gap-10 mb-40">
+                <div className="relative lg:flex lg:gap-10 mb-0 lg:mb-24">
                     {/* Scrolling Text Section */}
                     <div className="lg:w-1/2 relative z-20 ">
                         {steps.map((step, index) => (
@@ -57,7 +58,7 @@ export function WebAppProcess() {
                                 key={step.id}
                                 onViewportEnter={() => setActiveStep(step.id)}
                                 viewport={{ amount: 0.6 }}
-                                className={`flex items-center lg:block py-20 lg:py-0 ${index === 0 ? "lg:h-[500px] lg:flex lg:items-center" :
+                                className={`flex items-center lg:block pb-10 ${index === 0 ? "lg:h-[500px] lg:flex lg:items-center" :
                                     index === steps.length - 1 ? "lg:h-[500px] lg:flex lg:items-center" :
                                         "lg:h-[100vh] lg:flex lg:items-center"
                                     }`}
@@ -65,7 +66,7 @@ export function WebAppProcess() {
                                 <motion.div
                                     initial={{ opacity: 0, x: -50 }}
                                     whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true, margin: "-20%" }}
+                                    viewport={{ once: true, margin: "-80%" }}
                                     className={`bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl lg:bg-transparent lg:backdrop-blur-none lg:border-none lg:p-0 ${index !== 0 && index !== steps.length - 1 ? "lg:pt-64" : ""
                                         }`}
                                 >
@@ -109,7 +110,7 @@ export function WebAppProcess() {
                                             animate={{ opacity: 1, scale: 1 }}
                                             exit={{ opacity: 0, scale: 0.9 }}
                                             transition={{ duration: 0.5 }}
-                                            className="absolute inset-0 flex items-center justify-center p-10"
+                                            className="absolute inset-0 flex items-center justify-center"
                                         >
                                             <div className={`absolute inset-0 bg-gradient-to-br ${step.gradient} opacity-10 blur-3xl`} />
                                             <div className="relative z-10 text-center">
