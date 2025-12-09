@@ -7,6 +7,7 @@ import { Menu, X, Zap, Cpu, Network, Bot, Code, Cloud } from "lucide-react";
 import { useState } from "react";
 import { ContactModal } from "./ContactModal";
 import { useTranslations } from 'next-intl';
+import { ThemeSwitcher } from "./ThemeSwitcher";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export function Navbar() {
@@ -27,9 +28,9 @@ export function Navbar() {
     ];
 
     return (
-        <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4">
+        <nav className="fixed top-0 left-0 right-0 z-50 py-4 px-4 md:px-0">
             <div className="max-w-7xl mx-auto">
-                <div className="glass-nav rounded-2xl px-6 py-3 flex items-center justify-between bg-black/60 backdrop-blur-md border border-white/10">
+                <div className="glass-nav rounded-2xl px-6 py-3 flex items-center justify-between bg-background/60 backdrop-blur-md border border-border/50 shadow-sm dark:shadow-none transition-colors duration-300">
                     <Link href="/" className="flex items-center gap-2 group">
                         <div className="flex items-center gap-2">
                             <Image
@@ -49,23 +50,26 @@ export function Navbar() {
                             <Link
                                 key={item.name}
                                 href={item.href}
-                                className="flex items-center gap-2 text-sm font-medium text-gray-300 hover:text-white transition-colors relative group"
+                                className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
                             >
                                 <item.icon className="w-4 h-4" />
                                 {item.name}
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all group-hover:w-full" />
                             </Link>
                         ))}
-                        <LanguageSwitcher />
+                        <div className="flex items-center gap-4">
+                            <ThemeSwitcher />
+                            <LanguageSwitcher />
+                        </div>
                         <button
                             onClick={() => setIsContactOpen(true)}
-                            className="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all border border-white/5 hover:border-white/20"
+                            className="bg-primary/10 hover:bg-primary/20 text-foreground px-4 py-2 rounded-lg text-sm font-medium transition-all border border-input hover:border-accent/50"
                         >
                             {t('contact')}
                         </button>
                     </div>
                     <button
-                        className="md:hidden text-gray-300 hover:text-white"
+                        className="md:hidden text-muted-foreground hover:text-foreground"
                         onClick={() => setIsOpen(!isOpen)}
                     >
                         {isOpen ? <X /> : <Menu />}
@@ -76,21 +80,21 @@ export function Navbar() {
                     <motion.div
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="absolute top-20 left-6 right-6 glass-nav rounded-2xl p-4 md:hidden flex flex-col gap-4 bg-black/90 backdrop-blur-xl border border-white/10"
+                        className="absolute top-20 left-6 right-6 glass-nav rounded-2xl p-4 md:hidden flex flex-col gap-4 bg-background/90 backdrop-blur-xl border border-border/50"
                     >
                         {navItems.map((item) => (
                             <Link
                                 key={item.name}
                                 href={item.href}
-                                className="flex items-center gap-3 text-gray-300 hover:text-white p-2 hover:bg-white/5 rounded-lg transition-colors"
+                                className="flex items-center gap-3 text-muted-foreground hover:text-foreground p-2 hover:bg-secondary/50 rounded-lg transition-colors"
                                 onClick={() => setIsOpen(false)}
                             >
                                 <item.icon className="w-5 h-5" />
                                 {item.name}
                             </Link>
                         ))}
-                        <div className="pt-2 border-t border-white/10 flex justify-between items-center">
-                            <span className="text-sm text-gray-400">Language</span>
+                        <div className="pt-2 border-t border-border/50 flex justify-between items-center">
+                            <span className="text-sm text-muted-foreground">Language</span>
                             <LanguageSwitcher />
                         </div>
                     </motion.div>

@@ -23,13 +23,13 @@ const TechRow = ({ items, speed = 40, reverse = false }: { items: typeof fronten
                             >
                                 {/* Gradient border wrapper */}
                                 <div className="p-[1px] rounded-xl bg-gradient-to-r from-purple-400/20 via-blue-400/20 to-cyan-400/20 group-hover:from-purple-400/50 group-hover:via-blue-400/50 group-hover:to-cyan-400/50 transition-all duration-300">
-                                    <div className="flex items-center gap-3 px-5 py-2.5 rounded-xl bg-black/60 backdrop-blur-md text-gray-200 font-medium group-hover:bg-black/40 transition-all cursor-default">
+                                    <div className="flex items-center gap-3 px-5 py-2.5 rounded-xl bg-card/60 backdrop-blur-md text-muted-foreground font-medium group-hover:bg-card/40 transition-all cursor-default">
                                         <img
                                             src={`https://cdn.simpleicons.org/${item.icon}/white`}
                                             alt={item.name}
-                                            className="w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity"
+                                            className="w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity dark:invert-0 invert"
                                         />
-                                        <span className="text-sm pr-4 group-hover:text-white transition-colors">{item.name}</span>
+                                        <span className="text-sm pr-4 group-hover:text-foreground transition-colors">{item.name}</span>
                                     </div>
                                 </div>
                             </div>
@@ -49,10 +49,10 @@ export function TechStackCarousel() {
         <section id="tech-stack" className="py-24 relative overflow-hidden">
 
             <div className="max-w-7xl mx-auto px-6 mb-12 text-center relative z-10">
-                <h2 className="text-3xl text-white md:text-5xl font-bold mb-6">
+                <h2 className="text-3xl text-foreground md:text-5xl font-bold mb-6">
                     {t("titlePrefix")} <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_200%]">{t("titleSuffix")}</span>
                 </h2>
-                <p className="text-gray-200 max-w-2xl mx-auto">
+                <p className="text-muted-foreground max-w-2xl mx-auto">
                     {t("description")}
                 </p>
             </div>

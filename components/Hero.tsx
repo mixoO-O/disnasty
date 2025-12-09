@@ -83,7 +83,7 @@ export function Hero() {
                     transition={{ duration: 0.8 }}
                     className="text-center max-w-4xl mx-auto"
                 >
-                    <h1 className="text-4xl text-white md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
+                    <h1 className="text-4xl text-foreground md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
                         {t('titlePrefix')} <br />
                         <span className="block min-h-[1.2em]">
                             <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_200%]">
@@ -93,7 +93,7 @@ export function Hero() {
                         </span>
                     </h1>
 
-                    <p className="text-xl text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
                         {t('description')}
                     </p>
 

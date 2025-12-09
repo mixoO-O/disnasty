@@ -13,7 +13,7 @@ export function Footer() {
 
     return (
         <footer className="relative z-10 md:py-12">
-            <div className="relative overflow-hidden w-full md:max-w-7xl md:mx-auto md:rounded-3xl md:border md:border-white/10  bg-black/40 backdrop-blur-xl border-t border-white/10">
+            <div className="relative overflow-hidden w-full md:max-w-7xl md:mx-auto md:rounded-3xl md:border md:border-border/50 bg-background/40 backdrop-blur-xl border-t border-border/50 transition-colors duration-300">
 
                 {/* Top Gradient Border (Mobile only/Adjusted for card) */}
                 <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
@@ -39,7 +39,7 @@ export function Footer() {
                                     </span>
                                 </div>
                             </Link>
-                            <p className="text-gray-300 max-w-md text-center md:text-left text-lg leading-relaxed">
+                            <p className="text-muted-foreground max-w-md text-center md:text-left text-lg leading-relaxed">
                                 {t('description')}
                             </p>
                         </div>
@@ -52,7 +52,7 @@ export function Footer() {
                                     setCopied(true);
                                     setTimeout(() => setCopied(false), 2000);
                                 }}
-                                className="group relative flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-white/10 transition-all duration-300 cursor-pointer overflow-hidden"
+                                className="group relative flex items-center gap-3 px-6 py-3 rounded-full bg-secondary/50 border border-border/50 hover:border-primary/50 hover:bg-secondary transition-all duration-300 cursor-pointer overflow-hidden"
                             >
                                 <div className="p-2 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors relative">
                                     <AnimatePresence mode="wait">
@@ -72,7 +72,7 @@ export function Footer() {
                                                 animate={{ scale: 1 }}
                                                 exit={{ scale: 0 }}
                                             >
-                                                <Mail className="w-5 h-5 text-white" />
+                                                <Mail className="w-5 h-5 text-foreground" />
                                             </motion.div>
                                         )}
                                     </AnimatePresence>
@@ -95,7 +95,7 @@ export function Footer() {
                                                 initial={{ y: 20, opacity: 0 }}
                                                 animate={{ y: 0, opacity: 1 }}
                                                 exit={{ y: -20, opacity: 0 }}
-                                                className="text-gray-200 group-hover:text-white font-medium absolute left-0"
+                                                className="text-muted-foreground group-hover:text-foreground font-medium absolute left-0"
                                             >
                                                 mrojas@disnasty.com
                                             </motion.span>
@@ -113,7 +113,7 @@ export function Footer() {
                                     <Link
                                         key={index}
                                         href={social.href}
-                                        className={`w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 transition-all duration-300 hover:scale-110 hover:-translate-y-1 ${social.color} ${social.bg} ${social.border}`}
+                                        className={`w-12 h-12 rounded-xl bg-secondary/50 border border-border/50 flex items-center justify-center text-muted-foreground transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:text-foreground ${social.color} ${social.bg} ${social.border}`}
                                     >
                                         <social.icon className="w-5 h-5" />
                                     </Link>
@@ -123,9 +123,9 @@ export function Footer() {
                     </div>
 
                     {/* Copyright */}
-                    <div className="pt-8 border-t border-white/5 text-center">
-                        <p className="text-sm text-gray-400">
-                            © {new Date().getFullYear()} Disnasty Tech. <span className="text-gray-500 mx-2">|</span> {t('rights')}
+                    <div className="pt-8 border-t border-border/50 text-center">
+                        <p className="text-sm text-muted-foreground">
+                            © {new Date().getFullYear()} Disnasty Tech. <span className="text-muted-foreground/50 mx-2">|</span> {t('rights')}
                         </p>
                     </div>
                 </div>

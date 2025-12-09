@@ -34,18 +34,18 @@ export function WebAppProcess() {
 
     return (
         <section id="web-app" className="relative">
-            <div className="max-w-7xl mx-auto px-6 ">
+            <div className="max-w-7xl mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className={`sticky top-20 z-30 bg-background/80 backdrop-blur-xl py-10 text-center rounded-3xl border border-white/10 ${activeStep === steps[0].id ? "mb-24" : "mb-[50vh]"
+                    className={`sticky top-20 z-30 bg-background/80 backdrop-blur-xl py-10 text-center rounded-3xl border border-border/50 ${activeStep === steps[0].id ? "mb-24" : "mb-[50vh]"
                         }`}
                 >
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent  bg-gradient-to-r from-white to-white/80">
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
                         {t("title")}
                     </h2>
-                    <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                         {t("description")}
                     </p>
                 </motion.div>
@@ -67,27 +67,27 @@ export function WebAppProcess() {
                                     initial={{ opacity: 0, x: -50 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true, margin: "-20%" }}
-                                    className={`bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl lg:bg-transparent lg:backdrop-blur-none lg:border-none lg:p-0 ${index !== 0 && index !== steps.length - 1 ? "lg:pt-64" : ""
+                                    className={`bg-card/40 backdrop-blur-md border border-border/50 p-8 rounded-3xl lg:bg-transparent lg:backdrop-blur-none lg:border-none lg:p-0 ${index !== 0 && index !== steps.length - 1 ? "lg:pt-64" : ""
                                         }`}
                                 >
                                     <div className="lg:hidden mb-6">
                                         <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${step.gradient} p-0.5`}>
-                                            <div className="w-full h-full bg-black rounded-2xl flex items-center justify-center">
-                                                <step.icon className="w-8 h-8 text-white" />
+                                            <div className="w-full h-full bg-background rounded-2xl flex items-center justify-center">
+                                                <step.icon className="w-8 h-8 text-foreground" />
                                             </div>
                                         </div>
                                     </div>
                                     <h3 className={`text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${step.gradient} mb-6`}>
                                         {t(`steps.${step.id}.title`)}
                                     </h3>
-                                    <p className="text-lg text-gray-300 leading-relaxed mb-8">
+                                    <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                                         {t(`steps.${step.id}.description`)}
                                     </p>
                                     <div className="lg:hidden flex flex-wrap gap-2">
                                         {Array.from({ length: 4 }).map((_, i) => (
                                             <span
                                                 key={i}
-                                                className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300"
+                                                className="px-3 py-1 rounded-full bg-secondary/50 border border-border/50 text-sm text-muted-foreground"
                                             >
                                                 {t(`steps.${step.id}.tools.${i}`)}
                                             </span>
@@ -100,7 +100,7 @@ export function WebAppProcess() {
 
                     {/* Sticky Graphics Section - Desktop */}
                     <div className="hidden lg:block sticky top-96 h-[500px] w-1/2 ml-auto z-10">
-                        <div className="relative w-full h-full bg-gradient-to-br from-gray-900 to-black rounded-3xl border border-white/10 overflow-hidden shadow-2xl backdrop-blur-xl">
+                        <div className="relative w-full h-full bg-card/90 dark:bg-card/40 rounded-3xl border border-border/50 overflow-hidden shadow-2xl backdrop-blur-xl">
                             <AnimatePresence mode="wait">
                                 {steps.map((step) => (
                                     activeStep === step.id && (
@@ -115,16 +115,16 @@ export function WebAppProcess() {
                                             <div className={`absolute inset-0 bg-gradient-to-br ${step.gradient} opacity-10 blur-3xl`} />
                                             <div className="relative z-10 text-center">
                                                 <div className={`w-24 h-24 mx-auto mb-8 rounded-3xl bg-gradient-to-br ${step.gradient} p-0.5`}>
-                                                    <div className="w-full h-full bg-black rounded-3xl flex items-center justify-center">
-                                                        <step.icon className="w-12 h-12 text-white" />
+                                                    <div className="w-full h-full bg-background rounded-3xl flex items-center justify-center">
+                                                        <step.icon className="w-12 h-12 text-foreground" />
                                                     </div>
                                                 </div>
-                                                <h3 className="text-3xl font-bold text-white mb-4">{t(`steps.${step.id}.title`)}</h3>
+                                                <h3 className="text-3xl font-bold text-foreground mb-4">{t(`steps.${step.id}.title`)}</h3>
                                                 <div className="flex flex-wrap justify-center gap-2 mt-8">
                                                     {Array.from({ length: 4 }).map((_, i) => (
                                                         <span
                                                             key={i}
-                                                            className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300"
+                                                            className="px-3 py-1 rounded-full bg-secondary/50 border border-border/50 text-sm text-muted-foreground"
                                                         >
                                                             {t(`steps.${step.id}.tools.${i}`)}
                                                         </span>

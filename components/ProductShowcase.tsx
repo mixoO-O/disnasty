@@ -96,10 +96,10 @@ export function ProductShowcase() {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl text-white md:text-4xl font-bold mb-4 tracking-tight">
+                    <h2 className="text-3xl text-foreground md:text-4xl font-bold mb-4 tracking-tight">
                         {t("title")}
                     </h2>
-                    <p className="text-gray-300 max-w-2xl mx-auto">
+                    <p className="text-muted-foreground max-w-2xl mx-auto">
                         {t("description")}
                     </p>
                 </motion.div>
@@ -136,7 +136,7 @@ export function ProductShowcase() {
                                         damping: 20
                                     }
                                 }}
-                                className={`group relative rounded-2xl overflow-hidden bg-white/5 border border-white/10 backdrop-blur-md ${className} transform-style-3d`}
+                                className={`group relative rounded-2xl overflow-hidden bg-card/40 border border-border/50 backdrop-blur-md ${className} transform-style-3d`}
                             >
                                 {/* Image Background */}
                                 {product.image && (

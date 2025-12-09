@@ -138,10 +138,10 @@ export function MobileAppProcess() {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl text-white md:text-4xl font-bold mb-4">
+                    <h2 className="text-3xl text-foreground md:text-4xl font-bold mb-4">
                         {t("title")}
                     </h2>
-                    <p className="text-gray-200 max-w-2xl mx-auto">
+                    <p className="text-muted-foreground max-w-2xl mx-auto">
                         {t("description")}
                     </p>
                 </motion.div>
@@ -165,7 +165,7 @@ export function MobileAppProcess() {
                                 {/* Card */}
                                 <motion.div
                                     whileHover={{ y: -5 }}
-                                    className="relative h-full bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors duration-300 hover:border-white/20"
+                                    className="relative h-full bg-card/40 backdrop-blur-sm border border-border/50 rounded-2xl p-6 hover:bg-card/60 transition-colors duration-300 hover:border-border"
                                 >
                                     {/* Icon with gradient background */}
                                     <div className="mb-6">
@@ -174,16 +174,16 @@ export function MobileAppProcess() {
                                             className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${step.gradient} p-0.5 transition-transform duration-300`}
                                         >
                                             <div className="w-full h-full bg-background rounded-2xl flex items-center justify-center">
-                                                <Icon className="w-8 h-8 text-white" />
+                                                <Icon className="w-8 h-8 text-foreground" />
                                             </div>
                                         </motion.div>
                                     </div>
 
                                     {/* Content */}
-                                    <h3 className="text-xl font-bold text-white mb-3">
+                                    <h3 className="text-xl font-bold text-foreground mb-3">
                                         {t(`steps.${step.id}.title`)}
                                     </h3>
-                                    <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                                    <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                                         {t(`steps.${step.id}.description`)}
                                     </p>
 
@@ -192,7 +192,7 @@ export function MobileAppProcess() {
                                         {Array.from({ length: 6 }).map((_, i) => (
                                             <span
                                                 key={i}
-                                                className={`text-xs px-3 py-1 rounded-full bg-gradient-to-r ${step.gradient} bg-opacity-20 text-white/80 border border-white/10`}
+                                                className={`text-xs px-3 py-1 rounded-full bg-gradient-to-r ${step.gradient} bg-opacity-20 text-muted-foreground border border-border/50`}
                                             >
                                                 {t(`steps.${step.id}.tools.${i}`)}
                                             </span>
@@ -232,7 +232,7 @@ export function MobileAppProcess() {
                     transition={{ delay: 0.8 }}
                     className="mt-16 text-center"
                 >
-                    <p className="text-gray-300 text-lg">
+                    <p className="text-muted-foreground text-lg">
                         {t("cta")}
                     </p>
                 </motion.div>
