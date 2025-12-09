@@ -42,7 +42,7 @@ export function CloudArchitecture() {
                 whileTap={{ scale: 0.95 }}
                 className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-${color}-400/30 to-${color}-600/30 border border-${color}-400/50 backdrop-blur-md flex items-center justify-center shadow-[0_0_20px_rgba(var(--${color}-500),0.3)] group-hover:shadow-[0_0_40px_rgba(var(--${color}-500),0.6)] group-hover:border-${color}-300 transition-all duration-300 cursor-pointer`}
             >
-                <Icon className={`w-8 h-8 md:w-10 md:h-10 text-white drop-shadow-[0_0_5px_rgba(255,255,255,0.5)] transition-colors`} />
+                <Icon className={`w-8 h-8 md:w-10 md:h-10 text-foreground dark:drop-shadow-[0_0_5px_rgba(255,255,255,0.5)] transition-colors`} />
             </motion.div>
 
             <motion.div
@@ -51,11 +51,11 @@ export function CloudArchitecture() {
                 transition={{ delay: delay + 0.2 }}
                 className="mt-4 flex flex-col items-center"
             >
-                <span className="text-sm md:text-base font-bold text-white bg-black/80 px-4 py-1.5 rounded-full border border-white/20 backdrop-blur-sm whitespace-nowrap shadow-lg group-hover:border-white/40 transition-colors">
+                <span className="text-sm md:text-base font-bold text-foreground bg-card/80 px-4 py-1.5 rounded-full border border-border/50 backdrop-blur-sm whitespace-nowrap shadow-lg group-hover:border-border transition-colors">
                     {label}
                 </span>
                 {subLabel && (
-                    <span className="text-xs text-gray-300 mt-1.5 font-medium tracking-wide">{subLabel}</span>
+                    <span className="text-xs text-muted-foreground mt-1.5 font-medium tracking-wide">{subLabel}</span>
                 )}
             </motion.div>
         </motion.div>
@@ -63,7 +63,7 @@ export function CloudArchitecture() {
 
     // Straight Connection
     const ConnectionLine = ({ delay = 0, duration = 2 }: { delay?: number, duration?: number }) => (
-        <div className="hidden md:flex flex-1 h-[2px] bg-white/10 relative mx-2 self-center rounded-full overflow-hidden min-w-[50px]">
+        <div className="hidden md:flex flex-1 h-[2px] bg-border/50 relative mx-2 self-center rounded-full overflow-hidden min-w-[50px]">
             <motion.div
                 animate={{ x: ["-100%", "100%"] }}
                 transition={{ duration: duration, repeat: Infinity, ease: "linear", delay }}
@@ -76,7 +76,7 @@ export function CloudArchitecture() {
     const Splitter = ({ delay = 0 }: { delay?: number }) => (
         <div className="hidden md:flex flex-col justify-center items-center w-24 mx-2 relative h-36">
             {/* Horizontal Entry (Center) */}
-            <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1/2 h-[2px] bg-white/10">
+            <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1/2 h-[2px] bg-border/50">
                 <motion.div
                     animate={{ x: ["-100%", "100%"] }}
                     transition={{ duration: 2, repeat: Infinity, ease: "linear", delay }}
@@ -85,7 +85,7 @@ export function CloudArchitecture() {
             </div>
 
             {/* Vertical Split Line (Spans exactly the distance between node centers: 144px) */}
-            <div className="absolute left-1/2 -translate-x-1/2 top-0 h-full w-[2px] bg-white/10">
+            <div className="absolute left-1/2 -translate-x-1/2 top-0 h-full w-[2px] bg-border/50">
                 <motion.div
                     animate={{ y: ["-100%", "100%"], opacity: [0, 1, 0] }}
                     transition={{ duration: 2, repeat: Infinity, ease: "linear", delay: delay + 0.5 }}
@@ -94,8 +94,8 @@ export function CloudArchitecture() {
             </div>
 
             {/* Horizontal Exits (Top & Bottom) */}
-            <div className="absolute right-0 top-0 w-1/2 h-[2px] bg-white/10" />
-            <div className="absolute right-0 bottom-0 w-1/2 h-[2px] bg-white/10" />
+            <div className="absolute right-0 top-0 w-1/2 h-[2px] bg-border/50" />
+            <div className="absolute right-0 bottom-0 w-1/2 h-[2px] bg-border/50" />
         </div>
     );
 
@@ -103,11 +103,11 @@ export function CloudArchitecture() {
     const Merger = ({ delay = 0 }: { delay?: number }) => (
         <div className="hidden md:flex flex-col justify-center items-center w-24 mx-2 relative h-36">
             {/* Horizontal Entries (Top & Bottom) */}
-            <div className="absolute left-0 top-0 w-1/2 h-[2px] bg-white/10" />
-            <div className="absolute left-0 bottom-0 w-1/2 h-[2px] bg-white/10" />
+            <div className="absolute left-0 top-0 w-1/2 h-[2px] bg-border/50" />
+            <div className="absolute left-0 bottom-0 w-1/2 h-[2px] bg-border/50" />
 
             {/* Vertical Merge Line */}
-            <div className="absolute left-1/2 -translate-x-1/2 top-0 h-full w-[2px] bg-white/10">
+            <div className="absolute left-1/2 -translate-x-1/2 top-0 h-full w-[2px] bg-border/50">
                 <motion.div
                     animate={{ y: ["-100%", "100%"], opacity: [0, 1, 0] }}
                     transition={{ duration: 2, repeat: Infinity, ease: "linear", delay: delay + 0.5 }}
@@ -116,7 +116,7 @@ export function CloudArchitecture() {
             </div>
 
             {/* Horizontal Exit (Center) */}
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-[2px] bg-white/10">
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-[2px] bg-border/50">
                 <motion.div
                     animate={{ x: ["-100%", "100%"] }}
                     transition={{ duration: 2, repeat: Infinity, ease: "linear", delay: delay + 1 }}
@@ -129,7 +129,7 @@ export function CloudArchitecture() {
     // Vertical Connection for Mobile
     const VerticalConnection = ({ delay = 0 }: { delay?: number }) => (
         <div className="md:hidden flex flex-col items-center h-16 w-full relative">
-            <div className="w-[2px] h-full bg-white/10 relative overflow-hidden">
+            <div className="w-[2px] h-full bg-border/50 relative overflow-hidden">
                 <motion.div
                     animate={{ y: ["-100%", "100%"] }}
                     transition={{ duration: 2, repeat: Infinity, ease: "linear", delay }}
@@ -157,7 +157,7 @@ export function CloudArchitecture() {
                     <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 mb-6">
                         {t("title")}
                     </h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+                    <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
                         {t("description")}
                     </p>
                 </motion.div>

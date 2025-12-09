@@ -27,7 +27,7 @@ export function InnovationHub() {
                     viewport={{ once: true }}
                     className="text-center mb-20"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-400">
+                    <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
                         {t('title')}
                     </h2>
                 </motion.div>
@@ -46,25 +46,25 @@ export function InnovationHub() {
                             <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 opacity-20 group-hover:opacity-40 transition-opacity duration-500 blur-sm" />
 
                             {/* Main Card Content */}
-                            <div className="relative h-full p-[1px] rounded-2xl bg-gradient-to-r from-white/10 to-white/5 overflow-hidden">
-                                <div className="h-full bg-black/40 backdrop-blur-xl rounded-2xl p-8 flex flex-col relative z-10">
+                            <div className="relative h-full p-[1px] rounded-2xl bg-gradient-to-r from-card/40 to-card/20 overflow-hidden">
+                                <div className="h-full bg-card/80 backdrop-blur-xl rounded-2xl p-8 flex flex-col relative z-10">
 
                                     <div className="flex justify-between items-start mb-6">
-                                        <h3 className="text-2xl font-bold text-white transition-colors">
+                                        <h3 className="text-2xl font-bold text-foreground transition-colors">
                                             {t(`items.${index}.client`)}
                                         </h3>
-                                        <span className="text-xs px-3 py-1 rounded-full bg-white/10 text-gray-300 border border-white/5">
+                                        <span className="text-xs px-3 py-1 rounded-full bg-secondary/50 text-muted-foreground border border-border/50">
                                             {t(`items.${index}.location`)}
                                         </span>
                                     </div>
 
-                                    <p className="text-lg text-gray-200 mb-8 leading-relaxed">
+                                    <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
                                         {t(`items.${index}.desc`)}
                                     </p>
 
                                     <div className="flex gap-2 flex-wrap mt-auto">
                                         {t(`items.${index}.tags`).split(', ').map(tag => (
-                                            <span key={tag} className="text-xs text-white bg-primary/10 px-2 py-1 rounded-md ">
+                                            <span key={tag} className="text-xs text-foreground bg-primary/20 px-2 py-1 rounded-md ">
                                                 {tag}
                                             </span>
                                         ))}

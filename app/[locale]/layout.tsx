@@ -46,17 +46,17 @@ export default async function LocaleLayout({
     const messages = await getMessages();
 
     return (
-        <html lang={locale} className="dark bg-black">
-            <body className={`${inter.className} bg-black`}>
-                {/* Global Background */}
-                <div className="fixed inset-0 bg-black/90 -z-50" />
-                <div className="fixed inset-0 overflow-hidden -z-40 pointer-events-none">
-                    <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-purple-500/10 rounded-full blur-[120px]" />
-                    <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-blue-500/10 rounded-full blur-[120px]" />
-                    <div className="absolute top-[40%] left-[40%] w-[30%] h-[30%] bg-primary/5 rounded-full blur-[100px]" />
-                </div>
-
+        <html lang={locale} suppressHydrationWarning>
+            <body className={`${inter.className} min-h-screen bg-background text-foreground antialiased`}>
                 <Providers messages={messages} locale={locale}>
+                    {/* Global Background */}
+                    <div className="fixed inset-0 bg-background -z-50 transition-colors duration-300" />
+                    <div className="fixed inset-0 overflow-hidden -z-40 pointer-events-none">
+                        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-purple-500/10 dark:bg-purple-500/20 rounded-full blur-[120px]" />
+                        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-blue-500/10 dark:bg-blue-500/20 rounded-full blur-[120px]" />
+                        <div className="absolute top-[40%] left-[40%] w-[30%] h-[30%] bg-primary/5 dark:bg-primary/10 rounded-full blur-[100px]" />
+                    </div>
+
                     {children}
                 </Providers>
             </body>

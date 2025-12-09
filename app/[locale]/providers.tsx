@@ -1,6 +1,7 @@
 "use client";
 
 import { NextIntlClientProvider, AbstractIntlMessages } from 'next-intl';
+import { ThemeProvider } from 'next-themes';
 
 export function Providers({
     messages,
@@ -13,7 +14,9 @@ export function Providers({
 }) {
     return (
         <NextIntlClientProvider messages={messages} locale={locale} timeZone="America/New_York">
-            {children}
+            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+                {children}
+            </ThemeProvider>
         </NextIntlClientProvider>
     );
 }
