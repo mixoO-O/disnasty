@@ -27,6 +27,173 @@ const processSteps = [
     },
 ];
 
+function PhoneContent({ duration = 20 }: { duration?: number }) {
+    return (
+        <div className="relative w-full h-full bg-background rounded-[3rem] border-[8px] border-background border-cyan-700 shadow-2xl overflow-hidden ring-1 ring-background/50">
+            {/* Notch */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-background rounded-b-xl z-20 border-b border-x border-background/50" />
+
+            {/* Screen Content */}
+            <div className="relative w-full h-full bg-background overflow-hidden">
+                <motion.div
+                    animate={{ y: ["0%", "-50%"] }}
+                    transition={{
+                        duration: duration,
+                        repeat: Infinity,
+                        ease: "linear",
+                    }}
+                    className="w-full flex flex-col"
+                >
+                    {/* First Copy */}
+                    <div className="w-full pb-8">
+                        {/* Screen 1: Dashboard */}
+                        <div className="p-4 space-y-4 opacity-40">
+                            <div className="flex justify-between items-center">
+                                <div className="w-8 h-8 rounded-full border-2 border-foreground/20" />
+                                <div className="w-24 h-4 bg-muted-foreground/20 rounded" />
+                                <div className="w-6 h-6 border-2 border-foreground/20 rounded" />
+                            </div>
+                            <div className="w-full aspect-video border-2 border-foreground/20 relative bg-background/40">
+                                <svg className="absolute inset-0 w-full h-full text-foreground/20" preserveAspectRatio="none">
+                                    <line x1="0" y1="0" x2="100%" y2="100%" stroke="currentColor" strokeWidth="1" />
+                                    <line x1="100%" y1="0" x2="0" y2="100%" stroke="currentColor" strokeWidth="1" />
+                                </svg>
+                            </div>
+                            <div className="grid grid-cols-2 gap-3">
+                                <div className="aspect-square border-2 border-foreground/20 relative bg-background/40">
+                                    <svg className="absolute inset-0 w-full h-full text-foreground/20" preserveAspectRatio="none">
+                                        <line x1="0" y1="0" x2="100%" y2="100%" stroke="currentColor" strokeWidth="1" />
+                                        <line x1="100%" y1="0" x2="0" y2="100%" stroke="currentColor" strokeWidth="1" />
+                                    </svg>
+                                </div>
+                                <div className="space-y-2 py-2">
+                                    <div className="h-2 w-full bg-muted-foreground/20 rounded" />
+                                    <div className="h-2 w-2/3 bg-muted-foreground/20 rounded" />
+                                    <div className="h-2 w-3/4 bg-muted-foreground/20 rounded" />
+                                    <div className="h-2 w-1/2 bg-muted-foreground/20 rounded" />
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Screen 2: Feed */}
+                        <div className="p-4 space-y-4 opacity-40">
+                            <div className="w-1/3 h-6 bg-muted-foreground/20 rounded mb-6" />
+                            {[1, 2, 3].map((i) => (
+                                <div key={i} className="flex gap-3">
+                                    <div className="w-12 h-12 border-2 border-foreground/20 shrink-0 relative bg-background/40">
+                                        <svg className="absolute inset-0 w-full h-full text-foreground/20" preserveAspectRatio="none">
+                                            <line x1="0" y1="0" x2="100%" y2="100%" stroke="currentColor" strokeWidth="1" />
+                                            <line x1="100%" y1="0" x2="0" y2="100%" stroke="currentColor" strokeWidth="1" />
+                                        </svg>
+                                    </div>
+                                    <div className="space-y-2 flex-1 pt-1">
+                                        <div className="h-2 w-full bg-muted-foreground/20 rounded" />
+                                        <div className="h-2 w-2/3 bg-muted-foreground/20 rounded" />
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Screen 3: Details */}
+                        <div className="p-4 space-y-4 opacity-40">
+                            <div className="w-full aspect-square border-2 border-foreground/20 rounded relative bg-background/40">
+                                <svg className="absolute inset-0 w-full h-full text-foreground/20" preserveAspectRatio="none">
+                                    <line x1="0" y1="0" x2="100%" y2="100%" stroke="currentColor" strokeWidth="1" />
+                                    <line x1="100%" y1="0" x2="0" y2="100%" stroke="currentColor" strokeWidth="1" />
+                                </svg>
+                            </div>
+                            <div className="space-y-3">
+                                <div className="h-4 w-3/4 bg-muted-foreground/20 rounded" />
+                                <div className="h-2 w-full bg-muted-foreground/20 rounded" />
+                                <div className="h-2 w-full bg-muted-foreground/20 rounded" />
+                                <div className="h-2 w-5/6 bg-muted-foreground/20 rounded" />
+                            </div>
+                            <div className="flex gap-2 mt-4">
+                                <div className="h-8 w-24 border-2 border-foreground/20 rounded" />
+                                <div className="h-8 w-8 border-2 border-foreground/20 rounded-full" />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Second Copy (Duplicate for seamless loop) */}
+                    <div className="w-full pb-8">
+                        {/* Screen 1: Dashboard */}
+                        <div className="p-4 space-y-4 opacity-40">
+                            <div className="flex justify-between items-center">
+                                <div className="w-8 h-8 rounded-full border-2 border-foreground/20" />
+                                <div className="w-24 h-4 bg-muted-foreground/20 rounded" />
+                                <div className="w-6 h-6 border-2 border-foreground/20 rounded" />
+                            </div>
+                            <div className="w-full aspect-video border-2 border-foreground/20 relative bg-background/40">
+                                <svg className="absolute inset-0 w-full h-full text-foreground/20" preserveAspectRatio="none">
+                                    <line x1="0" y1="0" x2="100%" y2="100%" stroke="currentColor" strokeWidth="1" />
+                                    <line x1="100%" y1="0" x2="0" y2="100%" stroke="currentColor" strokeWidth="1" />
+                                </svg>
+                            </div>
+                            <div className="grid grid-cols-2 gap-3">
+                                <div className="aspect-square border-2 border-foreground/20 relative bg-background/40">
+                                    <svg className="absolute inset-0 w-full h-full text-foreground/20" preserveAspectRatio="none">
+                                        <line x1="0" y1="0" x2="100%" y2="100%" stroke="currentColor" strokeWidth="1" />
+                                        <line x1="100%" y1="0" x2="0" y2="100%" stroke="currentColor" strokeWidth="1" />
+                                    </svg>
+                                </div>
+                                <div className="space-y-2 py-2">
+                                    <div className="h-2 w-full bg-muted-foreground/20 rounded" />
+                                    <div className="h-2 w-2/3 bg-muted-foreground/20 rounded" />
+                                    <div className="h-2 w-3/4 bg-muted-foreground/20 rounded" />
+                                    <div className="h-2 w-1/2 bg-muted-foreground/20 rounded" />
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Screen 2: Feed */}
+                        <div className="p-4 space-y-4 opacity-40">
+                            <div className="w-1/3 h-6 bg-muted-foreground/20 rounded mb-6" />
+                            {[1, 2, 3].map((i) => (
+                                <div key={i} className="flex gap-3">
+                                    <div className="w-12 h-12 border-2 border-foreground/20 shrink-0 relative bg-background/40">
+                                        <svg className="absolute inset-0 w-full h-full text-foreground/20" preserveAspectRatio="none">
+                                            <line x1="0" y1="0" x2="100%" y2="100%" stroke="currentColor" strokeWidth="1" />
+                                            <line x1="100%" y1="0" x2="0" y2="100%" stroke="currentColor" strokeWidth="1" />
+                                        </svg>
+                                    </div>
+                                    <div className="space-y-2 flex-1 pt-1">
+                                        <div className="h-2 w-full bg-muted-foreground/20 rounded" />
+                                        <div className="h-2 w-2/3 bg-muted-foreground/20 rounded" />
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Screen 3: Details */}
+                        <div className="p-4 space-y-4 opacity-40">
+                            <div className="w-full aspect-square border-2 border-foreground/20 rounded relative bg-background/40">
+                                <svg className="absolute inset-0 w-full h-full text-foreground/20" preserveAspectRatio="none">
+                                    <line x1="0" y1="0" x2="100%" y2="100%" stroke="currentColor" strokeWidth="1" />
+                                    <line x1="100%" y1="0" x2="0" y2="100%" stroke="currentColor" strokeWidth="1" />
+                                </svg>
+                            </div>
+                            <div className="space-y-3">
+                                <div className="h-4 w-3/4 bg-muted-foreground/20 rounded" />
+                                <div className="h-2 w-full bg-muted-foreground/20 rounded" />
+                                <div className="h-2 w-full bg-muted-foreground/20 rounded" />
+                                <div className="h-2 w-5/6 bg-muted-foreground/20 rounded" />
+                            </div>
+                            <div className="flex gap-2 mt-4">
+                                <div className="h-8 w-24 border-2 border-foreground/20 rounded" />
+                                <div className="h-8 w-8 border-2 border-foreground/20 rounded-full" />
+                            </div>
+                        </div>
+                    </div>
+                </motion.div>
+
+                {/* Gradient Overlay to fade edges */}
+                <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background pointer-events-none" />
+            </div>
+        </div>
+    );
+}
+
 export function MobileAppProcess() {
     const t = useTranslations("MobileAppProcess");
 
@@ -54,83 +221,44 @@ export function MobileAppProcess() {
 
     return (
         <section id="mobile-app" className="py-20 px-6 relative overflow-hidden">
-            {/* Background gradient effects */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
-
-            {/* Animated background blobs */}
-            <motion.div
-                animate={{
-                    scale: [1, 1.2, 1],
-                    opacity: [0.1, 0.2, 0.1],
-                }}
-                transition={{
-                    duration: 8,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                }}
-                className="absolute top-20 left-10 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl -z-10"
-            />
-            <motion.div
-                animate={{
-                    scale: [1, 1.1, 1],
-                    opacity: [0.1, 0.2, 0.1],
-                }}
-                transition={{
-                    duration: 10,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 1
-                }}
-                className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl -z-10"
-            />
-
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Phone Background Animation */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1 }}
-                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[600px] -z-10 hidden md:block"
-                >
-                    {/* Phone Frame */}
-                    <div className="relative w-full h-full bg-black rounded-[3rem] border-[8px] border-gray-800 shadow-2xl overflow-hidden">
-                        {/* Notch */}
-                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-black rounded-b-xl z-20" />
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[600px] -z-10 hidden md:block">
+                    {/* Left Phone */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -100 }}
+                        whileInView={{ opacity: 0.3, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className="absolute left-80 top-10 -translate-x-full -translate-y-1/2 w-[260px] h-[520px] origin-right -rotate-6"
+                    >
+                        <PhoneContent duration={25} />
+                    </motion.div>
 
-                        {/* Screen Content */}
-                        <div className="relative w-full h-full bg-gray-900 overflow-hidden">
-                            <motion.div
-                                animate={{ y: [0, -1000] }}
-                                transition={{
-                                    duration: 20,
-                                    repeat: Infinity,
-                                    ease: "linear",
-                                    repeatType: "loop"
-                                }}
-                                className="w-full"
-                            >
-                                {/* Repeating the image to create seamless loop */}
-                                <img
-                                    src="/tech-app-mock.png"
-                                    alt="App Mock"
-                                    className="w-full h-auto opacity-50"
-                                />
-                                <img
-                                    src="/tech-app-mock.png"
-                                    alt="App Mock"
-                                    className="w-full h-auto opacity-50"
-                                />
-                            </motion.div>
+                    {/* Center Phone */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="relative w-full h-full z-10"
+                    >
+                        <PhoneContent duration={20} />
+                        {/* Glow Effect behind main phone */}
+                        <div className="absolute inset-0 bg-primary/20 blur-3xl -z-10 rounded-full" />
+                    </motion.div>
 
-                            {/* Gradient Overlay to fade edges */}
-                            <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/80 pointer-events-none" />
-                        </div>
-                    </div>
-
-                    {/* Glow Effect behind phone */}
-                    <div className="absolute inset-0 bg-primary/20 blur-3xl -z-10 rounded-full" />
-                </motion.div>
+                    {/* Right Phone */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 100 }}
+                        whileInView={{ opacity: 0.3, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className="absolute right-80 top-10 translate-x-full -translate-y-1/2 w-[260px] h-[520px] origin-left rotate-6"
+                    >
+                        <PhoneContent duration={28} />
+                    </motion.div>
+                </div>
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -230,7 +358,7 @@ export function MobileAppProcess() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.8 }}
-                    className="mt-16 text-center"
+                    className="mt-28 text-center"
                 >
                     <p className="text-muted-foreground text-lg">
                         {t("cta")}

@@ -8,9 +8,12 @@ import { motion } from "framer-motion";
 export function ThemeSwitcher() {
     const [mounted, setMounted] = useState(false);
     const { theme, setTheme } = useTheme();
-
+    console.log('theme', theme);
     useEffect(() => {
         setMounted(true);
+        if (theme === 'system') {
+            setTheme('dark');
+        }
     }, []);
 
     if (!mounted) {
@@ -19,7 +22,7 @@ export function ThemeSwitcher() {
 
     return (
         <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
             className="relative w-9 h-9 flex items-center justify-center rounded-lg bg-primary/10 hover:bg-primary/20 transition-colors border border-input hover:border-accent/50 text-muted-foreground hover:text-foreground"
             aria-label="Toggle theme"
         >
