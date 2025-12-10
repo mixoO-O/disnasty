@@ -160,7 +160,7 @@ export function Footer() {
                   },
                   {
                     icon: Instagram,
-                    href: '#',
+                    href: 'https://www.instagram.com/disnasty_tech/',
                     color: 'hover:text-[#E1306C]',
                     bg: 'hover:bg-[#E1306C]/10',
                     border: 'hover:border-[#E1306C]/50',
@@ -169,6 +169,8 @@ export function Footer() {
                   <Link
                     key={index}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`border-border/50 text-muted-foreground flex h-12 w-12 items-center justify-center rounded-xl border bg-secondary/50 transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:text-foreground ${social.color} ${social.bg} ${social.border}`}
                   >
                     <social.icon className="h-5 w-5" />
