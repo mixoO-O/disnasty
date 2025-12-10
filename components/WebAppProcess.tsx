@@ -71,6 +71,7 @@ export function WebAppProcess() {
                     index !== 0 && index !== steps.length - 1 ? 'lg:pt-64' : ''
                   }`}
                 >
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 opacity-20 blur-sm transition-opacity duration-500 group-hover:opacity-40" />
                   <div className="mb-6 lg:hidden">
                     <div
                       className={`h-16 w-16 rounded-2xl bg-gradient-to-br ${step.gradient} p-0.5`}
