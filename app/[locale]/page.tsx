@@ -39,7 +39,6 @@ export default function Home({ params: { locale } }: { params: { locale: string 
                 <ClientCarousel />
             </ScrollReveal> */}
 
-
       {/* <ScrollReveal>
                 <Testimonials />
                 </ScrollReveal> */}
