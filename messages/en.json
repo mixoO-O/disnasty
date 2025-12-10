@@ -17,7 +17,8 @@
     "testimonials": "Testimonials",
     "contact": "Contact Us",
     "ia": "IA",
-    "cloud": "Cloud"
+    "cloud": "Cloud",
+    "services": "Services"
   },
   "Hero": {
     "badge": "Next Gen Innovation",
@@ -162,7 +163,7 @@
         "title": "Planning",
         "description": "We analyze requirements, define scope, and create a strategic roadmap for your mobile application.",
         "tools": {
-         "0": "Jira",
+          "0": "Jira",
           "1": "Trello",
           "2": "Notion",
           "3": "Asana",

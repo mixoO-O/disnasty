@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, Linkedin, Twitter, Instagram, Check } from "lucide-react";
+import { Mail, Linkedin, Twitter, Instagram, Check, Cpu, Code, Cloud, Bot, Zap } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image"; // Added Image import
 import { useTranslations } from 'next-intl';
@@ -10,6 +10,17 @@ import { motion, AnimatePresence } from "framer-motion";
 export function Footer() {
     const t = useTranslations('Footer');
     const [copied, setCopied] = useState(false);
+    const tNav = useTranslations('Navbar');
+
+    const navItems = [
+        { name: tNav('products'), href: "#products", icon: Cpu },
+        { name: tNav('web-app'), href: "#web-app", icon: Code },
+        { name: tNav('mobile-app'), href: "#mobile-app", icon: Cpu },
+        { name: tNav('cloud'), href: "#cloud-architecture", icon: Cloud },
+        { name: tNav('tech-stack'), href: "#tech-stack", icon: Code },
+        { name: tNav('ia'), href: "#ia", icon: Bot },
+        { name: tNav('innovation'), href: "#innovation", icon: Zap },
+    ];
 
     return (
         <footer className="relative z-10 md:py-12">
@@ -22,7 +33,7 @@ export function Footer() {
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-primary/5 rounded-full blur-[100px] pointer-events-none z-0" />
 
                 <div className="relative z-10 px-6 pt-24 pb-12 md:p-12">
-                    <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+                    <div className="grid md:grid-cols-3 gap-12 mb-16">
                         {/* Brand Section */}
                         <div className="flex flex-col items-center md:items-start gap-6">
                             <Link href="/" className="inline-block group">
@@ -42,6 +53,23 @@ export function Footer() {
                             <p className="text-muted-foreground max-w-md text-center md:text-left text-lg leading-relaxed">
                                 {t('description')}
                             </p>
+                        </div>
+
+                        {/* Navigation Links */}
+                        <div className="flex flex-col items-center md:items-start gap-6">
+                            <h3 className="font-semibold text-lg">{tNav('services')}</h3>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+                                {navItems.map((item) => (
+                                    <Link
+                                        key={item.name}
+                                        href={item.href}
+                                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"
+                                    >
+                                        <item.icon className="w-4 h-4 text-primary/50 group-hover:text-primary transition-colors" />
+                                        {item.name}
+                                    </Link>
+                                ))}
+                            </div>
                         </div>
 
                         {/* Contact & Socials */}

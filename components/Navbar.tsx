@@ -3,8 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Menu, X, Zap, Cpu, Network, Bot, Code, Cloud } from "lucide-react";
-import { useState } from "react";
+import { Menu, X, Zap, Cpu, Bot, Code, Cloud, ChevronDown } from "lucide-react";
+import { useState, useEffect } from "react";
 import { ContactModal } from "./ContactModal";
 import { useTranslations } from 'next-intl';
 import { ThemeSwitcher } from "./ThemeSwitcher";
@@ -15,15 +15,31 @@ export function Navbar() {
     const [isContactOpen, setIsContactOpen] = useState(false);
     const t = useTranslations('Navbar');
 
+    useEffect(() => {
+            if (isOpen) {
+                document.body.style.overflow = "hidden";
+            } else {
+                document.body.style.overflow = "unset";
+            }
+            return () => {
+                document.body.style.overflow = "unset";
+            };
+        }, [isOpen]);
+
     const navItems = [
         { name: t('products'), href: "#products", icon: Cpu },
-        { name: t('web-app'), href: "#web-app", icon: Code },
-        { name: t('mobile-app'), href: "#mobile-app", icon: Cpu },
-        { name: t('cloud'), href: "#cloud-architecture", icon: Cloud },
-        // { name: t('clients'), href: "#clients", icon: Network },
+        {
+            name: t('services'),
+            href: "#",
+            icon: Cloud,
+            subItems: [
+                { name: t('web-app'), href: "#web-app", icon: Code },
+                { name: t('mobile-app'), href: "#mobile-app", icon: Cpu },
+                { name: t('cloud'), href: "#cloud-architecture", icon: Cloud },
+                { name: t('ia'), href: "#ia", icon: Bot },
+            ]
+        },
         { name: t('tech-stack'), href: "#tech-stack", icon: Code },
-        // { name: t('testimonials'), href: "#testimonials", icon: Zap },
-        { name: t('ia'), href: "#ia", icon: Bot },
         { name: t('innovation'), href: "#innovation", icon: Zap },
     ];
 
@@ -47,15 +63,39 @@ export function Navbar() {
                     </Link>
                     <div className="hidden md:flex items-center gap-8">
                         {navItems.map((item) => (
-                            <Link
-                                key={item.name}
-                                href={item.href}
-                                className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
-                            >
-                                <item.icon className="w-4 h-4" />
-                                {item.name}
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all group-hover:w-full" />
-                            </Link>
+                            item.subItems ? (
+                                <div key={item.name} className="relative group">
+                                    <button className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors outline-none">
+                                        <item.icon className="w-4 h-4" />
+                                        {item.name}
+                                        <ChevronDown className="w-3 h-3 transition-transform group-hover:rotate-180" />
+                                    </button>
+                                    <div className="absolute top-full -left-4 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                                        <div className="bg-background/90 backdrop-blur-xl border border-border/50 rounded-xl shadow-xl overflow-hidden min-w-[200px] p-2 flex flex-col gap-1">
+                                            {item.subItems.map((subItem) => (
+                                                <Link
+                                                    key={subItem.name}
+                                                    href={subItem.href}
+                                                    className="flex items-center gap-2 px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-colors"
+                                                >
+                                                    <subItem.icon className="w-4 h-4" />
+                                                    {subItem.name}
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            ) : (
+                                <Link
+                                    key={item.name}
+                                    href={item.href}
+                                    className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
+                                >
+                                    <item.icon className="w-4 h-4" />
+                                    {item.name}
+                                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all group-hover:w-full" />
+                                </Link>
+                            )
                         ))}
                         <div className="flex items-center gap-4">
                             <ThemeSwitcher />
@@ -83,15 +123,37 @@ export function Navbar() {
                         className="absolute top-20 left-6 right-6 glass-nav rounded-2xl p-4 md:hidden flex flex-col gap-4 bg-background/90 backdrop-blur-xl border border-border/50"
                     >
                         {navItems.map((item) => (
-                            <Link
-                                key={item.name}
-                                href={item.href}
-                                className="flex items-center gap-3 text-muted-foreground hover:text-foreground p-2 hover:bg-secondary/50 rounded-lg transition-colors"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                <item.icon className="w-5 h-5" />
-                                {item.name}
-                            </Link>
+                            item.subItems ? (
+                                <div key={item.name} className="flex flex-col gap-2">
+                                    <div className="flex items-center gap-3 text-foreground font-medium p-2">
+                                        <item.icon className="w-5 h-5" />
+                                        {item.name}
+                                    </div>
+                                    <div className="pl-6 flex flex-col gap-1 border-l border-border/20 ml-4">
+                                        {item.subItems.map((subItem) => (
+                                            <Link
+                                                key={subItem.name}
+                                                href={subItem.href}
+                                                className="flex items-center gap-3 text-muted-foreground hover:text-foreground p-2 hover:bg-secondary/50 rounded-lg transition-colors"
+                                                onClick={() => setIsOpen(false)}
+                                            >
+                                                <subItem.icon className="w-4 h-4" />
+                                                {subItem.name}
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </div>
+                            ) : (
+                                <Link
+                                    key={item.name}
+                                    href={item.href}
+                                    className="flex items-center gap-3 text-muted-foreground hover:text-foreground p-2 hover:bg-secondary/50 rounded-lg transition-colors"
+                                    onClick={() => setIsOpen(false)}
+                                >
+                                    <item.icon className="w-5 h-5" />
+                                    {item.name}
+                                </Link>
+                            )
                         ))}
                         <div className="pt-2 border-t border-border/50 flex justify-end items-center">
                             <ThemeSwitcher />
