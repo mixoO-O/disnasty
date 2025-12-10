@@ -110,7 +110,7 @@ export function Navbar() {
                         </button>
                     </div>
                     <button
-                        className="md:hidden text-muted-foreground hover:text-foreground"
+                        className="md:hidden text-muted-foreground hover:text-foreground z-10"
                         onClick={() => setIsOpen(!isOpen)}
                     >
                         {isOpen ? <X /> : <Menu />}
