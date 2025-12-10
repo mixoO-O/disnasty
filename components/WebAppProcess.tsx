@@ -39,7 +39,7 @@ export function WebAppProcess() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className={`sticky top-24 z-30 bg-background/80 backdrop-blur-xl py-10 text-center rounded-3xl border border-border/50 ${activeStep === steps[0].id ? "mb-24" : "mb-[50vh]"
+                    className={`sticky top-24 z-30 bg-background/80 backdrop-blur-xl py-10 text-center rounded-3xl  ${activeStep === steps[0].id ? "mb-24" : "mb-[50vh]"
                         }`}
                 >
                     <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
@@ -67,7 +67,7 @@ export function WebAppProcess() {
                                     initial={{ opacity: 0, x: -50 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true, margin: "-20%" }}
-                                    className={`bg-card/40 backdrop-blur-md border border-border/50 p-8 rounded-3xl lg:bg-transparent lg:backdrop-blur-none lg:border-none lg:p-0 ${index !== 0 && index !== steps.length - 1 ? "lg:pt-64" : ""
+                                    className={`bg-card/40 backdrop-blur-md  p-8 rounded-3xl lg:bg-transparent lg:backdrop-blur-none lg:border-none lg:p-0 ${index !== 0 && index !== steps.length - 1 ? "lg:pt-64" : ""
                                         }`}
                                 >
                                     <div className="lg:hidden mb-6">
@@ -87,7 +87,7 @@ export function WebAppProcess() {
                                         {Array.from({ length: 4 }).map((_, i) => (
                                             <span
                                                 key={i}
-                                                className="px-3 py-1 rounded-full bg-secondary/50 border border-border/50 text-sm text-muted-foreground"
+                                                className="px-3 py-1 rounded-full bg-secondary/50  text-sm text-muted-foreground"
                                             >
                                                 {t(`steps.${step.id}.tools.${i}`)}
                                             </span>
@@ -100,7 +100,7 @@ export function WebAppProcess() {
 
                     {/* Sticky Graphics Section - Desktop */}
                     <div className="hidden lg:block sticky top-[40vh] h-[500px] w-1/2 ml-auto z-10">
-                        <div className="relative w-full h-full bg-card/90 dark:bg-card/40 rounded-3xl border border-border/50 overflow-hidden shadow-2xl backdrop-blur-xl">
+                        <div className="relative w-full h-full bg-card/90 dark:bg-card/40 rounded-3xl  overflow-hidden shadow-2xl backdrop-blur-xl">
                             <AnimatePresence mode="wait">
                                 {steps.map((step) => (
                                     activeStep === step.id && (
@@ -124,7 +124,7 @@ export function WebAppProcess() {
                                                     {Array.from({ length: 4 }).map((_, i) => (
                                                         <span
                                                             key={i}
-                                                            className="px-3 py-1 rounded-full bg-secondary/50 border border-border/50 text-sm text-muted-foreground"
+                                                            className="px-3 py-1 rounded-full bg-secondary/50  text-sm text-muted-foreground"
                                                         >
                                                             {t(`steps.${step.id}.tools.${i}`)}
                                                         </span>

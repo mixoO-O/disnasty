@@ -24,6 +24,7 @@ export function CloudArchitecture() {
             transition={{ duration: 0.5, delay, type: "spring", stiffness: 100 }}
             className="flex flex-col items-center z-10 relative group"
         >
+            
             {/* Pulsing Background Layer */}
             <motion.div
                 animate={{
@@ -40,8 +41,9 @@ export function CloudArchitecture() {
             <motion.div
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}
-                className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-${color}-400/30 to-${color}-600/30 border border-${color}-400/50 backdrop-blur-md flex items-center justify-center shadow-[0_0_20px_rgba(var(--${color}-500),0.3)] group-hover:shadow-[0_0_40px_rgba(var(--${color}-500),0.6)] group-hover:border-${color}-300 transition-all duration-300 cursor-pointer`}
+                className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-${color}-400/30 to-${color}-600/30 backdrop-blur-md flex items-center justify-center shadow-[0_0_20px_rgba(var(--${color}-500),0.3)] group-hover:shadow-[0_0_40px_rgba(var(--${color}-500),0.6)] group-hover:border-${color}-300 transition-all duration-300 cursor-pointer`}
             >
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 opacity-20 group-hover:opacity-40 transition-opacity duration-500 blur-sm" />
                 <Icon className={`w-8 h-8 md:w-10 md:h-10 text-foreground dark:drop-shadow-[0_0_5px_rgba(255,255,255,0.5)] transition-colors`} />
             </motion.div>
 

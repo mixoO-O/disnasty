@@ -46,7 +46,8 @@ export function Navbar() {
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 py-4 px-4 md:px-0">
             <div className="max-w-7xl mx-auto">
-                <div className="glass-nav rounded-2xl px-6 py-3 flex items-center justify-between bg-background/60 backdrop-blur-md border border-border/50 shadow-sm dark:shadow-none transition-colors duration-300">
+                <div className="glass-nav rounded-2xl px-6 py-3 flex items-center justify-between bg-background/60 backdrop-blur-md  shadow-sm dark:shadow-none transition-colors duration-300">
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 opacity-20 group-hover:opacity-40" />
                     <Link href="/" className="flex items-center gap-2 group">
                         <div className="flex items-center gap-2">
                             <Image
@@ -71,7 +72,7 @@ export function Navbar() {
                                         <ChevronDown className="w-3 h-3 transition-transform group-hover:rotate-180" />
                                     </button>
                                     <div className="absolute top-full -left-4 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                                        <div className="bg-background/90 backdrop-blur-xl border border-border/50 rounded-xl shadow-xl overflow-hidden min-w-[200px] p-2 flex flex-col gap-1">
+                                        <div className="bg-background/90 backdrop-blur-xl  rounded-xl shadow-xl overflow-hidden min-w-[200px] p-2 flex flex-col gap-1">
                                             {item.subItems.map((subItem) => (
                                                 <Link
                                                     key={subItem.name}
@@ -103,9 +104,9 @@ export function Navbar() {
                         </div>
                         <button
                             onClick={() => setIsContactOpen(true)}
-                            className="bg-primary/10 hover:bg-primary/20 text-foreground px-4 py-2 rounded-lg text-sm font-medium transition-all border border-input hover:border-accent/50"
+                            className="bg-primary/10 hover:bg-primary/20 text-foreground px-4 py-2 z-10 rounded-lg text-sm font-medium transition-all border border-input hover:border-accent/50"
                         >
-                            {t('contact')}
+                            {t('contact')} 
                         </button>
                     </div>
                     <button
@@ -120,7 +121,7 @@ export function Navbar() {
                     <motion.div
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="absolute top-20 left-6 right-6 glass-nav rounded-2xl p-4 md:hidden flex flex-col gap-4 bg-background/90 backdrop-blur-xl border border-border/50"
+                        className="absolute top-20 left-6 right-6 glass-nav rounded-2xl p-4 md:hidden flex flex-col gap-4 bg-background/90 backdrop-blur-xl "
                     >
                         {navItems.map((item) => (
                             item.subItems ? (
