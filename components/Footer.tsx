@@ -35,7 +35,7 @@ export function Footer() {
 
   return (
     <footer className="relative z-10 md:py-12">
-      <div className="md:border-border/50 border-border/50 relative w-full overflow-hidden  bg-background/40 backdrop-blur-xl transition-colors duration-300 md:mx-auto md:max-w-7xl md:rounded-3xl ">
+      <div className="md:border-border/50 border-border/50 relative w-full overflow-hidden bg-background/40 backdrop-blur-xl transition-colors duration-300 md:mx-auto md:max-w-7xl md:rounded-3xl">
         <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 opacity-20 blur-sm transition-opacity duration-500 group-hover:opacity-40" />
         <div className="relative z-10 px-6 pb-12 pt-24 md:p-12">
           <div className="mb-16 grid gap-12 md:grid-cols-3">
