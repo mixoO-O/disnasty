@@ -69,10 +69,28 @@
     }
   },
   "AIShowcase": {
-    "badge": "Proprietary AI Solutions",
-    "titlePrefix": "Intelligent Systems",
-    "titleSuffix": "Tailored for Industries",
-    "description": "Discover how our AI solutions can transform your business with intelligent automation and data-driven insights. It's time to innovate.",
+    "badge": "Next-Gen Enterprise Capability",
+    "titlePrefix": "Autonomous",
+    "titleSuffix": "Intelligence Ecosystem",
+    "tooltip": "AI Agent created by Disnasty",
+    "description": "We orchestrate the world's most powerful AI models with our proprietary Code Antigravity framework, managing complex context via MCP for true enterprise autonomy.",
+    "antigravity": {
+      "title": "Code Antigravity",
+      "description": "Our proprietary engine for agentic behaviors. It overcomes friction, enabling AI to think, plan, and execute complex coding and operational tasks autonomously."
+    },
+    "n8n": {
+      "title": "n8n Automation",
+      "description": "Visual workflow orchestration that connects your AI agents to thousands of apps, ensuring seamless execution of business processes."
+    },
+    "llm": {
+      "title": "Multi-Model Matrix",
+      "description": "We don't rely on a single brain. We integrate OpenAI, Anthropic, Gemini, and DeepSeek, routing tasks to the most capable model for the specific job."
+    },
+    "context": {
+      "title": "MCP & Context",
+      "description": "Enterprise-grade memory management using the Model Context Protocol. We ensure your AI retains critical business context securely across all interactions."
+    },
+    "solutionsTitle": "Our Proprietary Solutions",
     "auralis": {
       "title": "Auralis",
       "description": "The advanced AI partner for legal firms. Auralis doesn't just manage schedules; it intelligently distributes caseloads, optimizes attorney bandwidth, and proactively communicates with clients.",

@@ -136,7 +136,7 @@ export function ProductShowcase() {
                                         damping: 20
                                     }
                                 }}
-                                className={`group relative rounded-2xl overflow-hidden bg-card/40 border border-border/50 backdrop-blur-md ${className} transform-style-3d`}
+                                className={`group relative rounded-2xl overflow-hidden bg-card/40  backdrop-blur-md ${className} transform-style-3d`}
                             >
                                 {/* Image Background */}
                                 {product.image && (

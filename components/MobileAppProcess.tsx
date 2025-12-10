@@ -293,8 +293,9 @@ export function MobileAppProcess() {
                                 {/* Card */}
                                 <motion.div
                                     whileHover={{ y: -5 }}
-                                    className="relative h-full bg-card/40 backdrop-blur-sm border border-border/50 rounded-2xl p-6 hover:bg-card/60 transition-colors duration-300 hover:border-border"
+                                    className="relative h-full bg-card/40 backdrop-blur-sm rounded-2xl p-6 hover:bg-card/60 transition-colors duration-300 hover:border-border"
                                 >
+                                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 opacity-20 group-hover:opacity-40 transition-opacity duration-500 blur-sm" />
                                     {/* Icon with gradient background */}
                                     <div className="mb-6">
                                         <motion.div
