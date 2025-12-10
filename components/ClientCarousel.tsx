@@ -1,64 +1,57 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 const clients = [
-    { name: "TechCorp", logo: "TC" },
-    { name: "InnovateAI", logo: "IA" },
-    { name: "FutureSystems", logo: "FS" },
-    { name: "DataFlow", logo: "DF" },
-    { name: "NeuralNet", logo: "NN" },
-    { name: "CloudScale", logo: "CS" },
-    { name: "CyberDyne", logo: "CD" },
-    { name: "QuantumLeap", logo: "QL" },
+  { name: 'TechCorp', logo: 'TC' },
+  { name: 'InnovateAI', logo: 'IA' },
+  { name: 'FutureSystems', logo: 'FS' },
+  { name: 'DataFlow', logo: 'DF' },
+  { name: 'NeuralNet', logo: 'NN' },
+  { name: 'CloudScale', logo: 'CS' },
+  { name: 'CyberDyne', logo: 'CD' },
+  { name: 'QuantumLeap', logo: 'QL' },
 ];
 
 export function ClientCarousel() {
-    const t = useTranslations("ClientCarousel");
+  const t = useTranslations('ClientCarousel');
 
-    return (
-        <section id="clients" className="py-24 overflow-hidden relative">
+  return (
+    <section id="clients" className="relative overflow-hidden py-24">
+      <div className="relative z-10 mx-auto mb-12 max-w-7xl px-6 text-center">
+        <h2 className="relative mb-6 inline-block text-3xl font-bold md:text-5xl">
+          <span className="absolute -inset-x-4 -inset-y-2 rounded-full bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-cyan-500/20 opacity-50 blur-xl" />
+          <span className="relative z-10 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
+            {t('title')}
+          </span>
+        </h2>
+        <p className="mx-auto max-w-2xl text-gray-200">{t('subtitle')}</p>
+      </div>
 
-
-            <div className="max-w-7xl mx-auto px-6 mb-12 text-center relative z-10">
-                <h2 className="text-3xl md:text-5xl font-bold mb-6 relative inline-block">
-                    <span className="absolute -inset-x-4 -inset-y-2 bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-cyan-500/20 blur-xl rounded-full opacity-50" />
-                    <span className="bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent relative z-10">
-                        {t("title")}
-                    </span>
-                </h2>
-                <p className="text-gray-200 max-w-2xl mx-auto">
-                    {t("subtitle")}
-                </p>
-            </div>
-
-            <div className="relative flex py-4 group md:[mask-image:linear-gradient(to_right,transparent,black_80%,black_20%,transparent)] overflow-hidden">
-                <div className="flex w-max animate-marquee group-hover:[animation-play-state:paused]">
-                    {[...Array(4)].map((_, i) => (
-                        <div key={i} className="flex gap-6 pr-6 shrink-0">
-                            {clients.map((client, index) => (
-                                <div
-                                    key={`${client.name}-${index}-${i}`}
-                                    className="relative group"
-                                >
-                                    {/* Gradient border wrapper */}
-                                    <div className="p-[1px] rounded-xl bg-gradient-to-r from-purple-400/20 via-blue-400/20 to-cyan-400/20 group-hover:from-purple-400/50 group-hover:via-blue-400/50 group-hover:to-cyan-400/50 transition-all duration-300">
-                                        <div className="flex items-center gap-4 px-8 py-4 rounded-xl bg-black/60 backdrop-blur-md text-gray-200 font-medium group-hover:bg-black/40 transition-all cursor-default min-w-[200px] justify-center">
-                                            <span className="font-bold text-white text-xl bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent opacity-70 group-hover:opacity-100 transition-opacity">
-                                                {client.logo}
-                                            </span>
-                                            <span className="text-lg group-hover:text-white transition-colors">
-                                                {client.name}
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    ))}
+      <div className="group relative flex overflow-hidden py-4 md:[mask-image:linear-gradient(to_right,transparent,black_80%,black_20%,transparent)]">
+        <div className="animate-marquee flex w-max group-hover:[animation-play-state:paused]">
+          {[...Array(4)].map((_, i) => (
+            <div key={i} className="flex shrink-0 gap-6 pr-6">
+              {clients.map((client, index) => (
+                <div key={`${client.name}-${index}-${i}`} className="group relative">
+                  {/* Gradient border wrapper */}
+                  <div className="rounded-xl bg-gradient-to-r from-purple-400/20 via-blue-400/20 to-cyan-400/20 p-[1px] transition-all duration-300 group-hover:from-purple-400/50 group-hover:via-blue-400/50 group-hover:to-cyan-400/50">
+                    <div className="flex min-w-[200px] cursor-default items-center justify-center gap-4 rounded-xl bg-black/60 px-8 py-4 font-medium text-gray-200 backdrop-blur-md transition-all group-hover:bg-black/40">
+                      <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-xl font-bold text-transparent text-white opacity-70 transition-opacity group-hover:opacity-100">
+                        {client.logo}
+                      </span>
+                      <span className="text-lg transition-colors group-hover:text-white">
+                        {client.name}
+                      </span>
+                    </div>
+                  </div>
                 </div>
+              ))}
             </div>
-        </section>
-    );
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }

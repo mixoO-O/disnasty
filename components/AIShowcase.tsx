@@ -1,18 +1,9 @@
-"use client";
+'use client';
 
-import {
-  Brain,
-  Workflow,
-  Cpu,
-  Sparkles,
-  Layers,
-  Scale,
-  Leaf,
-  X,
-} from "lucide-react";
-import { useTranslations } from "next-intl";
-import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { Brain, Workflow, Cpu, Sparkles, Layers, Scale, Leaf, X } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
 interface SolutionModalProps {
   isOpen: boolean;
@@ -26,7 +17,7 @@ interface SolutionModalProps {
   } | null;
 }
 
-import { createPortal } from "react-dom";
+import { createPortal } from 'react-dom';
 
 // ... imports
 
@@ -40,12 +31,12 @@ function SolutionModal({ isOpen, onClose, solution }: SolutionModalProps) {
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = 'unset';
     }
     return () => {
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = 'unset';
     };
   }, [isOpen]);
 
@@ -61,42 +52,39 @@ function SolutionModal({ isOpen, onClose, solution }: SolutionModalProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[9998]"
+            className="fixed inset-0 z-[9998] bg-black/60 backdrop-blur-sm"
           />
 
           {/* Modal */}
-          <div className="fixed inset-0 flex items-center justify-center z-[9999] pointer-events-none p-4">
+          <div className="pointer-events-none fixed inset-0 z-[9999] flex items-center justify-center p-4">
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="w-full max-w-lg bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-2xl pointer-events-auto relative overflow-hidden"
+              className="pointer-events-auto relative w-full max-w-lg overflow-hidden rounded-2xl border border-white/10 bg-black/80 p-8 shadow-2xl backdrop-blur-xl"
             >
               {/* Background Gradient Blob */}
               <div
-                className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${solution.color} opacity-20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none`}
+                className={`absolute right-0 top-0 h-64 w-64 bg-gradient-to-br ${solution.color} pointer-events-none -translate-y-1/2 translate-x-1/2 rounded-full opacity-20 blur-3xl`}
               />
 
               <button
                 onClick={onClose}
-                className="absolute top-4 right-4 text-gray-200 hover:text-white transition-colors"
+                className="absolute right-4 top-4 text-gray-200 transition-colors hover:text-white"
               >
-                <X className="w-6 h-6" />
+                <X className="h-6 w-6" />
               </button>
 
               <div className="relative z-10">
-                <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-6 border border-white/10">
+                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/10">
                   <solution.icon
-                    className={`w-6 h-6 ${
-                      solution.color
-                        .replace("from-", "text-")
-                        .replace("/20", "-400")
-                        .split(" ")[0]
+                    className={`h-6 w-6 ${
+                      solution.color.replace('from-', 'text-').replace('/20', '-400').split(' ')[0]
                     }`}
                   />
                 </div>
 
-                <h2 className="text-3xl font-bold mb-4">
+                <h2 className="mb-4 text-3xl font-bold">
                   <span
                     className={`bg-gradient-to-r ${solution.color} bg-clip-text text-transparent`}
                   >
@@ -104,22 +92,17 @@ function SolutionModal({ isOpen, onClose, solution }: SolutionModalProps) {
                   </span>
                 </h2>
 
-                <p className="text-gray-200 text-lg leading-relaxed mb-8">
-                  {solution.description}
-                </p>
+                <p className="mb-8 text-lg leading-relaxed text-gray-200">{solution.description}</p>
 
                 <div className="space-y-4">
-                  <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider">
+                  <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-400">
                     Key Features
                   </h3>
                   <ul className="space-y-3">
                     {solution.features.map((feature, idx) => (
-                      <li
-                        key={idx}
-                        className="flex items-start gap-3 text-gray-300"
-                      >
+                      <li key={idx} className="flex items-start gap-3 text-gray-300">
                         <div
-                          className={`w-1.5 h-1.5 rounded-full mt-2 bg-gradient-to-r ${solution.color}`}
+                          className={`mt-2 h-1.5 w-1.5 rounded-full bg-gradient-to-r ${solution.color}`}
                         />
                         <span>{feature}</span>
                       </li>
@@ -132,164 +115,139 @@ function SolutionModal({ isOpen, onClose, solution }: SolutionModalProps) {
         </>
       )}
     </AnimatePresence>,
-    document.body
+    document.body,
   );
 }
 
 export function AIShowcase() {
-  const t = useTranslations("AIShowcase");
-  const [activeSolution, setActiveSolution] = useState<
-    "auralis" | "clou" | null
-  >(null);
+  const t = useTranslations('AIShowcase');
+  const [activeSolution, setActiveSolution] = useState<'auralis' | 'clou' | null>(null);
 
   const solutions = {
     auralis: {
-      title: t("auralis.title"),
-      description: t("auralis.description"),
-      features: [
-        t("auralis.features.0"),
-        t("auralis.features.1"),
-        t("auralis.features.2"),
-      ],
-      color: "from-purple-500 to-indigo-500",
+      title: t('auralis.title'),
+      description: t('auralis.description'),
+      features: [t('auralis.features.0'), t('auralis.features.1'), t('auralis.features.2')],
+      color: 'from-purple-500 to-indigo-500',
       icon: Scale,
     },
     clou: {
-      title: t("clou.title"),
-      description: t("clou.description"),
-      features: [
-        t("clou.features.0"),
-        t("clou.features.1"),
-        t("clou.features.2"),
-      ],
-      color: "from-green-500 to-emerald-500",
+      title: t('clou.title'),
+      description: t('clou.description'),
+      features: [t('clou.features.0'), t('clou.features.1'), t('clou.features.2')],
+      color: 'from-green-500 to-emerald-500',
       icon: Leaf,
     },
   };
 
   return (
-    <section
-      id="ia"
-      className="py-24 px-6 relative overflow-hidden bg-background"
-    >
+    <section id="ia" className="relative overflow-hidden bg-background px-6 py-24">
       {/* Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[100px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[100px]" />
+      <div className="pointer-events-none absolute left-0 top-0 h-full w-full overflow-hidden">
+        <div className="absolute left-1/4 top-1/4 h-[500px] w-[500px] rounded-full bg-purple-500/10 blur-[100px]" />
+        <div className="absolute bottom-1/4 right-1/4 h-[500px] w-[500px] rounded-full bg-blue-500/10 blur-[100px]" />
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border/50 mb-6 backdrop-blur-sm">
-            <Sparkles className="w-4 h-4 text-purple-400" />
-            <span className="text-sm font-medium text-muted-foreground">
-              {t("badge")}
-            </span>
+      <div className="relative z-10 mx-auto max-w-7xl">
+        <div className="mb-16 text-center">
+          <div className="border-border/50 mb-6 inline-flex items-center gap-2 rounded-full border bg-secondary/50 px-4 py-2 backdrop-blur-sm">
+            <Sparkles className="h-4 w-4 text-purple-400" />
+            <span className="text-muted-foreground text-sm font-medium">{t('badge')}</span>
           </div>
-          <h2 className="text-4xl md:text-5xl text-foreground font-bold mb-6">
-            {t("titlePrefix")} <br />
-            <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_200%]">
-              {t("titleSuffix")}
+          <h2 className="mb-6 text-4xl font-bold text-foreground md:text-5xl">
+            {t('titlePrefix')} <br />
+            <span className="animate-gradient bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-[length:200%_200%] bg-clip-text text-transparent">
+              {t('titleSuffix')}
             </span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            {t("description")}
-          </p>
+          <p className="text-muted-foreground mx-auto max-w-2xl text-lg">{t('description')}</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {/* Card 1: Code Antigravity (Large) */}
-          <div className="md:col-span-3 group relative rounded-3xl overflow-hidden bg-card/40 hover:bg-card/60 transition-colors p-8 md:p-12">
+          <div className="bg-card/40 hover:bg-card/60 group relative overflow-hidden rounded-3xl p-8 transition-colors md:col-span-3 md:p-12">
             {/* Animated Border Container */}
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 opacity-20 group-hover:opacity-40 transition-opacity duration-500 blur-sm" />
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 opacity-20 blur-sm transition-opacity duration-500 group-hover:opacity-40" />
 
             {/* Solution Bubbles */}
-            <div className="absolute top-6 right-6 z-20 flex flex-col items-center">
-              <div className="flex gap-3 relative">
+            <div className="absolute right-6 top-6 z-20 flex flex-col items-center">
+              <div className="relative flex gap-3">
                 <button
-                  onClick={() => setActiveSolution("auralis")}
-                  className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-purple-500/20 border border-purple-500/30 flex items-center justify-center hover:scale-110 hover:bg-purple-500/30 transition-all cursor-pointer group/btn"
+                  onClick={() => setActiveSolution('auralis')}
+                  className="group/btn flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-purple-500/30 bg-purple-500/20 transition-all hover:scale-110 hover:bg-purple-500/30 md:h-12 md:w-12"
                   aria-label="Auralis"
                 >
-                  <Scale className="w-5 h-5 md:w-6 md:h-6 text-purple-400" />
+                  <Scale className="h-5 w-5 text-purple-400 md:h-6 md:w-6" />
                 </button>
 
                 <button
-                  onClick={() => setActiveSolution("clou")}
-                  className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-green-500/20 border border-green-500/30 flex items-center justify-center hover:scale-110 hover:bg-green-500/30 transition-all cursor-pointer group/btn"
+                  onClick={() => setActiveSolution('clou')}
+                  className="group/btn flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-green-500/30 bg-green-500/20 transition-all hover:scale-110 hover:bg-green-500/30 md:h-12 md:w-12"
                   aria-label="Clou"
                 >
-                  <Leaf className="w-5 h-5 md:w-6 md:h-6 text-green-400" />
+                  <Leaf className="h-5 w-5 text-green-400 md:h-6 md:w-6" />
                 </button>
 
                 {/* Persistent Tooltip */}
-                <div className="absolute top-full right-0 mt-4 whitespace-nowrap pointer-events-none z-30">
-                  <div className="relative px-4 py-2 bg-card/90 backdrop-blur-md border border-border/50 rounded-xl text-xs font-medium text-foreground shadow-xl flex items-center gap-2">
-                    <Sparkles className="w-3.5 h-3.5 text-purple-400 animate-pulse" />
-                    <span>{t("tooltip")}</span>
+                <div className="pointer-events-none absolute right-0 top-full z-30 mt-4 whitespace-nowrap">
+                  <div className="bg-card/90 border-border/50 relative flex items-center gap-2 rounded-xl border px-4 py-2 text-xs font-medium text-foreground shadow-xl backdrop-blur-md">
+                    <Sparkles className="h-3.5 w-3.5 animate-pulse text-purple-400" />
+                    <span>{t('tooltip')}</span>
                   </div>
                   {/* Arrow pointing up - aligned to center of button gap */}
-                  <div className="absolute -top-1.5 right-[calc(50%-6px)] w-3 h-3 bg-card/90 border-l border-t border-border/50 rotate-45 backdrop-blur-md rounded-tl-[2px]"></div>
+                  <div className="bg-card/90 border-border/50 absolute -top-1.5 right-[calc(50%-6px)] h-3 w-3 rotate-45 rounded-tl-[2px] border-l border-t backdrop-blur-md"></div>
                 </div>
               </div>
             </div>
 
-            <div className="relative z-10 flex flex-col md:flex-row items-center gap-8">
-              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-500 to-blue-600 flex items-center justify-center shrink-0 shadow-lg shadow-purple-500/20">
-                <Cpu className="w-10 h-10 text-white" />
+            <div className="relative z-10 flex flex-col items-center gap-8 md:flex-row">
+              <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500 to-blue-600 shadow-lg shadow-purple-500/20">
+                <Cpu className="h-10 w-10 text-white" />
               </div>
               <div className="text-center md:text-left">
-                <h3 className="text-3xl font-bold text-foreground mb-3">
-                  {t("antigravity.title")}
+                <h3 className="mb-3 text-3xl font-bold text-foreground">
+                  {t('antigravity.title')}
                 </h3>
-                <p className="text-lg text-muted-foreground max-w-2xl">
-                  {t("antigravity.description")}
+                <p className="text-muted-foreground max-w-2xl text-lg">
+                  {t('antigravity.description')}
                 </p>
               </div>
             </div>
           </div>
 
           {/* Card 2: n8n Automation */}
-          <div className="group relative rounded-3xl overflow-hidden  bg-card/40 hover:bg-card/60 transition-colors p-8">
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 opacity-20 group-hover:opacity-40 transition-opacity duration-500 blur-sm" />
+          <div className="bg-card/40 hover:bg-card/60 group relative overflow-hidden rounded-3xl p-8 transition-colors">
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 opacity-20 blur-sm transition-opacity duration-500 group-hover:opacity-40" />
             <div className="relative z-10">
-              <div className="w-12 h-12 rounded-xl bg-pink-500/20 flex items-center justify-center mb-6 border border-pink-500/20 group-hover:scale-110 transition-transform">
-                <Workflow className="w-6 h-6 text-pink-400" />
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl border border-pink-500/20 bg-pink-500/20 transition-transform group-hover:scale-110">
+                <Workflow className="h-6 w-6 text-pink-400" />
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-3">
-                {t("n8n.title")}
-              </h3>
-              <p className="text-muted-foreground">{t("n8n.description")}</p>
+              <h3 className="mb-3 text-xl font-bold text-foreground">{t('n8n.title')}</h3>
+              <p className="text-muted-foreground">{t('n8n.description')}</p>
             </div>
           </div>
 
           {/* Card 3: Multi-Model Matrix */}
-          <div className="group relative rounded-3xl overflow-hidden  bg-card/40 hover:bg-card/60 transition-colors p-8">
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 opacity-20 group-hover:opacity-40 transition-opacity duration-500 blur-sm" />
+          <div className="bg-card/40 hover:bg-card/60 group relative overflow-hidden rounded-3xl p-8 transition-colors">
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 opacity-20 blur-sm transition-opacity duration-500 group-hover:opacity-40" />
             <div className="relative z-10">
-              <div className="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center mb-6 border border-emerald-500/20 group-hover:scale-110 transition-transform">
-                <Brain className="w-6 h-6 text-emerald-400" />
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl border border-emerald-500/20 bg-emerald-500/20 transition-transform group-hover:scale-110">
+                <Brain className="h-6 w-6 text-emerald-400" />
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-3">
-                {t("llm.title")}
-              </h3>
-              <p className="text-muted-foreground">{t("llm.description")}</p>
+              <h3 className="mb-3 text-xl font-bold text-foreground">{t('llm.title')}</h3>
+              <p className="text-muted-foreground">{t('llm.description')}</p>
             </div>
           </div>
 
           {/* Card 4: MCP & Context */}
-          <div className="group relative rounded-3xl overflow-hidden  bg-card/40 hover:bg-card/60 transition-colors p-8">
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 opacity-20 group-hover:opacity-40 transition-opacity duration-500 blur-sm" />
+          <div className="bg-card/40 hover:bg-card/60 group relative overflow-hidden rounded-3xl p-8 transition-colors">
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 opacity-20 blur-sm transition-opacity duration-500 group-hover:opacity-40" />
             <div className="relative z-10">
-              <div className="w-12 h-12 rounded-xl bg-orange-500/20 flex items-center justify-center mb-6 border border-orange-500/20 group-hover:scale-110 transition-transform">
-                <Layers className="w-6 h-6 text-orange-400" />
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl border border-orange-500/20 bg-orange-500/20 transition-transform group-hover:scale-110">
+                <Layers className="h-6 w-6 text-orange-400" />
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-3">
-                {t("context.title")}
-              </h3>
-              <p className="text-muted-foreground">
-                {t("context.description")}
-              </p>
+              <h3 className="mb-3 text-xl font-bold text-foreground">{t('context.title')}</h3>
+              <p className="text-muted-foreground">{t('context.description')}</p>
             </div>
           </div>
         </div>

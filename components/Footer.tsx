@@ -1,163 +1,192 @@
-"use client";
+'use client';
 
-import { Mail, Linkedin, Twitter, Instagram, Check, Cpu, Code, Cloud, Bot, Zap } from "lucide-react";
-import Link from "next/link";
-import Image from "next/image"; // Added Image import
+import {
+  Mail,
+  Linkedin,
+  Twitter,
+  Instagram,
+  Check,
+  Cpu,
+  Code,
+  Cloud,
+  Bot,
+  Zap,
+} from 'lucide-react';
+import Link from 'next/link';
+import Image from 'next/image'; // Added Image import
 import { useTranslations } from 'next-intl';
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export function Footer() {
-    const t = useTranslations('Footer');
-    const [copied, setCopied] = useState(false);
-    const tNav = useTranslations('Navbar');
+  const t = useTranslations('Footer');
+  const [copied, setCopied] = useState(false);
+  const tNav = useTranslations('Navbar');
 
-    const navItems = [
-        { name: tNav('products'), href: "#products", icon: Cpu },
-        { name: tNav('web-app'), href: "#web-app", icon: Code },
-        { name: tNav('mobile-app'), href: "#mobile-app", icon: Cpu },
-        { name: tNav('cloud'), href: "#cloud-architecture", icon: Cloud },
-        { name: tNav('tech-stack'), href: "#tech-stack", icon: Code },
-        { name: tNav('ia'), href: "#ia", icon: Bot },
-        { name: tNav('innovation'), href: "#innovation", icon: Zap },
-    ];
+  const navItems = [
+    { name: tNav('products'), href: '#products', icon: Cpu },
+    { name: tNav('web-app'), href: '#web-app', icon: Code },
+    { name: tNav('mobile-app'), href: '#mobile-app', icon: Cpu },
+    { name: tNav('cloud'), href: '#cloud-architecture', icon: Cloud },
+    { name: tNav('tech-stack'), href: '#tech-stack', icon: Code },
+    { name: tNav('ia'), href: '#ia', icon: Bot },
+    { name: tNav('innovation'), href: '#innovation', icon: Zap },
+  ];
 
-    return (
-        <footer className="relative z-10 md:py-12">
-            <div className="relative overflow-hidden w-full md:max-w-7xl md:mx-auto md:rounded-3xl md:border md:border-border/50 bg-background/40 backdrop-blur-xl border-t border-border/50 transition-colors duration-300">
+  return (
+    <footer className="relative z-10 md:py-12">
+      <div className="md:border-border/50 border-border/50 relative w-full overflow-hidden border-t bg-background/40 backdrop-blur-xl transition-colors duration-300 md:mx-auto md:max-w-7xl md:rounded-3xl md:border">
+        {/* Top Gradient Border (Mobile only/Adjusted for card) */}
+        <div className="absolute left-0 right-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
 
-                {/* Top Gradient Border (Mobile only/Adjusted for card) */}
-                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
+        {/* Ambient Glow */}
+        <div className="pointer-events-none absolute bottom-0 left-1/2 z-0 h-[300px] w-[500px] -translate-x-1/2 rounded-full bg-primary/5 blur-[100px]" />
 
-                {/* Ambient Glow */}
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-primary/5 rounded-full blur-[100px] pointer-events-none z-0" />
-
-                <div className="relative z-10 px-6 pt-24 pb-12 md:p-12">
-                    <div className="grid md:grid-cols-3 gap-12 mb-16">
-                        {/* Brand Section */}
-                        <div className="flex flex-col items-center md:items-start gap-6">
-                            <Link href="/" className="inline-block group">
-                                <div className="flex items-center gap-2">
-                                    <Image
-                                        src="/disnasty-logo-icon.png"
-                                        alt="Disnasty Logo"
-                                        width={32}
-                                        height={32}
-                                        className="h-8 w-auto object-contain"
-                                    />
-                                    <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_200%]">
-                                        DISNASTY
-                                    </span>
-                                </div>
-                            </Link>
-                            <p className="text-muted-foreground max-w-md text-center md:text-left text-lg leading-relaxed">
-                                {t('description')}
-                            </p>
-                        </div>
-
-                        {/* Navigation Links */}
-                        <div className="flex flex-col items-center md:items-start gap-6">
-                            <h3 className="font-semibold text-lg">{tNav('services')}</h3>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
-                                {navItems.map((item) => (
-                                    <Link
-                                        key={item.name}
-                                        href={item.href}
-                                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"
-                                    >
-                                        <item.icon className="w-4 h-4 text-primary/50 group-hover:text-primary transition-colors" />
-                                        {item.name}
-                                    </Link>
-                                ))}
-                            </div>
-                        </div>
-
-                        {/* Contact & Socials */}
-                        <div className="flex flex-col items-center md:items-end gap-8">
-                            <button
-                                onClick={() => {
-                                    navigator.clipboard.writeText("mrojas@disnasty.com");
-                                    setCopied(true);
-                                    setTimeout(() => setCopied(false), 2000);
-                                }}
-                                className="group relative flex items-center gap-3 px-6 py-3 rounded-full bg-secondary/50 border border-border/50 hover:border-primary/50 hover:bg-secondary transition-all duration-300 cursor-pointer overflow-hidden"
-                            >
-                                <div className="p-2 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors relative">
-                                    <AnimatePresence mode="wait">
-                                        {copied ? (
-                                            <motion.div
-                                                key="check"
-                                                initial={{ scale: 0 }}
-                                                animate={{ scale: 1 }}
-                                                exit={{ scale: 0 }}
-                                            >
-                                                <Check className="w-5 h-5 text-green-400" />
-                                            </motion.div>
-                                        ) : (
-                                            <motion.div
-                                                key="mail"
-                                                initial={{ scale: 0 }}
-                                                animate={{ scale: 1 }}
-                                                exit={{ scale: 0 }}
-                                            >
-                                                <Mail className="w-5 h-5 text-foreground" />
-                                            </motion.div>
-                                        )}
-                                    </AnimatePresence>
-                                </div>
-                                <div className="relative overflow-hidden h-6 min-w-[180px] flex items-center">
-                                    <AnimatePresence mode="wait" initial={false}>
-                                        {copied ? (
-                                            <motion.span
-                                                key="copied"
-                                                initial={{ y: 20, opacity: 0 }}
-                                                animate={{ y: 0, opacity: 1 }}
-                                                exit={{ y: -20, opacity: 0 }}
-                                                className="text-green-400 font-medium absolute left-0"
-                                            >
-                                                Copied to clipboard!
-                                            </motion.span>
-                                        ) : (
-                                            <motion.span
-                                                key="email"
-                                                initial={{ y: 20, opacity: 0 }}
-                                                animate={{ y: 0, opacity: 1 }}
-                                                exit={{ y: -20, opacity: 0 }}
-                                                className="text-muted-foreground group-hover:text-foreground font-medium absolute left-0"
-                                            >
-                                                mrojas@disnasty.com
-                                            </motion.span>
-                                        )}
-                                    </AnimatePresence>
-                                </div>
-                            </button>
-
-                            <div className="flex items-center gap-4">
-                                {[
-                                    { icon: Linkedin, href: "#", color: "hover:text-[#0077b5]", bg: "hover:bg-[#0077b5]/10", border: "hover:border-[#0077b5]/50" },
-                                    { icon: Twitter, href: "#", color: "hover:text-[#1DA1F2]", bg: "hover:bg-[#1DA1F2]/10", border: "hover:border-[#1DA1F2]/50" },
-                                    { icon: Instagram, href: "#", color: "hover:text-[#E1306C]", bg: "hover:bg-[#E1306C]/10", border: "hover:border-[#E1306C]/50" },
-                                ].map((social, index) => (
-                                    <Link
-                                        key={index}
-                                        href={social.href}
-                                        className={`w-12 h-12 rounded-xl bg-secondary/50 border border-border/50 flex items-center justify-center text-muted-foreground transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:text-foreground ${social.color} ${social.bg} ${social.border}`}
-                                    >
-                                        <social.icon className="w-5 h-5" />
-                                    </Link>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Copyright */}
-                    <div className="pt-8 border-t border-border/50 text-center">
-                        <p className="text-sm text-muted-foreground">
-                            © {new Date().getFullYear()} Disnasty Tech. <span className="text-muted-foreground/50 mx-2">|</span> {t('rights')}
-                        </p>
-                    </div>
+        <div className="relative z-10 px-6 pb-12 pt-24 md:p-12">
+          <div className="mb-16 grid gap-12 md:grid-cols-3">
+            {/* Brand Section */}
+            <div className="flex flex-col items-center gap-6 md:items-start">
+              <Link href="/" className="group inline-block">
+                <div className="flex items-center gap-2">
+                  <Image
+                    src="/disnasty-logo-icon.png"
+                    alt="Disnasty Logo"
+                    width={32}
+                    height={32}
+                    className="h-8 w-auto object-contain"
+                  />
+                  <span className="animate-gradient bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-[length:200%_200%] bg-clip-text text-2xl font-bold text-transparent">
+                    DISNASTY
+                  </span>
                 </div>
+              </Link>
+              <p className="text-muted-foreground max-w-md text-center text-lg leading-relaxed md:text-left">
+                {t('description')}
+              </p>
             </div>
-        </footer>
-    );
+
+            {/* Navigation Links */}
+            <div className="flex flex-col items-center gap-6 md:items-start">
+              <h3 className="text-lg font-semibold">{tNav('services')}</h3>
+              <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="text-muted-foreground group flex items-center gap-2 text-sm transition-colors hover:text-foreground"
+                  >
+                    <item.icon className="h-4 w-4 text-primary/50 transition-colors group-hover:text-primary" />
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Contact & Socials */}
+            <div className="flex flex-col items-center gap-8 md:items-end">
+              <button
+                onClick={() => {
+                  navigator.clipboard.writeText('mrojas@disnasty.com');
+                  setCopied(true);
+                  setTimeout(() => setCopied(false), 2000);
+                }}
+                className="border-border/50 group relative flex cursor-pointer items-center gap-3 overflow-hidden rounded-full border bg-secondary/50 px-6 py-3 transition-all duration-300 hover:border-primary/50 hover:bg-secondary"
+              >
+                <div className="relative rounded-full bg-primary/10 p-2 transition-colors group-hover:bg-primary/20">
+                  <AnimatePresence mode="wait">
+                    {copied ? (
+                      <motion.div
+                        key="check"
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        exit={{ scale: 0 }}
+                      >
+                        <Check className="h-5 w-5 text-green-400" />
+                      </motion.div>
+                    ) : (
+                      <motion.div
+                        key="mail"
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        exit={{ scale: 0 }}
+                      >
+                        <Mail className="h-5 w-5 text-foreground" />
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+                <div className="relative flex h-6 min-w-[180px] items-center overflow-hidden">
+                  <AnimatePresence mode="wait" initial={false}>
+                    {copied ? (
+                      <motion.span
+                        key="copied"
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: -20, opacity: 0 }}
+                        className="absolute left-0 font-medium text-green-400"
+                      >
+                        Copied to clipboard!
+                      </motion.span>
+                    ) : (
+                      <motion.span
+                        key="email"
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: -20, opacity: 0 }}
+                        className="text-muted-foreground absolute left-0 font-medium group-hover:text-foreground"
+                      >
+                        mrojas@disnasty.com
+                      </motion.span>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </button>
+
+              <div className="flex items-center gap-4">
+                {[
+                  {
+                    icon: Linkedin,
+                    href: '#',
+                    color: 'hover:text-[#0077b5]',
+                    bg: 'hover:bg-[#0077b5]/10',
+                    border: 'hover:border-[#0077b5]/50',
+                  },
+                  {
+                    icon: Twitter,
+                    href: '#',
+                    color: 'hover:text-[#1DA1F2]',
+                    bg: 'hover:bg-[#1DA1F2]/10',
+                    border: 'hover:border-[#1DA1F2]/50',
+                  },
+                  {
+                    icon: Instagram,
+                    href: '#',
+                    color: 'hover:text-[#E1306C]',
+                    bg: 'hover:bg-[#E1306C]/10',
+                    border: 'hover:border-[#E1306C]/50',
+                  },
+                ].map((social, index) => (
+                  <Link
+                    key={index}
+                    href={social.href}
+                    className={`border-border/50 text-muted-foreground flex h-12 w-12 items-center justify-center rounded-xl border bg-secondary/50 transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:text-foreground ${social.color} ${social.bg} ${social.border}`}
+                  >
+                    <social.icon className="h-5 w-5" />
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Copyright */}
+          <div className="border-border/50 border-t pt-8 text-center">
+            <p className="text-muted-foreground text-sm">
+              © {new Date().getFullYear()} Disnasty Tech.{' '}
+              <span className="text-muted-foreground/50 mx-2">|</span> {t('rights')}
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
 }

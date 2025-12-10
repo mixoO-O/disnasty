@@ -1,6 +1,6 @@
-import {getRequestConfig} from 'next-intl/server';
- 
-export default getRequestConfig(async ({requestLocale}) => {
+import { getRequestConfig } from 'next-intl/server';
+
+export default getRequestConfig(async ({ requestLocale }) => {
   let locale = await requestLocale;
 
   // Validate that the incoming `locale` parameter is valid
@@ -11,13 +11,13 @@ export default getRequestConfig(async ({requestLocale}) => {
   try {
     return {
       locale,
-      messages: (await import(`../messages/${locale}.json`)).default
+      messages: (await import(`../messages/${locale}.json`)).default,
     };
   } catch (error) {
     console.error(`Failed to load messages for locale ${locale}:`, error);
     return {
       locale,
-      messages: {}
+      messages: {},
     };
   }
 });
