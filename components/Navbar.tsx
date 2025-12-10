@@ -13,6 +13,7 @@ import { LanguageSwitcher } from './LanguageSwitcher';
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
   const t = useTranslations('Navbar');
 
   useEffect(() => {
@@ -25,6 +26,28 @@ export function Navbar() {
       document.body.style.overflow = 'unset';
     };
   }, [isOpen]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: '-50% 0px -50% 0px', // Trigger when section is in the middle of viewport
+      },
+    );
+
+    const sections = document.querySelectorAll('section[id]');
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
 
   const navItems = [
     { name: t('products'), href: '#products', icon: Cpu },
@@ -66,7 +89,13 @@ export function Navbar() {
             {navItems.map((item) =>
               item.subItems ? (
                 <div key={item.name} className="group relative">
-                  <button className="text-muted-foreground flex items-center gap-2 text-sm font-medium outline-none transition-colors hover:text-foreground">
+                  <button
+                    className={`flex items-center gap-2 text-sm font-medium outline-none transition-colors hover:text-foreground ${
+                      item.subItems.some((sub) => sub.href === `#${activeSection}`)
+                        ? 'text-primary'
+                        : 'text-muted-foreground'
+                    }`}
+                  >
                     <item.icon className="h-4 w-4" />
                     {item.name}
                     <ChevronDown className="h-3 w-3 transition-transform group-hover:rotate-180" />
@@ -77,7 +106,11 @@ export function Navbar() {
                         <Link
                           key={subItem.name}
                           href={subItem.href}
-                          className="text-muted-foreground flex items-center gap-2 rounded-lg px-3 py-2 text-sm transition-colors hover:bg-secondary/50 hover:text-foreground"
+                          className={`flex items-center gap-2 rounded-lg px-3 py-2 text-sm transition-colors hover:bg-secondary/50 hover:text-foreground ${
+                            subItem.href === `#${activeSection}`
+                              ? 'bg-secondary/50 text-foreground'
+                              : 'text-muted-foreground'
+                          }`}
                         >
                           <subItem.icon className="h-4 w-4" />
                           {subItem.name}
@@ -90,11 +123,17 @@ export function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-muted-foreground group relative flex items-center gap-2 text-sm font-medium transition-colors hover:text-foreground"
+                  className={`group relative flex items-center gap-2 text-sm font-medium transition-colors hover:text-foreground ${
+                    item.href === `#${activeSection}` ? 'text-primary' : 'text-muted-foreground'
+                  }`}
                 >
                   <item.icon className="h-4 w-4" />
                   {item.name}
-                  <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-accent transition-all group-hover:w-full" />
+                  <span
+                    className={`absolute -bottom-1 left-0 h-0.5 w-0 bg-accent transition-all group-hover:w-full ${
+                      item.href === `#${activeSection}` ? 'w-full' : ''
+                    }`}
+                  />
                 </Link>
               ),
             )}

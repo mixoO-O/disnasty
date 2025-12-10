@@ -6,6 +6,10 @@ import '../globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
+export function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'es' }];
+}
+
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
   const t = await getTranslations({ locale, namespace: 'Metadata' });
 
@@ -42,7 +46,6 @@ export default async function LocaleLayout({
   params: { locale: string };
 }) {
   // Enable static rendering
-  // unstable_setRequestLocale(locale);
   const messages = await getMessages();
 
   return (
