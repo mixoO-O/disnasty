@@ -69,10 +69,28 @@
     }
   },
   "AIShowcase": {
-    "badge": "Soluciones de IA Propietarias",
-    "titlePrefix": "Sistemas Inteligentes",
-    "titleSuffix": "Adaptados para Industrias",
-    "description": "Descubre cómo nuestras soluciones de IA pueden transformar tu negocio con automatización inteligente y conocimientos basados en datos. Es hora de innovar.",
+    "badge": "Capacidad Empresarial de Próxima Generación",
+    "titlePrefix": "Ecosistema de",
+    "titleSuffix": "Inteligencia Autónoma",
+    "tooltip": "Agente IA creado por Disnasty",
+    "description": "Orquestamos los modelos de IA más potentes del mundo con nuestro marco propietario Code Antigravity, gestionando contextos complejos vía MCP para una verdadera autonomía empresarial.",
+    "antigravity": {
+      "title": "Code Antigravity",
+      "description": "Nuestro motor propietario para comportamientos agénticos. Supera la fricción, permitiendo a la IA pensar, planificar y ejecutar tareas operativas y de código complejas de forma autónoma."
+    },
+    "n8n": {
+      "title": "Automatización n8n",
+      "description": "Orquestación visual de flujos de trabajo que conecta tus agentes de IA con miles de aplicaciones, asegurando la ejecución fluida de procesos empresariales."
+    },
+    "llm": {
+      "title": "Matriz Multi-Modelo",
+      "description": "No dependemos de un solo cerebro. Integramos OpenAI, Anthropic, Gemini y DeepSeek, enrutando tareas al modelo más capaz para el trabajo específico."
+    },
+    "context": {
+      "title": "MCP y Contexto",
+      "description": "Gestión de memoria de grado empresarial usando el Protocolo de Contexto de Modelo (MCP). Aseguramos que tu IA retenga el contexto crítico de negocio de forma segura."
+    },
+    "solutionsTitle": "Nuestras Soluciones Propietarias",
     "auralis": {
       "title": "Auralis",
       "description": "El socio avanzado de IA para firmas legales. Auralis no solo gestiona agendas; distribuye inteligentemente la carga de casos, optimiza el ancho de banda de los abogados y se comunica proactivamente con los clientes.",
