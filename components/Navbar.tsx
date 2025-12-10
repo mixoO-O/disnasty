@@ -93,8 +93,9 @@ export function Navbar() {
                                 {item.name}
                             </Link>
                         ))}
-                        <div className="pt-2 border-t border-border/50 flex justify-between items-center">
-                            <span className="text-sm text-muted-foreground">Language</span>
+                        <div className="pt-2 border-t border-border/50 flex justify-end items-center">
+                            <ThemeSwitcher />
+                            <div className="w-2" />
                             <LanguageSwitcher />
                         </div>
                     </motion.div>
