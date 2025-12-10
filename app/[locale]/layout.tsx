@@ -6,10 +6,15 @@ import '../globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
+export function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'es' }];
+}
+
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
   const t = await getTranslations({ locale, namespace: 'Metadata' });
 
   return {
+    metadataBase: new URL('https://disnasty.com'),
     title: t('title'),
     description: t('description'),
     keywords: t('keywords'),
@@ -21,13 +26,15 @@ export async function generateMetadata({ params: { locale } }: { params: { local
       description: t('ogDescription'),
       type: 'website',
       locale: locale,
-      // url: `https://disnasty.com/${locale}`, // TODO: Update with actual domain
+      url: `https://disnasty.com/${locale}`,
       siteName: 'Disnasty',
+      images: ['/og-image.jpg'],
     },
     twitter: {
       card: 'summary_large_image',
       title: t('twitterTitle'),
       description: t('twitterDescription'),
+      images: ['/og-image.jpg'],
       // creator: '@disnasty', // TODO: Update with actual handle
     },
     themeColor: '#000000',
@@ -42,7 +49,6 @@ export default async function LocaleLayout({
   params: { locale: string };
 }) {
   // Enable static rendering
-  // unstable_setRequestLocale(locale);
   const messages = await getMessages();
 
   return (

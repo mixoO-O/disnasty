@@ -98,8 +98,11 @@ export function ProductShowcase() {
           viewport={{ once: true }}
           className="mb-16 text-center"
         >
-          <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-            {t('title')}
+          <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-5xl">
+            {t('titlePrefix')}{' '}
+            <span className="animate-gradient bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-[length:200%_200%] bg-clip-text text-transparent">
+              {t('titleSuffix')}
+            </span>
           </h2>
           <p className="text-muted-foreground mx-auto max-w-2xl">{t('description')}</p>
         </motion.div>
@@ -136,8 +139,11 @@ export function ProductShowcase() {
                     damping: 20,
                   },
                 }}
-                className={`bg-card/40 group relative overflow-hidden rounded-2xl backdrop-blur-md ${className} transform-style-3d`}
+                className={`bg-card/40 group relative overflow-hidden rounded-3xl backdrop-blur-md ${className} transform-style-3d`}
               >
+                {/* Animated Border Container */}
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 opacity-20 blur-sm transition-opacity duration-500 group-hover:opacity-40" />
+
                 {/* Image Background */}
                 {product.image && (
                   <div className="absolute inset-0">

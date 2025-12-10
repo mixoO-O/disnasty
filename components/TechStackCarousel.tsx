@@ -1,8 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-
 import { frontendTech, iaTech, cloudTech } from '@/constants/techStack';
 
 const TechRow = ({

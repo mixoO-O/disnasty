@@ -35,7 +35,8 @@
     "cta": "Contact Us"
   },
   "ProductShowcase": {
-    "title": "Featured Projects",
+    "titlePrefix": "Featured",
+    "titleSuffix": "Projects",
     "description": "Explore our latest work in AI, automation, and next-gen web development.",
     "products": {
       "aiAnalytics": {
