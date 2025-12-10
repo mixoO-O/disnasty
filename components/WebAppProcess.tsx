@@ -39,7 +39,7 @@ export function WebAppProcess() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className={`sticky top-20 z-30 bg-background/80 backdrop-blur-xl py-10 text-center rounded-3xl border border-border/50 ${activeStep === steps[0].id ? "mb-24" : "mb-[50vh]"
+                    className={`sticky top-24 z-30 bg-background/80 backdrop-blur-xl py-10 text-center rounded-3xl border border-border/50 ${activeStep === steps[0].id ? "mb-24" : "mb-[50vh]"
                         }`}
                 >
                     <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
@@ -99,7 +99,7 @@ export function WebAppProcess() {
                     </div>
 
                     {/* Sticky Graphics Section - Desktop */}
-                    <div className="hidden lg:block sticky top-96 h-[500px] w-1/2 ml-auto z-10">
+                    <div className="hidden lg:block sticky top-[40vh] h-[500px] w-1/2 ml-auto z-10">
                         <div className="relative w-full h-full bg-card/90 dark:bg-card/40 rounded-3xl border border-border/50 overflow-hidden shadow-2xl backdrop-blur-xl">
                             <AnimatePresence mode="wait">
                                 {steps.map((step) => (
