@@ -10,10 +10,10 @@
     --primary: 263.4 70% 50.4%;
     --secondary: 217.2 32.6% 17.5%;
     --accent: 160 84% 39%;
-    
+
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
- 
+
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
     --ring: 263.4 70% 50.4%;
@@ -22,14 +22,14 @@
   .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
-    
+
     --primary: 263.4 70% 50.4%;
     --secondary: 217.2 32.6% 17.5%;
     --accent: 160 84% 39%;
-    
+
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
- 
+
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 263.4 70% 50.4%;
@@ -42,10 +42,10 @@
 
 @layer utilities {
   .glass {
-    @apply bg-white/5 backdrop-blur-lg border border-white/10;
+    @apply border border-white/10 bg-white/5 backdrop-blur-lg;
   }
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-400;
+    @apply bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent;
   }
   .animate-gradient {
     animation: gradient 8s linear infinite;
@@ -53,14 +53,24 @@
 }
 
 @keyframes gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-marquee {
