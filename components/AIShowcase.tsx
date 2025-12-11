@@ -121,9 +121,50 @@ function SolutionModal({ isOpen, onClose, solution }: SolutionModalProps) {
 
 export function AIShowcase() {
   const t = useTranslations('AIShowcase');
-  const [activeSolution, setActiveSolution] = useState<'auralis' | 'clou' | null>(null);
+  const [activeSolution, setActiveSolution] = useState<string | null>(null);
 
-  const solutions = {
+  const solutions: Record<
+    string,
+    {
+      title: string;
+      description: string;
+      features: string[];
+      color: string;
+      icon: any;
+    }
+  > = {
+    antigravity: {
+      title: t('antigravity.title'),
+      description: t('antigravity.description'),
+      features: [
+        t('antigravity.features.0'),
+        t('antigravity.features.1'),
+        t('antigravity.features.2'),
+      ],
+      color: 'from-cyan-500 via-purple-500 to-emerald-500', // Complex gradient for main card
+      icon: Cpu,
+    },
+    n8n: {
+      title: t('n8n.title'),
+      description: t('n8n.description'),
+      features: [t('n8n.features.0'), t('n8n.features.1'), t('n8n.features.2')],
+      color: 'from-pink-500 to-rose-500',
+      icon: Workflow,
+    },
+    llm: {
+      title: t('llm.title'),
+      description: t('llm.description'),
+      features: [t('llm.features.0'), t('llm.features.1'), t('llm.features.2')],
+      color: 'from-emerald-500 to-teal-500',
+      icon: Brain,
+    },
+    context: {
+      title: t('context.title'),
+      description: t('context.description'),
+      features: [t('context.features.0'), t('context.features.1'), t('context.features.2')],
+      color: 'from-orange-500 to-amber-500',
+      icon: Layers,
+    },
     auralis: {
       title: t('auralis.title'),
       description: t('auralis.description'),
@@ -138,6 +179,12 @@ export function AIShowcase() {
       color: 'from-green-500 to-emerald-500',
       icon: Leaf,
     },
+  };
+
+  const handleCardClick = (key: string, e: React.MouseEvent) => {
+    // Prevent bubbling if a specific button inside was clicked
+    if ((e.target as HTMLElement).closest('button')) return;
+    setActiveSolution(key);
   };
 
   return (
@@ -165,7 +212,10 @@ export function AIShowcase() {
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {/* Card 1: Code Antigravity (Large) */}
-          <div className="bg-card/40 hover:bg-card/60 group relative overflow-hidden rounded-3xl p-8 transition-colors md:col-span-3 md:p-12">
+          <div
+            onClick={(e) => handleCardClick('antigravity', e)}
+            className="bg-card/40 hover:bg-card/60 group relative cursor-pointer overflow-hidden rounded-3xl p-8 transition-colors md:col-span-3 md:p-12"
+          >
             {/* Animated Border Container */}
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 opacity-20 blur-sm transition-opacity duration-500 group-hover:opacity-40" />
 
@@ -173,7 +223,10 @@ export function AIShowcase() {
             <div className="absolute right-6 top-6 z-20 flex flex-col items-center">
               <div className="relative flex gap-3">
                 <button
-                  onClick={() => setActiveSolution('auralis')}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setActiveSolution('auralis');
+                  }}
                   className="group/btn flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-purple-500/30 bg-purple-500/20 transition-all hover:scale-110 hover:bg-purple-500/30 md:h-12 md:w-12"
                   aria-label="Auralis"
                 >
@@ -181,7 +234,10 @@ export function AIShowcase() {
                 </button>
 
                 <button
-                  onClick={() => setActiveSolution('clou')}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setActiveSolution('clou');
+                  }}
                   className="group/btn flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-green-500/30 bg-green-500/20 transition-all hover:scale-110 hover:bg-green-500/30 md:h-12 md:w-12"
                   aria-label="Clou"
                 >
@@ -216,7 +272,10 @@ export function AIShowcase() {
           </div>
 
           {/* Card 2: n8n Automation */}
-          <div className="bg-card/40 hover:bg-card/60 group relative overflow-hidden rounded-3xl p-8 transition-colors">
+          <div
+            onClick={(e) => handleCardClick('n8n', e)}
+            className="bg-card/40 hover:bg-card/60 group relative cursor-pointer overflow-hidden rounded-3xl p-8 transition-colors"
+          >
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 opacity-20 blur-sm transition-opacity duration-500 group-hover:opacity-40" />
             <div className="relative z-10">
               <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl border border-pink-500/20 bg-pink-500/20 transition-transform group-hover:scale-110">
@@ -228,7 +287,10 @@ export function AIShowcase() {
           </div>
 
           {/* Card 3: Multi-Model Matrix */}
-          <div className="bg-card/40 hover:bg-card/60 group relative overflow-hidden rounded-3xl p-8 transition-colors">
+          <div
+            onClick={(e) => handleCardClick('llm', e)}
+            className="bg-card/40 hover:bg-card/60 group relative cursor-pointer overflow-hidden rounded-3xl p-8 transition-colors"
+          >
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 opacity-20 blur-sm transition-opacity duration-500 group-hover:opacity-40" />
             <div className="relative z-10">
               <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl border border-emerald-500/20 bg-emerald-500/20 transition-transform group-hover:scale-110">
@@ -240,7 +302,10 @@ export function AIShowcase() {
           </div>
 
           {/* Card 4: MCP & Context */}
-          <div className="bg-card/40 hover:bg-card/60 group relative overflow-hidden rounded-3xl p-8 transition-colors">
+          <div
+            onClick={(e) => handleCardClick('context', e)}
+            className="bg-card/40 hover:bg-card/60 group relative cursor-pointer overflow-hidden rounded-3xl p-8 transition-colors"
+          >
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 opacity-20 blur-sm transition-opacity duration-500 group-hover:opacity-40" />
             <div className="relative z-10">
               <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl border border-orange-500/20 bg-orange-500/20 transition-transform group-hover:scale-110">

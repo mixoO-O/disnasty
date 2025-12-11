@@ -77,19 +77,39 @@
     "description": "Orquestamos los modelos de IA más potentes del mundo con nuestro marco propietario Code Antigravity, gestionando contextos complejos vía MCP para una verdadera autonomía empresarial.",
     "antigravity": {
       "title": "Code Antigravity",
-      "description": "Nuestro motor propietario para comportamientos agénticos. Supera la fricción, permitiendo a la IA pensar, planificar y ejecutar tareas operativas y de código complejas de forma autónoma."
+      "description": "Nuestro motor propietario para comportamientos agénticos. Supera la fricción, permitiendo a la IA pensar, planificar y ejecutar tareas operativas y de código complejas de forma autónoma.",
+      "features": {
+        "0": "Planificación Autónoma de Tareas",
+        "1": "Ejecución de Código en Tiempo Real",
+        "2": "Integración Profunda de Sistemas"
+      }
     },
     "n8n": {
       "title": "Automatización n8n",
-      "description": "Orquestación visual de flujos de trabajo que conecta tus agentes de IA con miles de aplicaciones, asegurando la ejecución fluida de procesos empresariales."
+      "description": "Orquestación visual de flujos de trabajo que conecta tus agentes de IA con miles de aplicaciones, asegurando la ejecución fluida de procesos empresariales.",
+      "features": {
+        "0": "Flujos de Trabajo Visuales",
+        "1": "Conexión con +1000 Apps",
+        "2": "Automatización Escalable"
+      }
     },
     "llm": {
-      "title": "Matriz Multi-Modelo",
-      "description": "No dependemos de un solo cerebro. Integramos OpenAI, Anthropic, Gemini y DeepSeek, enrutando tareas al modelo más capaz para el trabajo específico."
+      "title": "LLM y Matriz Multi-Modelo",
+      "description": "No dependemos de un solo cerebro. Integramos OpenAI, Anthropic, Gemini y DeepSeek, enrutando tareas al modelo más capaz para el trabajo específico.",
+      "features": {
+        "0": "Enrutamiento Inteligente de Modelos",
+        "1": "Soporte para OpenAI, Anthropic, Gemini",
+        "2": "Optimización de Costos y Rendimiento"
+      }
     },
     "context": {
       "title": "MCP y Contexto",
-      "description": "Gestión de memoria de grado empresarial usando el Protocolo de Contexto de Modelo (MCP). Aseguramos que tu IA retenga el contexto crítico de negocio de forma segura."
+      "description": "Gestión de memoria de grado empresarial usando el Protocolo de Contexto de Modelo (MCP). Aseguramos que tu IA retenga el contexto crítico de negocio de forma segura.",
+      "features": {
+        "0": "Memoria Persistente Segura",
+        "1": "Protocolo de Contexto Unificado",
+        "2": "Recuperación de Información Contextual"
+      }
     },
     "solutionsTitle": "Nuestras Soluciones Propietarias",
     "auralis": {
