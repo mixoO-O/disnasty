@@ -77,19 +77,39 @@
     "description": "We orchestrate the world's most powerful AI models with our proprietary Code Antigravity framework, managing complex context via MCP for true enterprise autonomy.",
     "antigravity": {
       "title": "Code Antigravity",
-      "description": "Our proprietary engine for agentic behaviors. It overcomes friction, enabling AI to think, plan, and execute complex coding and operational tasks autonomously."
+      "description": "Our proprietary engine for agentic behaviors. It overcomes friction, enabling AI to think, plan, and execute complex coding and operational tasks autonomously.",
+      "features": {
+        "0": "Autonomous Task Planning",
+        "1": "Real-time Code Execution",
+        "2": "Deep System Integration"
+      }
     },
     "n8n": {
       "title": "n8n Automation",
-      "description": "Visual workflow orchestration that connects your AI agents to thousands of apps, ensuring seamless execution of business processes."
+      "description": "Visual workflow orchestration that connects your AI agents to thousands of apps, ensuring seamless execution of business processes.",
+      "features": {
+        "0": "Visual Workflow Builder",
+        "1": "Connects with +1000 Apps",
+        "2": "Scalable Automation"
+      }
     },
     "llm": {
-      "title": "Multi-Model Matrix",
-      "description": "We don't rely on a single brain. We integrate OpenAI, Anthropic, Gemini, and DeepSeek, routing tasks to the most capable model for the specific job."
+      "title": "LLM & Multi-Model Matrix",
+      "description": "We don't rely on a single brain. We integrate OpenAI, Anthropic, Gemini, and DeepSeek, routing tasks to the most capable model for the specific job.",
+      "features": {
+        "0": "Intelligent Model Routing",
+        "1": "Support for OpenAI, Anthropic, Gemini",
+        "2": "Cost & Performance Optimization"
+      }
     },
     "context": {
       "title": "MCP & Context",
-      "description": "Enterprise-grade memory management using the Model Context Protocol. We ensure your AI retains critical business context securely across all interactions."
+      "description": "Enterprise-grade memory management using the Model Context Protocol. We ensure your AI retains critical business context securely across all interactions.",
+      "features": {
+        "0": "Secure Persistent Memory",
+        "1": "Unified Context Protocol",
+        "2": "Contextual Information Retrieval"
+      }
     },
     "solutionsTitle": "Our Proprietary Solutions",
     "auralis": {
