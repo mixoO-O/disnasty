@@ -69,7 +69,7 @@ export function Navbar() {
   return (
     <nav className="fixed left-0 right-0 top-0 z-50 px-4 py-4 md:px-0">
       <div className="mx-auto max-w-7xl">
-        <div className="glass-nav flex items-center justify-between rounded-2xl bg-background/60 pl-0 pr-6 py-3 shadow-sm backdrop-blur-md transition-colors duration-300 dark:shadow-none">
+        <div className="glass-nav flex items-center justify-between rounded-2xl bg-background/60 py-3 pl-0 pr-6 shadow-sm backdrop-blur-md transition-colors duration-300 dark:shadow-none">
           <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 opacity-20 group-hover:opacity-40" />
           <Link href="/" className="group flex items-center gap-2">
             <div className="relative flex items-center gap-2">
@@ -80,7 +80,7 @@ export function Navbar() {
                 height={128}
                 className="absolute h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-110"
               />
-              <span className="ml-24 animate-gradient z-10 bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-[length:200%_200%] bg-clip-text text-2xl font-bold text-transparent">
+              <span className="animate-gradient z-10 ml-24 bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-[length:200%_200%] bg-clip-text text-2xl font-bold text-transparent">
                 DISNASTY
               </span>
             </div>
