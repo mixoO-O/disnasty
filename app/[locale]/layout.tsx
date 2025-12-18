@@ -19,7 +19,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
     description: t('description'),
     keywords: t('keywords'),
     icons: {
-      icon: '/favicon.ico',
+      icon: '/lion-logo.svg',
     },
     openGraph: {
       title: t('ogTitle'),

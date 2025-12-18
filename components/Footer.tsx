@@ -44,11 +44,11 @@ export function Footer() {
               <Link href="/" className="group inline-block">
                 <div className="flex items-center gap-2">
                   <Image
-                    src="/disnasty-logo-icon.png"
+                    src="/lion-logo.svg"
                     alt="Disnasty Logo"
-                    width={32}
-                    height={32}
-                    className="h-8 w-auto object-contain"
+                    width={128}
+                    height={128}
+                    className="h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-110"
                   />
                   <span className="animate-gradient bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-[length:200%_200%] bg-clip-text text-2xl font-bold text-transparent">
                     DISNASTY
