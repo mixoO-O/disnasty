@@ -18,8 +18,37 @@ export async function generateMetadata({ params: { locale } }: { params: { local
     title: t('title'),
     description: t('description'),
     keywords: t('keywords'),
+    alternates: {
+      canonical: `https://disnasty.com/${locale}`,
+      languages: {
+        'en-US': 'https://disnasty.com/en',
+        'es-CL': 'https://disnasty.com/es',
+      },
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
     icons: {
-      icon: '/lion-logo.svg',
+      icon: [
+        { url: '/favicon.ico', sizes: 'any' },
+        { url: '/lion-logo.svg', type: 'image/svg+xml' },
+        { url: '/lion-logo.png', type: 'image/png' },
+      ],
+      apple: [{ url: '/lion-logo.png' }],
+      other: [
+        {
+          rel: 'manifest',
+          url: '/site.webmanifest',
+        },
+      ],
     },
     openGraph: {
       title: t('ogTitle'),
@@ -28,16 +57,26 @@ export async function generateMetadata({ params: { locale } }: { params: { local
       locale: locale,
       url: `https://disnasty.com/${locale}`,
       siteName: 'Disnasty',
-      images: ['/og-image.jpg'],
+      images: [
+        {
+          url: '/og-image.jpg',
+          width: 1200,
+          height: 630,
+          alt: 'Disnasty Tech',
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: t('twitterTitle'),
       description: t('twitterDescription'),
       images: ['/og-image.jpg'],
-      // creator: '@disnasty', // TODO: Update with actual handle
+      creator: '@disnasty',
     },
     themeColor: '#000000',
+    other: {
+      'google-site-verification': 'google_verification_token', // TODO: Add verification token
+    },
   };
 }
 
@@ -51,9 +90,38 @@ export default async function LocaleLayout({
   // Enable static rendering
   const messages = await getMessages();
 
+  // JSON-LD Structured Data
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Disnasty',
+    url: 'https://disnasty.com',
+    logo: 'https://disnasty.com/lion-logo.png',
+    sameAs: [
+      'https://www.linkedin.com/company/disnasty',
+      'https://twitter.com/disnasty',
+      'https://www.instagram.com/disnastytech',
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+56-9-1234-5678',
+      contactType: 'sales',
+      areaServed: ['CL', 'US', 'World'],
+      availableLanguage: ['es', 'en'],
+    },
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'CL',
+    },
+  };
+
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={`${inter.className} min-h-screen bg-background text-foreground antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Providers messages={messages} locale={locale}>
           {/* Global Background */}
           <div className="fixed inset-0 -z-50 bg-background transition-colors duration-300" />
