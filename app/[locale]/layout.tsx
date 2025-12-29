@@ -93,26 +93,60 @@ export default async function LocaleLayout({
   // JSON-LD Structured Data
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'Disnasty',
-    url: 'https://disnasty.com',
-    logo: 'https://disnasty.com/lion-logo.png',
-    sameAs: [
-      'https://www.linkedin.com/company/disnasty',
-      'https://twitter.com/disnasty',
-      'https://www.instagram.com/disnastytech',
+    '@graph': [
+      {
+        '@type': 'Organization',
+        '@id': 'https://disnasty.com/#organization',
+        name: 'Disnasty',
+        url: 'https://disnasty.com',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://disnasty.com/lion-logo.png',
+          width: 512,
+          height: 512,
+        },
+        sameAs: [
+          'https://www.linkedin.com/company/disnasty',
+          'https://twitter.com/disnasty',
+          'https://www.instagram.com/disnastytech',
+        ],
+        contactPoint: {
+          '@type': 'ContactPoint',
+          telephone: '+56-9-1234-5678',
+          contactType: 'sales',
+          areaServed: ['CL', 'US', 'World'],
+          availableLanguage: ['es', 'en'],
+        },
+        address: {
+          '@type': 'PostalAddress',
+          addressCountry: 'CL',
+        },
+      },
+      {
+        '@type': 'WebSite',
+        '@id': 'https://disnasty.com/#website',
+        url: 'https://disnasty.com',
+        name: 'Disnasty Tech',
+        publisher: {
+          '@id': 'https://disnasty.com/#organization',
+        },
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: 'https://disnasty.com/search?q={search_term_string}',
+          'query-input': 'required name=search_term_string',
+        },
+      },
+      {
+        '@type': 'SiteNavigationElement',
+        name: ['Innovation Hub', 'Products', 'Services', 'Tech Stack'],
+        url: [
+          'https://disnasty.com/#innovation',
+          'https://disnasty.com/#products',
+          'https://disnasty.com/#services',
+          'https://disnasty.com/#tech-stack',
+        ],
+      },
     ],
-    contactPoint: {
-      '@type': 'ContactPoint',
-      telephone: '+56-9-1234-5678',
-      contactType: 'sales',
-      areaServed: ['CL', 'US', 'World'],
-      availableLanguage: ['es', 'en'],
-    },
-    address: {
-      '@type': 'PostalAddress',
-      addressCountry: 'CL',
-    },
   };
 
   return (
