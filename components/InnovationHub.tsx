@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Stethoscope, Ship } from 'lucide-react';
+import { Stethoscope, Ship, Activity } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 const projects = [
@@ -12,6 +12,10 @@ const projects = [
   {
     icon: Ship,
     color: '#3b82f6', // Blue
+  },
+  {
+    icon: Activity,
+    color: '#f43f5e', // Rose
   },
 ];
 
@@ -30,7 +34,7 @@ export function InnovationHub() {
           <h2 className="mb-6 text-4xl font-bold text-foreground md:text-5xl">{t('title')}</h2>
         </motion.div>
 
-        <div className="mx-auto grid max-w-4xl gap-10 md:grid-cols-2">
+        <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <motion.div
               key={index}

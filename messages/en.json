@@ -175,6 +175,12 @@
         "location": "Arica, Chile",
         "desc": "Maritime systems for port and shipping management.",
         "tags": "Maritime, Logistics"
+      },
+      "2": {
+        "client": "Newcom",
+        "location": "Community",
+        "desc": "Digital platform for the Newcom community (Adapted Volleyball). News, tournaments, and connection for active aging.",
+        "tags": "Sports, Health, Senior"
       }
     }
   },
