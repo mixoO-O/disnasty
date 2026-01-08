@@ -40,34 +40,77 @@
     "titlePrefix": "Proyectos",
     "titleSuffix": "Destacados",
     "description": "Explora nuestro último trabajo en IA, automatización y desarrollo web de próxima generación.",
+    "keyFeatures": "Características Clave",
     "products": {
       "aiAnalytics": {
         "title": "Panel de Análisis de IA",
-        "category": "Visualización de Datos"
+        "category": "Visualización de Datos",
+        "description": "Un panel integral que proporciona información en tiempo real a través de modelos predictivos avanzados y algoritmos de detección de anomalías.",
+        "features": {
+          "0": "Procesamiento de Datos en Tiempo Real",
+          "1": "Analítica Predictiva",
+          "2": "Informes Personalizados"
+        }
       },
       "smartCity": {
         "title": "Interfaz de Ciudad Inteligente",
-        "category": "Plataforma IoT"
+        "category": "Plataforma IoT",
+        "description": "Una plataforma integral de gestión urbana que optimiza el flujo de tráfico, el consumo de energía y los recursos de seguridad pública.",
+        "features": {
+          "0": "Integración de Sensores IoT",
+          "1": "Optimización de Tráfico",
+          "2": "Gestión Energética"
+        }
       },
       "neuralNet": {
         "title": "Visualizador de Redes Neuronales",
-        "category": "Aprendizaje Automático"
+        "category": "Aprendizaje Automático",
+        "description": "Visualización 3D interactiva de modelos de aprendizaje profundo complejos, permitiendo transparencia y una mejor comprensión de las decisiones de la IA.",
+        "features": {
+          "0": "Renderizado de Modelos 3D",
+          "1": "Inspección de Capas",
+          "2": "Vista de Entrenamiento en Tiempo Real"
+        }
       },
       "defi": {
         "title": "Protocolo de Comercio DeFi",
-        "category": "Web3 / Blockchain"
+        "category": "Web3 / Blockchain",
+        "description": "Protocolo de finanzas descentralizadas de próxima generación que garantiza transacciones seguras y de alta velocidad con gestión automatizada de liquidez.",
+        "features": {
+          "0": "Seguridad de Contratos Inteligentes",
+          "1": "Liquidez Automatizada",
+          "2": "Puente Cross-chain"
+        }
       },
       "quantum": {
         "title": "Núcleo de Computación Cuántica",
-        "category": "Computación Avanzada"
+        "category": "Computación Avanzada",
+        "description": "Interfaz de simulación para algoritmos cuánticos, cerrando la brecha entre las metodologías de computación clásica y cuántica.",
+        "features": {
+          "0": "Simulación de Qubits",
+          "1": "Pruebas de Algoritmos",
+          "2": "Corrección de Errores Cuánticos"
+        }
       },
       "cyber": {
         "title": "Escudo de Ciberseguridad",
-        "category": "Seguridad"
+        "category": "Seguridad",
+        "description": "Sistema de detección de amenazas impulsado por IA que protege la infraestructura empresarial de amenazas cibernéticas en evolución en tiempo real.",
+        "features": {
+          "0": "Inteligencia de Amenazas",
+          "1": "Respuesta Automatizada",
+          "2": "Arquitectura Zero-trust"
+        }
       },
       "holo": {
         "title": "Espacio de Trabajo Holográfico",
-        "category": "RA / RV"
+        "category": "RA / RV",
+        "description": "Entorno de trabajo inmersivo AR/VR diseñado para la colaboración remota y el diseño espacial en 3D.",
+        "features": {
+          "0": "Audio Espacial",
+          "1": "Seguimiento de Manos",
+          "2": "Colaboración Multi-usuario"
+        }
       }
     }
   },

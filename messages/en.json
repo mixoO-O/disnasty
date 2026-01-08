@@ -40,34 +40,77 @@
     "titlePrefix": "Featured",
     "titleSuffix": "Projects",
     "description": "Explore our latest work in AI, automation, and next-gen web development.",
+    "keyFeatures": "Key Features",
     "products": {
       "aiAnalytics": {
         "title": "AI Analytics Dashboard",
-        "category": "Data Visualization"
+        "category": "Data Visualization",
+        "description": "A comprehensive dashboard providing real-time insights through advanced predictive modeling and anomaly detection algorithms.",
+        "features": {
+          "0": "Real-time Data Processing",
+          "1": "Predictive Analytics",
+          "2": "Custom Reporting"
+        }
       },
       "smartCity": {
         "title": "Smart City Interface",
-        "category": "IoT Platform"
+        "category": "IoT Platform",
+        "description": "An integrated urban management platform optimizing traffic flow, energy consumption, and public safety resources.",
+        "features": {
+          "0": "IoT Sensor Integration",
+          "1": "Traffic Optimization",
+          "2": "Energy Management"
+        }
       },
       "neuralNet": {
         "title": "Neural Network Visualizer",
-        "category": "Machine Learning"
+        "category": "Machine Learning",
+        "description": "Interactive 3D visualization of complex deep learning models, enabling transparency and better understanding of AI decisions.",
+        "features": {
+          "0": "3D Model Rendering",
+          "1": "Layer Inspection",
+          "2": "Real-time Training View"
+        }
       },
       "defi": {
         "title": "DeFi Trading Protocol",
-        "category": "Web3 / Blockchain"
+        "category": "Web3 / Blockchain",
+        "description": "Next-generation decentralized finance protocol ensuring secure, high-speed transactions with automated liquidity management.",
+        "features": {
+          "0": "Smart Contract Security",
+          "1": "Automated Liquidity",
+          "2": "Cross-chain Bridge"
+        }
       },
       "quantum": {
         "title": "Quantum Computing Core",
-        "category": "Advanced Computing"
+        "category": "Advanced Computing",
+        "description": "Simulation interface for quantum algorithms, bridging the gap between classical and quantum computing methodologies.",
+        "features": {
+          "0": "Qubit Simulation",
+          "1": "Algorithm Testing",
+          "2": "Quantum Error Correction"
+        }
       },
       "cyber": {
         "title": "Cybersecurity Shield",
-        "category": "Security"
+        "category": "Security",
+        "description": "AI-driven threat detection system protecting enterprise infrastructure from evolving cyber threats in real-time.",
+        "features": {
+          "0": "Threat Intelligence",
+          "1": "Automated Response",
+          "2": "Zero-trust Architecture"
+        }
       },
       "holo": {
         "title": "Holographic Workspace",
-        "category": "AR / VR"
+        "category": "AR / VR",
+        "description": "Immersive AR/VR workspace environment designed for remote collaboration and 3D spatial design.",
+        "features": {
+          "0": "Spatial Audio",
+          "1": "Hand Tracking",
+          "2": "Multi-user Collaboration"
+        }
       }
     }
   },
