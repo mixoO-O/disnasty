@@ -50,19 +50,18 @@ export function Navbar() {
   }, []);
 
   const navItems = [
-    { name: t('products'), href: '#products', icon: Cpu },
     {
       name: t('services'),
       href: '#',
       icon: Cloud,
       subItems: [
-        { name: t('web-app'), href: '#web-app', icon: Code },
-        { name: t('mobile-app'), href: '#mobile-app', icon: Cpu },
-        { name: t('cloud'), href: '#cloud-architecture', icon: Cloud },
         { name: t('ia'), href: '#ia', icon: Bot },
+        { name: t('development-process'), href: '#development-process', icon: Code },
+        { name: t('cloud'), href: '#cloud-architecture', icon: Cloud },
       ],
     },
     { name: t('tech-stack'), href: '#tech-stack', icon: Code },
+    { name: t('products'), href: '#products', icon: Cpu },
     { name: t('innovation'), href: '#innovation', icon: Zap },
   ];
 
