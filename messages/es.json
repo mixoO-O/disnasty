@@ -208,6 +208,8 @@
   },
   "InnovationHub": {
     "title": "Centro de Innovación",
+    "visitWebsite": "Visitar Sitio",
+    "confidential": "Cliente Confidencial",
     "items": {
       "0": {
         "client": "Mediprotek",
