@@ -24,12 +24,10 @@ export function Footer() {
   const tNav = useTranslations('Navbar');
 
   const navItems = [
-    { name: tNav('products'), href: '#products', icon: Cpu },
-    { name: tNav('web-app'), href: '#web-app', icon: Code },
-    { name: tNav('mobile-app'), href: '#mobile-app', icon: Cpu },
+    { name: tNav('ia'), href: '#ia', icon: Bot },
     { name: tNav('cloud'), href: '#cloud-architecture', icon: Cloud },
     { name: tNav('tech-stack'), href: '#tech-stack', icon: Code },
-    { name: tNav('ia'), href: '#ia', icon: Bot },
+    { name: tNav('products'), href: '#products', icon: Cpu },
     { name: tNav('innovation'), href: '#innovation', icon: Zap },
   ];
 

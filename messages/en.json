@@ -208,6 +208,8 @@
   },
   "InnovationHub": {
     "title": "Innovation Hub",
+    "visitWebsite": "Visit Website",
+    "confidential": "Confidential Client",
     "items": {
       "0": {
         "client": "Mediprotek",
