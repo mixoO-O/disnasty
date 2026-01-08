@@ -107,7 +107,7 @@ export function ProductShowcase() {
           <p className="text-muted-foreground mx-auto max-w-2xl">{t('description')}</p>
         </motion.div>
 
-        <div className="perspective-1000 grid auto-rows-[200px] grid-cols-1 gap-4 md:grid-cols-4">
+        <div className="grid auto-rows-[200px] grid-cols-1 gap-4 md:grid-cols-4">
           {displayProducts.map((product, index) => {
             // Use the grid slot based on index
             const className = gridSlots[index] || 'md:col-span-1 md:row-span-1';
@@ -115,29 +115,15 @@ export function ProductShowcase() {
             return (
               <motion.div
                 key={`${product.id}-${index}`}
-                initial={{ opacity: 0, scale: 0.5, rotateX: 45 }}
-                whileInView={{ opacity: 1, scale: 1, rotateX: 0 }}
-                viewport={{ once: true }}
+                initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, margin: '-50px' }}
                 transition={{
-                  y: {
-                    duration: 4 + Math.random() * 2,
-                    repeat: Infinity,
-                    ease: 'easeInOut',
-                    delay: Math.random() * 2,
-                  },
-                  rotate: {
-                    duration: 6 + Math.random() * 2,
-                    repeat: Infinity,
-                    ease: 'easeInOut',
-                    delay: Math.random() * 2,
-                  },
-                  default: {
-                    duration: 0.8,
-                    delay: index * 0.1,
-                    type: 'spring',
-                    stiffness: 50,
-                    damping: 20,
-                  },
+                  duration: 0.8,
+                  delay: index * 0.1,
+                  type: 'spring',
+                  stiffness: 50,
+                  damping: 20,
                 }}
                 className={`bg-card/40 group relative overflow-hidden rounded-3xl backdrop-blur-md ${className} transform-style-3d`}
               >
@@ -146,20 +132,20 @@ export function ProductShowcase() {
 
                 {/* Image Background */}
                 {product.image && (
-                  <div className="absolute inset-0">
+                  <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105">
                     <Image
                       src={product.image}
                       alt={t(`products.${product.id}.title`)}
                       fill
-                      className="object-cover opacity-60 transition-transform duration-700 group-hover:scale-110 group-hover:opacity-80"
+                      className="object-cover opacity-60 transition-opacity duration-500 group-hover:opacity-80"
                     />
                     <div className="absolute inset-0 bg-black/60 transition-colors duration-500 group-hover:bg-black/40" />
                   </div>
                 )}
 
-                {/* Holographic Gradient Overlay */}
+                {/* Holographic Gradient Overlay - Smoother */}
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br ${product.gradient} opacity-20 mix-blend-color-dodge transition-opacity duration-500 group-hover:opacity-40`}
+                  className={`absolute inset-0 bg-gradient-to-br ${product.gradient} opacity-10 mix-blend-color-dodge transition-all duration-700 group-hover:opacity-30`}
                 />
 
                 {/* Scanning Line Effect on Hover */}

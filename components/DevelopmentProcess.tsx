@@ -28,12 +28,12 @@ const steps = [
   },
 ];
 
-export function WebAppProcess() {
-  const t = useTranslations('WebAppProcess');
+export function DevelopmentProcess() {
+  const t = useTranslations('DevelopmentProcess');
   const [activeStep, setActiveStep] = useState(steps[0].id);
 
   return (
-    <section id="web-app" className="relative">
+    <section id="development-process" className="relative">
       <div className="mx-auto max-w-7xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

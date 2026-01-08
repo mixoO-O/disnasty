@@ -1,8 +1,7 @@
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
 import { ProductShowcase } from '@/components/ProductShowcase';
-import { MobileAppProcess } from '@/components/MobileAppProcess';
-import { WebAppProcess } from '@/components/WebAppProcess';
+import { DevelopmentProcess } from '@/components/DevelopmentProcess';
 import { CloudArchitecture } from '@/components/CloudArchitecture';
 import { TechStackCarousel } from '@/components/TechStackCarousel';
 import { Footer } from '@/components/Footer';
@@ -20,15 +19,11 @@ export default function Home({ params: { locale } }: { params: { locale: string 
       <Hero />
 
       <ScrollReveal>
-        <ProductShowcase />
+        <AIShowcase />
       </ScrollReveal>
 
       <ScrollReveal>
-        <WebAppProcess />
-      </ScrollReveal>
-
-      <ScrollReveal>
-        <MobileAppProcess />
+        <DevelopmentProcess />
       </ScrollReveal>
 
       <ScrollReveal>
@@ -44,11 +39,11 @@ export default function Home({ params: { locale } }: { params: { locale: string 
                 </ScrollReveal> */}
 
       <ScrollReveal>
-        <AIShowcase />
+        <TechStackCarousel />
       </ScrollReveal>
 
       <ScrollReveal>
-        <TechStackCarousel />
+        <ProductShowcase />
       </ScrollReveal>
 
       <ScrollReveal>

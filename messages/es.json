@@ -18,7 +18,9 @@
     "contact": "Contáctanos",
     "ia": "IA",
     "cloud": "Nube",
-    "services": "Servicios"
+    "services": "Servicios",
+    "development-process": "Proceso de Desarrollo",
+    "cloud-architecture": "Arquitectura de Nube"
   },
   "Hero": {
     "badge": "Innovación de Próxima Generación",
@@ -38,34 +40,77 @@
     "titlePrefix": "Proyectos",
     "titleSuffix": "Destacados",
     "description": "Explora nuestro último trabajo en IA, automatización y desarrollo web de próxima generación.",
+    "keyFeatures": "Características Clave",
     "products": {
       "aiAnalytics": {
         "title": "Panel de Análisis de IA",
-        "category": "Visualización de Datos"
+        "category": "Visualización de Datos",
+        "description": "Un panel integral que proporciona información en tiempo real a través de modelos predictivos avanzados y algoritmos de detección de anomalías.",
+        "features": {
+          "0": "Procesamiento de Datos en Tiempo Real",
+          "1": "Analítica Predictiva",
+          "2": "Informes Personalizados"
+        }
       },
       "smartCity": {
         "title": "Interfaz de Ciudad Inteligente",
-        "category": "Plataforma IoT"
+        "category": "Plataforma IoT",
+        "description": "Una plataforma integral de gestión urbana que optimiza el flujo de tráfico, el consumo de energía y los recursos de seguridad pública.",
+        "features": {
+          "0": "Integración de Sensores IoT",
+          "1": "Optimización de Tráfico",
+          "2": "Gestión Energética"
+        }
       },
       "neuralNet": {
         "title": "Visualizador de Redes Neuronales",
-        "category": "Aprendizaje Automático"
+        "category": "Aprendizaje Automático",
+        "description": "Visualización 3D interactiva de modelos de aprendizaje profundo complejos, permitiendo transparencia y una mejor comprensión de las decisiones de la IA.",
+        "features": {
+          "0": "Renderizado de Modelos 3D",
+          "1": "Inspección de Capas",
+          "2": "Vista de Entrenamiento en Tiempo Real"
+        }
       },
       "defi": {
         "title": "Protocolo de Comercio DeFi",
-        "category": "Web3 / Blockchain"
+        "category": "Web3 / Blockchain",
+        "description": "Protocolo de finanzas descentralizadas de próxima generación que garantiza transacciones seguras y de alta velocidad con gestión automatizada de liquidez.",
+        "features": {
+          "0": "Seguridad de Contratos Inteligentes",
+          "1": "Liquidez Automatizada",
+          "2": "Puente Cross-chain"
+        }
       },
       "quantum": {
         "title": "Núcleo de Computación Cuántica",
-        "category": "Computación Avanzada"
+        "category": "Computación Avanzada",
+        "description": "Interfaz de simulación para algoritmos cuánticos, cerrando la brecha entre las metodologías de computación clásica y cuántica.",
+        "features": {
+          "0": "Simulación de Qubits",
+          "1": "Pruebas de Algoritmos",
+          "2": "Corrección de Errores Cuánticos"
+        }
       },
       "cyber": {
         "title": "Escudo de Ciberseguridad",
-        "category": "Seguridad"
+        "category": "Seguridad",
+        "description": "Sistema de detección de amenazas impulsado por IA que protege la infraestructura empresarial de amenazas cibernéticas en evolución en tiempo real.",
+        "features": {
+          "0": "Inteligencia de Amenazas",
+          "1": "Respuesta Automatizada",
+          "2": "Arquitectura Zero-trust"
+        }
       },
       "holo": {
         "title": "Espacio de Trabajo Holográfico",
-        "category": "RA / RV"
+        "category": "RA / RV",
+        "description": "Entorno de trabajo inmersivo AR/VR diseñado para la colaboración remota y el diseño espacial en 3D.",
+        "features": {
+          "0": "Audio Espacial",
+          "1": "Seguimiento de Manos",
+          "2": "Colaboración Multi-usuario"
+        }
       }
     }
   },
@@ -199,68 +244,13 @@
     "description": "Empoderando empresas con automatización de IA de vanguardia y soluciones de infraestructura escalables.",
     "rights": "Todos los derechos reservados"
   },
-  "MobileAppProcess": {
-    "title": "Proceso de Desarrollo de Aplicaciones Móviles",
-    "description": "Desde el concepto hasta el despliegue, seguimos una metodología probada para construir aplicaciones móviles excepcionales.",
-    "cta": "¿Listo para dar vida a tu idea de aplicación móvil? Hablemos.",
-    "steps": {
-      "planning": {
-        "title": "Planificación",
-        "description": "Analizamos requisitos, definimos el alcance y creamos una hoja de ruta estratégica para tu aplicación móvil.",
-        "tools": {
-          "0": "Jira",
-          "1": "Trello",
-          "2": "Notion",
-          "3": "Asana",
-          "4": "Monday",
-          "5": "ClickUp"
-        }
-      },
-      "mockup": {
-        "title": "Mockup y Wireframing",
-        "description": "Prototipos interactivos y wireframes para visualizar el recorrido del usuario y validar conceptos tempranamente.",
-        "tools": {
-          "0": "Figma",
-          "1": "Sketch",
-          "2": "InVision",
-          "3": "Marvel",
-          "4": "Balsamiq",
-          "5": "Adobe XD"
-        }
-      },
-      "design": {
-        "title": "Diseño UX/UI",
-        "description": "Creando interfaces hermosas e intuitivas con enfoque en la experiencia del usuario y consistencia de marca.",
-        "tools": {
-          "0": "Figma",
-          "1": "Lucidchart",
-          "2": "Accesibilidad",
-          "3": "Animations",
-          "4": "Adobe CC",
-          "5": "Zeplin"
-        }
-      },
-      "development": {
-        "title": "Desarrollo",
-        "description": "Construyendo aplicaciones móviles robustas y escalables usando React Native, Expo y herramientas modernas de desarrollo.",
-        "tools": {
-          "0": "React Native",
-          "1": "Expo",
-          "2": "TypeScript",
-          "3": "Next.js",
-          "4": "Node.js",
-          "5": "etc..."
-        }
-      }
-    }
-  },
-  "WebAppProcess": {
-    "title": "Desarrollo de Aplicaciones Web",
-    "description": "Construyendo aplicaciones web escalables y de alto rendimiento con tecnologías modernas y estética impresionante.",
+  "DevelopmentProcess": {
+    "title": "Proceso de Desarrollo",
+    "description": "Construyendo aplicaciones escalables y de alto rendimiento con tecnologías modernas y estética impresionante.",
     "steps": {
       "strategy": {
         "title": "Estrategia y Planificación",
-        "description": "Definimos la arquitectura técnica y el flujo de usuario para asegurar que tu aplicación web cumpla con los objetivos comerciales y las necesidades del usuario.",
+        "description": "Analizamos requisitos, definimos el alcance y creamos una hoja de ruta estratégica para asegurar que tu aplicación cumpla con los objetivos comerciales.",
         "tools": {
           "0": "Arquitectura",
           "1": "Flujo de Usuario",
@@ -270,7 +260,7 @@
       },
       "design": {
         "title": "Diseño UI/UX",
-        "description": "Creando experiencias web inmersivas con principios de diseño moderno, modos oscuros y efectos de glassmorphism.",
+        "description": "Creando interfaces hermosas e intuitivas con principios de diseño moderno, modos oscuros y efectos de glassmorphism.",
         "tools": {
           "0": "Figma",
           "1": "Tailwind",
@@ -279,27 +269,28 @@
         }
       },
       "development": {
-        "title": "Desarrollo Full Stack",
-        "description": "Implementando sistemas backend robustos y frontends dinámicos usando Next.js, React e infraestructura en la nube.",
+        "title": "Desarrollo",
+        "description": "Implementando sistemas backend robustos y frontends dinámicos usando Next.js, React Native e infraestructura en la nube.",
         "tools": {
           "0": "Next.js",
-          "1": "React",
+          "1": "React Native",
           "2": "Node.js",
           "3": "PostgreSQL"
         }
       },
       "launch": {
         "title": "Lanzamiento y Escala",
-        "description": "Desplegando a producción con pipelines CI/CD, optimización de rendimiento y monitoreo para un escalado sin problemas.",
+        "description": "Desplegando a producción/tiendas con pipelines CI/CD, optimización de rendimiento y monitoreo para un escalado sin problemas.",
         "tools": {
           "0": "Vercel",
-          "1": "AWS",
+          "1": "Tiendas de Apps",
           "2": "Docker",
           "3": "Analítica"
         }
       }
     }
   },
+
   "Metadata": {
     "title": "Disnasty - Agencia de Desarrollo de Software e IA | Apps Móviles, Web y Automatización",
     "description": "Transforma tu negocio con Disnasty. Expertos en Desarrollo de Software a Medida, Inteligencia Artificial, Apps Móviles (iOS/Android), Desarrollo Web y Automatización de Procesos. Soluciones tecnológicas innovadoras desde Chile para el mundo.",

@@ -18,7 +18,9 @@
     "contact": "Contact Us",
     "ia": "IA",
     "cloud": "Cloud",
-    "services": "Services"
+    "services": "Services",
+    "development-process": "Development Process",
+    "cloud-architecture": "Cloud Architecture"
   },
   "Hero": {
     "badge": "Next Gen Innovation",
@@ -38,34 +40,77 @@
     "titlePrefix": "Featured",
     "titleSuffix": "Projects",
     "description": "Explore our latest work in AI, automation, and next-gen web development.",
+    "keyFeatures": "Key Features",
     "products": {
       "aiAnalytics": {
         "title": "AI Analytics Dashboard",
-        "category": "Data Visualization"
+        "category": "Data Visualization",
+        "description": "A comprehensive dashboard providing real-time insights through advanced predictive modeling and anomaly detection algorithms.",
+        "features": {
+          "0": "Real-time Data Processing",
+          "1": "Predictive Analytics",
+          "2": "Custom Reporting"
+        }
       },
       "smartCity": {
         "title": "Smart City Interface",
-        "category": "IoT Platform"
+        "category": "IoT Platform",
+        "description": "An integrated urban management platform optimizing traffic flow, energy consumption, and public safety resources.",
+        "features": {
+          "0": "IoT Sensor Integration",
+          "1": "Traffic Optimization",
+          "2": "Energy Management"
+        }
       },
       "neuralNet": {
         "title": "Neural Network Visualizer",
-        "category": "Machine Learning"
+        "category": "Machine Learning",
+        "description": "Interactive 3D visualization of complex deep learning models, enabling transparency and better understanding of AI decisions.",
+        "features": {
+          "0": "3D Model Rendering",
+          "1": "Layer Inspection",
+          "2": "Real-time Training View"
+        }
       },
       "defi": {
         "title": "DeFi Trading Protocol",
-        "category": "Web3 / Blockchain"
+        "category": "Web3 / Blockchain",
+        "description": "Next-generation decentralized finance protocol ensuring secure, high-speed transactions with automated liquidity management.",
+        "features": {
+          "0": "Smart Contract Security",
+          "1": "Automated Liquidity",
+          "2": "Cross-chain Bridge"
+        }
       },
       "quantum": {
         "title": "Quantum Computing Core",
-        "category": "Advanced Computing"
+        "category": "Advanced Computing",
+        "description": "Simulation interface for quantum algorithms, bridging the gap between classical and quantum computing methodologies.",
+        "features": {
+          "0": "Qubit Simulation",
+          "1": "Algorithm Testing",
+          "2": "Quantum Error Correction"
+        }
       },
       "cyber": {
         "title": "Cybersecurity Shield",
-        "category": "Security"
+        "category": "Security",
+        "description": "AI-driven threat detection system protecting enterprise infrastructure from evolving cyber threats in real-time.",
+        "features": {
+          "0": "Threat Intelligence",
+          "1": "Automated Response",
+          "2": "Zero-trust Architecture"
+        }
       },
       "holo": {
         "title": "Holographic Workspace",
-        "category": "AR / VR"
+        "category": "AR / VR",
+        "description": "Immersive AR/VR workspace environment designed for remote collaboration and 3D spatial design.",
+        "features": {
+          "0": "Spatial Audio",
+          "1": "Hand Tracking",
+          "2": "Multi-user Collaboration"
+        }
       }
     }
   },
@@ -199,68 +244,13 @@
     "description": "Empowering businesses with cutting-edge AI automation and scalable infrastructure solutions.",
     "rights": "All rights reserved"
   },
-  "MobileAppProcess": {
-    "title": "Mobile App Development Process",
-    "description": "From concept to deployment, we follow a proven methodology to build exceptional mobile applications.",
-    "cta": "Ready to bring your mobile app idea to life? Let's talk.",
-    "steps": {
-      "planning": {
-        "title": "Planning",
-        "description": "We analyze requirements, define scope, and create a strategic roadmap for your mobile application.",
-        "tools": {
-          "0": "Jira",
-          "1": "Trello",
-          "2": "Notion",
-          "3": "Asana",
-          "4": "Monday",
-          "5": "ClickUp"
-        }
-      },
-      "mockup": {
-        "title": "Mockup & Wireframing",
-        "description": "Interactive prototypes and wireframes to visualize the user journey and validate concepts early.",
-        "tools": {
-          "0": "Figma",
-          "1": "Sketch",
-          "2": "InVision",
-          "3": "Marvel",
-          "4": "Balsamiq",
-          "5": "Adobe XD"
-        }
-      },
-      "design": {
-        "title": "UX/UI Design",
-        "description": "Crafting beautiful, intuitive interfaces with a focus on user experience and brand consistency.",
-        "tools": {
-          "0": "Figma",
-          "1": "Lucidchart",
-          "2": "Accesibilidad",
-          "3": "Animations",
-          "4": "Adobe CC",
-          "5": "Zeplin"
-        }
-      },
-      "development": {
-        "title": "Development",
-        "description": "Building robust, scalable mobile apps using React Native, Expo, and modern development tools.",
-        "tools": {
-          "0": "React Native",
-          "1": "Expo",
-          "2": "TypeScript",
-          "3": "Next.js",
-          "4": "Node.js",
-          "5": "etc..."
-        }
-      }
-    }
-  },
-  "WebAppProcess": {
-    "title": "Web App Development",
-    "description": "Building scalable, high-performance web applications with modern technologies and stunning aesthetics.",
+  "DevelopmentProcess": {
+    "title": "App Development Process",
+    "description": "Building scalable, high-performance applications with modern technologies and stunning aesthetics.",
     "steps": {
       "strategy": {
         "title": "Strategy & Planning",
-        "description": "We define the technical architecture and user flow to ensure your web application meets business goals and user needs.",
+        "description": "We analyze requirements, define scope, an create a strategic roadmap to ensure your application meets business goals.",
         "tools": {
           "0": "Architecture",
           "1": "User Flow",
@@ -270,7 +260,7 @@
       },
       "design": {
         "title": "UI/UX Design",
-        "description": "Creating immersive web experiences with modern design principles, dark modes, and glassmorphism effects.",
+        "description": "Crafting beautiful, intuitive interfaces with modern design principles, dark modes, and glassmorphism effects.",
         "tools": {
           "0": "Figma",
           "1": "Tailwind",
@@ -279,27 +269,28 @@
         }
       },
       "development": {
-        "title": "Full Stack Development",
-        "description": "Implementing robust backend systems and dynamic frontends using Next.js, React, and cloud infrastructure.",
+        "title": "Development",
+        "description": "Implementing robust backend systems and dynamic frontends using Next.js, React Native, and cloud infrastructure.",
         "tools": {
           "0": "Next.js",
-          "1": "React",
+          "1": "React Native",
           "2": "Node.js",
           "3": "PostgreSQL"
         }
       },
       "launch": {
         "title": "Launch & Scale",
-        "description": "Deploying to production with CI/CD pipelines, performance optimization, and monitoring for seamless scaling.",
+        "description": "Deploying to production/stores with CI/CD pipelines, performance optimization, and monitoring for seamless scaling.",
         "tools": {
           "0": "Vercel",
-          "1": "AWS",
+          "1": "App Stores",
           "2": "Docker",
           "3": "Analytics"
         }
       }
     }
   },
+
   "Metadata": {
     "title": "Disnasty - AI & Software Development Agency | Mobile, Web & Automation Solutions",
     "description": "Transform your business with Disnasty. Experts in Custom Software Development, Artificial Intelligence, Mobile Apps (iOS/Android), Web Development, and Process Automation. Innovative tech solutions from Chile to the world.",
