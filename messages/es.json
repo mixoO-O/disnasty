@@ -316,5 +316,61 @@
       "database": "Base de Datos",
       "storage": "Almacenamiento"
     }
+  },
+  "MobileAppProcess": {
+    "title": "Proceso de Desarrollo de Apps Móviles",
+    "description": "Desde el concepto hasta el despliegue, seguimos una metodología probada para construir aplicaciones móviles excepcionales.",
+    "cta_prefix": "¿Listo para dar vida a tu idea de app móvil?",
+    "cta_highlight": "Hablemos.",
+    "steps": {
+      "planning": {
+        "title": "Planificación",
+        "description": "Analizamos requisitos, definimos el alcance y creamos una hoja de ruta estratégica para tu aplicación móvil.",
+        "tools": {
+          "0": "Jira",
+          "1": "Trello",
+          "2": "Notion",
+          "3": "Asana",
+          "4": "Monday",
+          "5": "ClickUp"
+        }
+      },
+      "mockup": {
+        "title": "Mockup y Wireframing",
+        "description": "Prototipos interactivos y wireframes para visualizar el recorrido del usuario y validar conceptos de forma temprana.",
+        "tools": {
+          "0": "Figma",
+          "1": "Sketch",
+          "2": "InVision",
+          "3": "Marvel",
+          "4": "Balsamiq",
+          "5": "Adobe XD"
+        }
+      },
+      "design": {
+        "title": "Diseño UX/UI",
+        "description": "Creando interfaces hermosas e intuitivas con un enfoque en la experiencia del usuario y la consistencia de marca.",
+        "tools": {
+          "0": "Figma",
+          "1": "Lucidchart",
+          "2": "Accesibilidad",
+          "3": "Animaciones",
+          "4": "Adobe CC",
+          "5": "Zeplin"
+        }
+      },
+      "development": {
+        "title": "Desarrollo",
+        "description": "Construyendo apps móviles robustas y escalables usando React Native, Expo y herramientas de desarrollo modernas.",
+        "tools": {
+          "0": "React Native",
+          "1": "Expo",
+          "2": "TypeScript",
+          "3": "Next.js",
+          "4": "Node.js",
+          "5": "etc..."
+        }
+      }
+    }
   }
 }

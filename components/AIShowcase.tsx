@@ -214,105 +214,135 @@ export function AIShowcase() {
           {/* Card 1: Code Antigravity (Large) */}
           <div
             onClick={(e) => handleCardClick('antigravity', e)}
-            className="bg-card/40 hover:bg-card/60 group relative cursor-pointer overflow-hidden rounded-3xl p-8 transition-colors md:col-span-3 md:p-12"
+            className="group relative h-full cursor-pointer md:col-span-3"
           >
-            {/* Animated Border Container */}
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 opacity-20 blur-sm transition-opacity duration-500 group-hover:opacity-40" />
+            {/* Card Container */}
+            <div className="border-border/40 bg-card/30 hover:bg-card/50 relative flex h-full flex-col overflow-hidden rounded-3xl border p-8 backdrop-blur-xl transition-all duration-500 hover:shadow-2xl dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10 md:p-12">
+              {/* Glow Effect */}
+              <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-gradient-to-br from-cyan-500 via-purple-500 to-emerald-500 opacity-0 blur-[60px] transition-opacity duration-500 group-hover:opacity-20" />
 
-            {/* Solution Bubbles */}
-            <div className="absolute right-6 top-6 z-20 flex flex-col items-center">
-              <div className="relative flex gap-3">
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setActiveSolution('auralis');
-                  }}
-                  className="group/btn flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-purple-500/30 bg-purple-500/20 transition-all hover:scale-110 hover:bg-purple-500/30 md:h-12 md:w-12"
-                  aria-label="Auralis"
-                >
-                  <Scale className="h-5 w-5 text-purple-400 md:h-6 md:w-6" />
-                </button>
+              {/* Solution Bubbles */}
+              <div className="absolute right-6 top-6 z-20 flex flex-col items-center">
+                <div className="relative flex gap-3">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setActiveSolution('auralis');
+                    }}
+                    className="group/btn flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-purple-500/30 bg-purple-500/20 transition-all hover:scale-110 hover:bg-purple-500/30 md:h-12 md:w-12"
+                    aria-label="Auralis"
+                  >
+                    <Scale className="h-5 w-5 text-purple-400 md:h-6 md:w-6" />
+                  </button>
 
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setActiveSolution('clou');
-                  }}
-                  className="group/btn flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-green-500/30 bg-green-500/20 transition-all hover:scale-110 hover:bg-green-500/30 md:h-12 md:w-12"
-                  aria-label="Clou"
-                >
-                  <Leaf className="h-5 w-5 text-green-400 md:h-6 md:w-6" />
-                </button>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setActiveSolution('clou');
+                    }}
+                    className="group/btn flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-green-500/30 bg-green-500/20 transition-all hover:scale-110 hover:bg-green-500/30 md:h-12 md:w-12"
+                    aria-label="Clou"
+                  >
+                    <Leaf className="h-5 w-5 text-green-400 md:h-6 md:w-6" />
+                  </button>
 
-                {/* Persistent Tooltip */}
-                <div className="pointer-events-none absolute right-0 top-full z-30 mt-4 whitespace-nowrap">
-                  <div className="bg-card/90 border-border/50 relative flex items-center gap-2 rounded-xl border px-4 py-2 text-xs font-medium text-foreground shadow-xl backdrop-blur-md">
-                    <Sparkles className="h-3.5 w-3.5 animate-pulse text-purple-400" />
-                    <span>{t('tooltip')}</span>
+                  {/* Persistent Tooltip */}
+                  <div className="pointer-events-none absolute right-0 top-full z-30 mt-4 whitespace-nowrap">
+                    <div className="bg-card/90 border-border/50 relative flex items-center gap-2 rounded-xl border px-4 py-2 text-xs font-medium text-foreground shadow-xl backdrop-blur-md">
+                      <Sparkles className="h-3.5 w-3.5 animate-pulse text-purple-400" />
+                      <span>{t('tooltip')}</span>
+                    </div>
+                    {/* Arrow pointing up - aligned to center of button gap */}
+                    <div className="bg-card/90 border-border/50 absolute -top-1.5 right-[calc(50%-6px)] h-3 w-3 rotate-45 rounded-tl-[2px] border-l border-t backdrop-blur-md"></div>
                   </div>
-                  {/* Arrow pointing up - aligned to center of button gap */}
-                  <div className="bg-card/90 border-border/50 absolute -top-1.5 right-[calc(50%-6px)] h-3 w-3 rotate-45 rounded-tl-[2px] border-l border-t backdrop-blur-md"></div>
                 </div>
               </div>
-            </div>
 
-            <div className="relative z-10 flex flex-col items-center gap-8 md:flex-row">
-              <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500 to-blue-600 shadow-lg shadow-purple-500/20">
-                <Cpu className="h-10 w-10 text-white" />
+              <div className="relative z-10 flex flex-col items-center gap-8 md:flex-row">
+                <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500 to-blue-600 shadow-lg ring-1 ring-black/5 dark:ring-white/20">
+                  <Cpu className="h-10 w-10 text-white" />
+                </div>
+                <div className="text-center md:text-left">
+                  <h3 className="mb-3 text-3xl font-bold text-foreground">
+                    {t('antigravity.title')}
+                  </h3>
+                  <p className="text-muted-foreground max-w-2xl text-lg">
+                    {t('antigravity.description')}
+                  </p>
+                </div>
               </div>
-              <div className="text-center md:text-left">
-                <h3 className="mb-3 text-3xl font-bold text-foreground">
-                  {t('antigravity.title')}
-                </h3>
-                <p className="text-muted-foreground max-w-2xl text-lg">
-                  {t('antigravity.description')}
-                </p>
-              </div>
+
+              {/* Bottom Gradient Border line */}
+              <div className="absolute bottom-0 left-0 h-1 w-full scale-x-0 transform bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 transition-transform duration-500 group-hover:scale-x-100" />
             </div>
           </div>
 
           {/* Card 2: n8n Automation */}
           <div
             onClick={(e) => handleCardClick('n8n', e)}
-            className="bg-card/40 hover:bg-card/60 group relative cursor-pointer overflow-hidden rounded-3xl p-8 transition-colors"
+            className="group relative h-full cursor-pointer"
           >
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 opacity-20 blur-sm transition-opacity duration-500 group-hover:opacity-40" />
-            <div className="relative z-10">
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl border border-pink-500/20 bg-pink-500/20 transition-transform group-hover:scale-110">
-                <Workflow className="h-6 w-6 text-pink-400" />
+            {/* Card Container */}
+            <div className="border-border/40 bg-card/30 hover:bg-card/50 relative flex h-full flex-col overflow-hidden rounded-3xl border p-8 backdrop-blur-xl transition-all duration-500 hover:shadow-2xl dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10">
+              {/* Glow Effect */}
+              <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-gradient-to-br from-pink-500 to-rose-500 opacity-0 blur-[60px] transition-opacity duration-500 group-hover:opacity-20" />
+
+              <div className="relative z-10">
+                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-pink-500 to-rose-500 shadow-lg ring-1 ring-black/5 dark:ring-white/20">
+                  <Workflow className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="mb-3 text-xl font-bold text-foreground">{t('n8n.title')}</h3>
+                <p className="text-muted-foreground">{t('n8n.description')}</p>
               </div>
-              <h3 className="mb-3 text-xl font-bold text-foreground">{t('n8n.title')}</h3>
-              <p className="text-muted-foreground">{t('n8n.description')}</p>
+
+              {/* Bottom Gradient Border line */}
+              <div className="absolute bottom-0 left-0 h-1 w-full scale-x-0 transform bg-gradient-to-r from-pink-500 to-rose-500 transition-transform duration-500 group-hover:scale-x-100" />
             </div>
           </div>
 
           {/* Card 3: Multi-Model Matrix */}
           <div
             onClick={(e) => handleCardClick('llm', e)}
-            className="bg-card/40 hover:bg-card/60 group relative cursor-pointer overflow-hidden rounded-3xl p-8 transition-colors"
+            className="group relative h-full cursor-pointer"
           >
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 opacity-20 blur-sm transition-opacity duration-500 group-hover:opacity-40" />
-            <div className="relative z-10">
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl border border-emerald-500/20 bg-emerald-500/20 transition-transform group-hover:scale-110">
-                <Brain className="h-6 w-6 text-emerald-400" />
+            {/* Card Container */}
+            <div className="border-border/40 bg-card/30 hover:bg-card/50 relative flex h-full flex-col overflow-hidden rounded-3xl border p-8 backdrop-blur-xl transition-all duration-500 hover:shadow-2xl dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10">
+              {/* Glow Effect */}
+              <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 opacity-0 blur-[60px] transition-opacity duration-500 group-hover:opacity-20" />
+
+              <div className="relative z-10">
+                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 shadow-lg ring-1 ring-black/5 dark:ring-white/20">
+                  <Brain className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="mb-3 text-xl font-bold text-foreground">{t('llm.title')}</h3>
+                <p className="text-muted-foreground">{t('llm.description')}</p>
               </div>
-              <h3 className="mb-3 text-xl font-bold text-foreground">{t('llm.title')}</h3>
-              <p className="text-muted-foreground">{t('llm.description')}</p>
+
+              {/* Bottom Gradient Border line */}
+              <div className="absolute bottom-0 left-0 h-1 w-full scale-x-0 transform bg-gradient-to-r from-emerald-500 to-teal-500 transition-transform duration-500 group-hover:scale-x-100" />
             </div>
           </div>
 
           {/* Card 4: MCP & Context */}
           <div
             onClick={(e) => handleCardClick('context', e)}
-            className="bg-card/40 hover:bg-card/60 group relative cursor-pointer overflow-hidden rounded-3xl p-8 transition-colors"
+            className="group relative h-full cursor-pointer"
           >
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 opacity-20 blur-sm transition-opacity duration-500 group-hover:opacity-40" />
-            <div className="relative z-10">
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl border border-orange-500/20 bg-orange-500/20 transition-transform group-hover:scale-110">
-                <Layers className="h-6 w-6 text-orange-400" />
+            {/* Card Container */}
+            <div className="border-border/40 bg-card/30 hover:bg-card/50 relative flex h-full flex-col overflow-hidden rounded-3xl border p-8 backdrop-blur-xl transition-all duration-500 hover:shadow-2xl dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10">
+              {/* Glow Effect */}
+              <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-gradient-to-br from-orange-500 to-amber-500 opacity-0 blur-[60px] transition-opacity duration-500 group-hover:opacity-20" />
+
+              <div className="relative z-10">
+                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-500 to-amber-500 shadow-lg ring-1 ring-black/5 dark:ring-white/20">
+                  <Layers className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="mb-3 text-xl font-bold text-foreground">{t('context.title')}</h3>
+                <p className="text-muted-foreground">{t('context.description')}</p>
               </div>
-              <h3 className="mb-3 text-xl font-bold text-foreground">{t('context.title')}</h3>
-              <p className="text-muted-foreground">{t('context.description')}</p>
+
+              {/* Bottom Gradient Border line */}
+              <div className="absolute bottom-0 left-0 h-1 w-full scale-x-0 transform bg-gradient-to-r from-orange-500 to-amber-500 transition-transform duration-500 group-hover:scale-x-100" />
             </div>
           </div>
         </div>

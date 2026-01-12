@@ -125,60 +125,70 @@ export function ProductShowcase() {
                   stiffness: 50,
                   damping: 20,
                 }}
-                className={`bg-card/40 group relative overflow-hidden rounded-3xl backdrop-blur-md ${className} transform-style-3d`}
+                className={`group relative ${className}`}
               >
-                {/* Animated Border Container */}
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 opacity-20 blur-sm transition-opacity duration-500 group-hover:opacity-40" />
+                {/* InnovationHub Card Container Style */}
+                <div className="border-border/40 bg-card/30 hover:bg-card/50 transform-style-3d relative flex h-full flex-col overflow-hidden rounded-3xl border backdrop-blur-xl transition-all duration-500 hover:shadow-2xl dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10">
+                  {/* Glow Effect */}
+                  <div
+                    className={`absolute -right-20 -top-20 h-64 w-64 rounded-full bg-gradient-to-br ${product.gradient} opacity-0 blur-[60px] transition-opacity duration-500 group-hover:opacity-20`}
+                  />
 
-                {/* Image Background */}
-                {product.image && (
-                  <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105">
-                    <Image
-                      src={product.image}
-                      alt={t(`products.${product.id}.title`)}
-                      fill
-                      className="object-cover opacity-60 transition-opacity duration-500 group-hover:opacity-80"
-                    />
-                    <div className="absolute inset-0 bg-black/60 transition-colors duration-500 group-hover:bg-black/40" />
-                  </div>
-                )}
+                  {/* Image Background */}
+                  {product.image && (
+                    <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105">
+                      <Image
+                        src={product.image}
+                        alt={t(`products.${product.id}.title`)}
+                        fill
+                        className="object-cover opacity-60 transition-opacity duration-500 group-hover:opacity-80"
+                      />
+                      <div className="absolute inset-0 bg-black/60 transition-colors duration-500 group-hover:bg-black/40" />
+                    </div>
+                  )}
 
-                {/* Holographic Gradient Overlay - Smoother */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${product.gradient} opacity-10 mix-blend-color-dodge transition-all duration-700 group-hover:opacity-30`}
-                />
+                  {/* Holographic Gradient Overlay - Smoother */}
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${product.gradient} opacity-10 mix-blend-color-dodge transition-all duration-700 group-hover:opacity-30`}
+                  />
 
-                {/* Scanning Line Effect on Hover */}
-                <div className="pointer-events-none absolute inset-0 translate-y-[-100%] bg-gradient-to-b from-transparent via-white/10 to-transparent transition-transform duration-1000 ease-in-out group-hover:translate-y-[100%]" />
+                  {/* Scanning Line Effect on Hover */}
+                  <div className="pointer-events-none absolute inset-0 translate-y-[-100%] bg-gradient-to-b from-transparent via-white/10 to-transparent transition-transform duration-1000 ease-in-out group-hover:translate-y-[100%]" />
 
-                {/* Content Overlay */}
-                <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6">
-                  <div className="translate-y-4 transform transition-transform duration-300 group-hover:translate-y-0">
-                    <span className="glow-text mb-2 block text-xs font-medium uppercase tracking-widest text-cyan-400">
-                      {t(`products.${product.id}.category`)}
-                    </span>
-                    <div className="flex items-center justify-between gap-4">
-                      <h3
-                        className={`font-bold leading-tight text-white ${
-                          className.includes('row-span-2') ? 'text-3xl' : 'text-xl'
-                        }`}
-                      >
-                        {t(`products.${product.id}.title`)}
-                      </h3>
-                      <button
-                        onClick={() =>
-                          setSelectedProduct({
-                            ...product,
-                            title: t(`products.${product.id}.title`),
-                            category: t(`products.${product.id}.category`),
-                          })
-                        }
-                        className="flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full border border-white/20 bg-white/10 opacity-0 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-cyan-500/20 hover:shadow-[0_0_15px_rgba(6,182,212,0.5)] group-hover:opacity-100"
-                      >
-                        <ArrowUpRight className="h-5 w-5 text-white" />
-                      </button>
+                  {/* Content Overlay */}
+                  <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6">
+                    <div className="translate-y-4 transform transition-transform duration-300 group-hover:translate-y-0">
+                      <span className="glow-text mb-2 block text-xs font-medium uppercase tracking-widest text-cyan-400">
+                        {t(`products.${product.id}.category`)}
+                      </span>
+                      <div className="flex items-center justify-between gap-4">
+                        <h3
+                          className={`font-bold leading-tight text-white ${
+                            className.includes('row-span-2') ? 'text-3xl' : 'text-xl'
+                          }`}
+                        >
+                          {t(`products.${product.id}.title`)}
+                        </h3>
+                        <button
+                          onClick={() =>
+                            setSelectedProduct({
+                              ...product,
+                              title: t(`products.${product.id}.title`),
+                              category: t(`products.${product.id}.category`),
+                            })
+                          }
+                          className="flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full border border-white/20 bg-white/10 opacity-0 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-cyan-500/20 hover:shadow-[0_0_15px_rgba(6,182,212,0.5)] group-hover:opacity-100"
+                        >
+                          <ArrowUpRight className="h-5 w-5 text-white" />
+                        </button>
+                      </div>
                     </div>
                   </div>
+
+                  {/* Bottom Gradient Border line */}
+                  <div
+                    className={`absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r ${product.gradient} scale-x-0 transform transition-transform duration-500 group-hover:scale-x-100`}
+                  />
                 </div>
               </motion.div>
             );
