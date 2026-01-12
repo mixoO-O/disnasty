@@ -10,13 +10,21 @@ interface ContactModalProps {
   onClose: () => void;
 }
 
+import { createPortal } from 'react-dom';
+
 export function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const t = useTranslations('ContactModal');
+  const [mounted, setMounted] = useState(false);
   const [formState, setFormState] = useState({
     name: '',
     email: '',
     message: '',
   });
+
+  useEffect(() => {
+    setMounted(true);
+    return () => setMounted(false);
+  }, []);
 
   useEffect(() => {
     if (isOpen) {
@@ -36,7 +44,9 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
     onClose();
   };
 
-  return (
+  if (!mounted) return null;
+
+  return createPortal(
     <AnimatePresence>
       {isOpen && (
         <>
@@ -46,11 +56,11 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm"
+            className="fixed inset-0 z-[9998] bg-black/60 backdrop-blur-sm"
           />
 
           {/* Modal */}
-          <div className="pointer-events-none fixed inset-0 z-[100] flex items-center justify-center p-4">
+          <div className="pointer-events-none fixed inset-0 z-[9999] flex items-center justify-center p-4">
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -132,6 +142,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
           </div>
         </>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body,
   );
 }

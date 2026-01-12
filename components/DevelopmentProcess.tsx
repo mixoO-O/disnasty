@@ -67,15 +67,17 @@ export function DevelopmentProcess() {
                   initial={{ opacity: 0, x: -50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: '-20%' }}
-                  className={`bg-card/40 rounded-3xl p-8 backdrop-blur-md lg:border-none lg:bg-transparent lg:p-0 lg:backdrop-blur-none ${
-                    index !== 0 && index !== steps.length - 1 ? 'lg:pt-64' : ''
-                  }`}
                 >
+                  {/* Glow Effect - Mobile Only */}
+                  <div
+                    className={`absolute -right-20 -top-20 h-64 w-64 rounded-full bg-gradient-to-br ${step.gradient} opacity-0 blur-[60px] transition-opacity duration-500 group-hover:opacity-20 lg:hidden`}
+                  />
+
                   <div className="mb-6 lg:hidden">
                     <div
-                      className={`h-16 w-16 rounded-2xl bg-gradient-to-br ${step.gradient} p-0.5`}
+                      className={`h-16 w-16 rounded-2xl bg-gradient-to-br ${step.gradient} p-0.5 shadow-lg ring-1 ring-black/5 dark:ring-white/20`}
                     >
-                      <div className="flex h-full w-full items-center justify-center rounded-2xl bg-background">
+                      <div className="flex h-full w-full items-center justify-center rounded-2xl bg-background/90 backdrop-blur-sm">
                         <step.icon className="h-8 w-8 text-foreground" />
                       </div>
                     </div>
@@ -98,6 +100,11 @@ export function DevelopmentProcess() {
                       </span>
                     ))}
                   </div>
+
+                  {/* Bottom Gradient Border line - Mobile Only */}
+                  <div
+                    className={`absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r ${step.gradient} scale-x-0 transform transition-transform duration-500 group-hover:scale-x-100 lg:hidden`}
+                  />
                 </motion.div>
               </motion.div>
             ))}
@@ -105,7 +112,17 @@ export function DevelopmentProcess() {
 
           {/* Sticky Graphics Section - Desktop */}
           <div className="sticky top-[40vh] z-10 ml-auto hidden h-[500px] w-1/2 lg:block">
-            <div className="bg-card/90 dark:bg-card/40 relative h-full w-full overflow-hidden rounded-3xl shadow-2xl backdrop-blur-xl">
+            <div className="border-border/40 bg-card/30 group relative h-full w-full overflow-hidden rounded-3xl border shadow-2xl backdrop-blur-xl transition-all duration-500 hover:shadow-2xl dark:border-white/10 dark:bg-white/5">
+              {/* Dynamic Glow Effect based on activeStep */}
+              <div
+                className={`absolute -right-20 -top-20 h-64 w-64 rounded-full bg-gradient-to-br ${steps.find((s) => s.id === activeStep)?.gradient || ''} opacity-20 blur-[60px] transition-all duration-500`}
+              />
+
+              {/* Bottom Gradient Border line */}
+              <div
+                className={`absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r ${steps.find((s) => s.id === activeStep)?.gradient || ''} transition-all duration-500`}
+              />
+
               <AnimatePresence mode="wait">
                 {steps.map(
                   (step) =>

@@ -9,6 +9,7 @@ import { ScrollReveal } from '@/components/ScrollReveal';
 import { AIShowcase } from '@/components/AIShowcase';
 import { InnovationHub } from '@/components/InnovationHub';
 import { useTranslations } from 'next-intl';
+import { MobileAppProcess } from '@/components/ModileAppProcess';
 
 export default function Home({ params: { locale } }: { params: { locale: string } }) {
   const t = useTranslations('HomePage');
@@ -37,6 +38,10 @@ export default function Home({ params: { locale } }: { params: { locale: string 
       {/* <ScrollReveal>
                 <Testimonials />
                 </ScrollReveal> */}
+
+      <ScrollReveal>
+        <MobileAppProcess />
+      </ScrollReveal>
 
       <ScrollReveal>
         <TechStackCarousel />
